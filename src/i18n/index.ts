@@ -1,18 +1,22 @@
 import { createI18n } from 'vue-i18n';
-import type { LocaleMessageDictionary } from 'vue-i18n';
 import en from './EN/en.json';
 import fr from './FR/fr.json';
-import ml from './ML/ml.json';
+import mg from './MG/mg.json';
 
-type MessageSchema = typeof en;
+export type Locale = 'fr' | 'en' | 'mg';
 
-const messages: Record<string, LocaleMessageDictionary<MessageSchema>> = { en, fr, ml };
+const DEFAULT_LOCALE: Locale = 'fr';
 
-const userLocale = navigator.language?.split('-')[0] ?? 'en';
+const getSavedLocale = (): Locale => {
+    const saved = localStorage.getItem('locale');
+    return saved === 'fr' || saved === 'en' || saved === 'mg' ? saved : DEFAULT_LOCALE;
+};
 
-export const i18n = createI18n({
+const i18n = createI18n({
     legacy: false,
-    locale: userLocale in messages ? userLocale : 'en',
+    locale: getSavedLocale(),
     fallbackLocale: 'en',
-    messages,
+    messages: { fr, en, mg },
 });
+
+export default i18n;

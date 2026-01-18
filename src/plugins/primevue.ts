@@ -1,0 +1,40 @@
+import type { App } from 'vue';
+import Button from 'primevue/button';
+import Select from 'primevue/select';
+import Rating from 'primevue/rating';
+import InputText from 'primevue/inputtext';
+import Textarea from 'primevue/textarea';
+import ToggleSwitch from 'primevue/toggleswitch';
+import Timeline from 'primevue/timeline';
+import Card from 'primevue/card';
+import Divider from 'primevue/divider';
+import Fieldset from 'primevue/fieldset';
+import Panel from 'primevue/panel';
+import Drawer from 'primevue/drawer';
+import Carousel from 'primevue/carousel';
+import Galleria from 'primevue/galleria';
+import Image from 'primevue/image';
+import Chip from 'primevue/chip';
+import ProgressBar from 'primevue/progressbar';
+
+export default {
+    install(app: App) {
+        app.component('Button', Button);
+        app.component('Select', Select);
+        app.component('Rating', Rating);
+        app.component('InputText', InputText);
+        app.component('Textarea', Textarea);
+        app.component('ToggleSwitch', ToggleSwitch);
+        app.component('Timeline', Timeline);
+        app.component('Card', Card);
+        app.component('Divider', Divider);
+        app.component('Fieldset', Fieldset);
+        app.component('Panel', Panel);
+        app.component('Drawer', Drawer);
+        app.component('Carousel', Carousel);
+        app.component('Galleria', Galleria);
+        app.component('Image', Image);
+        app.component('Chip', Chip);
+        app.component('ProgressBar', ProgressBar);
+    },
+};

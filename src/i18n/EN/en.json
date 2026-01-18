@@ -1,1 +1,8 @@
-{}
+{
+    "language": "Language",
+    "languages": {
+        "mg": "Malagasy",
+        "fr": "French",
+        "en": "English"
+    }
+}
