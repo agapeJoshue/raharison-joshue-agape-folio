@@ -10,8 +10,8 @@
         "light": "Mazava",
         "dark": "Maizina",
         "tooltip": {
-            "light": "Miova mazava",
-            "dark": "Miova maizina"
+            "light": "Afindra ho maody mazava",
+            "dark": "Afindra ho maody maizina"
         }
     }
 }

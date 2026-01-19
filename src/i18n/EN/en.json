@@ -10,8 +10,8 @@
         "light": "Light",
         "dark": "Dark",
         "tooltip": {
-            "light": "change to light mode",
-            "dark": "change to dark mode"
+            "light": "Switch to light mode",
+            "dark": "Switch to dark mode"
         }
     }
 }

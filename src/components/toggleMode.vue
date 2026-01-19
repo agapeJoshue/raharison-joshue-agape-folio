@@ -54,6 +54,7 @@
         v-tooltip="{
             value: isDark ? t('themes.tooltip.light') : t('themes.tooltip.dark'),
             showDelay: 1000,
+            autoHide: true,
             hideDelay: 100,
             pt: { text: 'text-xs font-medium' },
         }"

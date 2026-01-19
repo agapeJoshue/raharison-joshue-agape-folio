@@ -11,7 +11,6 @@
 </script>
 
 <template>
-    <main class="relative w-screen min-h-screen">
-        <ToggleMode />
-    </main>
+    <HeaderSection />
+    <LongText />
 </template>

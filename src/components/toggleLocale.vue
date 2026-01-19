@@ -63,13 +63,14 @@
         v-model="selected"
         :options="options"
         optionLabel="label"
-        class="w-38"
+        class="w-28 sm:w-38 bg-transparent border-gray-500"
         :placeholder="t('language')"
     >
         <template #value="{ value, placeholder }">
             <div v-if="value" class="text-sm flex items-center gap-x-2.5">
                 {{ getFlag(value.code) }}
-                <span>{{ t(value.label) }}</span>
+                <span class="hidden sm:flex">{{ t(value.label) }}</span>
+                <span class="sm:hidden uppercase">{{ value.code }}</span>
             </div>
             <span v-else>{{ placeholder }}</span>
         </template>
