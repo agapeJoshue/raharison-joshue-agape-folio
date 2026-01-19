@@ -12,6 +12,6 @@
 
 <template>
     <main class="relative w-screen min-h-screen">
-        <ToggleLocale />
+        <ToggleMode />
     </main>
 </template>

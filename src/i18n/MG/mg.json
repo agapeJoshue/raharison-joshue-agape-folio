@@ -4,5 +4,14 @@
         "mg": "Malagasy",
         "fr": "Frantsay",
         "en": "Anglisy"
+    },
+    "theme": "Endrika",
+    "themes": {
+        "light": "Mazava",
+        "dark": "Maizina",
+        "tooltip": {
+            "light": "Miova mazava",
+            "dark": "Miova maizina"
+        }
     }
 }

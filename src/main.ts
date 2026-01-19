@@ -1,14 +1,14 @@
 import { createApp } from 'vue';
-import App from './App.vue';
-import router from './routes';
-import i18n from './i18n';
-import './styles/style.css';
+import App from '@/App.vue';
+import router from '@/routes';
+import i18n from '@/i18n';
+import '@/styles/style.css';
 
-import PrimeVueConfigPlugin from './plugins/config';
-import iconsPlugin from './plugins/icons';
-import ComponentsPlugin from './plugins/components';
-import PrimeVueComponentsPlugin from './plugins/primevue';
-import DirectivesPlugin from './plugins/directives';
+import PrimeVueConfigPlugin from '@/plugins/config';
+import iconsPlugin from '@/plugins/icons';
+import ComponentsPlugin from '@/plugins/components';
+import PrimeVueComponentsPlugin from '@/plugins/primevue';
+import DirectivesPlugin from '@/plugins/directives';
 
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme === 'dark') {

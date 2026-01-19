@@ -4,5 +4,14 @@
         "mg": "Malagasy",
         "fr": "French",
         "en": "English"
+    },
+    "theme": "Theme",
+    "themes": {
+        "light": "Light",
+        "dark": "Dark",
+        "tooltip": {
+            "light": "change to light mode",
+            "dark": "change to dark mode"
+        }
     }
 }
