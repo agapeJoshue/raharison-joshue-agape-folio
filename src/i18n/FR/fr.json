@@ -13,5 +13,13 @@
             "light": "Passer en mode clair",
             "dark": "Passer en mode sombre"
         }
+    },
+    "navItems": {
+        "about": "À propos",
+        "service": "Services",
+        "experience": "Expériences",
+        "project": "Projets",
+        "skill": "Compétences",
+        "contact": "Contact"
     }
 }

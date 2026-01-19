@@ -2,3 +2,30 @@
 @import 'tailwindcss-primeui';
 
 @custom-variant dark (&:where(.my-app-dark, .my-app-dark *));
+
+body::-webkit-scrollbar {
+    width: 4px;
+}
+body::-webkit-scrollbar-thumb {
+    border-radius: 50rem;
+    -webkit-border-radius: 50rem;
+    -moz-border-radius: 50rem;
+    -ms-border-radius: 50rem;
+    -o-border-radius: 50rem;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--color-green-700);
+}
+
+body.dark::-webkit-scrollbar-thumb {
+    background: var(--color-green-400);
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--color-zinc-100);
+}
+
+body.dark::-webkit-scrollbar-track {
+    background: var(--color-zinc-900);
+}

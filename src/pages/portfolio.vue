@@ -12,5 +12,6 @@
 
 <template>
     <HeaderSection />
+    <HeroSection />
     <LongText />
 </template>

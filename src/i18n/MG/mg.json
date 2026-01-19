@@ -13,5 +13,13 @@
             "light": "Afindra ho maody mazava",
             "dark": "Afindra ho maody maizina"
         }
+    },
+    "navItems": {
+        "about": "Momba ahy",
+        "service": "Tolotra",
+        "experience": "Traikefa",
+        "project": "Tetikasa",
+        "skill": "Fahaiza-manao",
+        "contact": "Fifandraisana"
     }
 }

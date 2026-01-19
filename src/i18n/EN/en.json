@@ -13,5 +13,13 @@
             "light": "Switch to light mode",
             "dark": "Switch to dark mode"
         }
+    },
+    "navItems": {
+        "about": "About",
+        "service": "Services",
+        "experience": "Experiences",
+        "project": "Projects",
+        "skill": "Skills",
+        "contact": "Contact"
     }
 }

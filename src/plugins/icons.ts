@@ -1,5 +1,5 @@
 import type { App } from 'vue';
-import { Moon, Sun, SunMoon, Gem, Terminal, Menu, X } from 'lucide-vue-next';
+import { Moon, Sun, SunMoon, Gem, Terminal, Menu, X, Download, ChevronUp } from 'lucide-vue-next';
 
 export default {
     install(app: App) {
@@ -9,6 +9,8 @@ export default {
         app.component('Gem', Gem);
         app.component('Menu', Menu);
         app.component('CloseIcon', X);
+        app.component('ChevronUp', ChevronUp);
+        app.component('Download', Download);
         app.component('TerminalIcon', Terminal);
     },
 };

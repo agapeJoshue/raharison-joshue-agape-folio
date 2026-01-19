@@ -1,5 +1,6 @@
 <script lang="ts">
     import { defineComponent, ref, onMounted, onUnmounted } from 'vue';
+    import { useI18n } from 'vue-i18n';
 
     type NavItem = {
         id: string;
@@ -9,18 +10,27 @@
     export default defineComponent({
         name: 'HeaderSection',
         setup() {
+            const { t } = useI18n();
             const isOpen = ref(false);
             const itemActive = ref<string>('hero');
             const isScrolled = ref(false);
 
             const navItems: NavItem[] = [
-                { id: 'about', label: 'À propos' },
-                { id: 'service', label: 'Services' },
-                { id: 'experience', label: 'Expériences' },
-                { id: 'project', label: 'Projets' },
-                { id: 'skill', label: 'Compétences' },
-                { id: 'contact', label: 'Contact' },
+                { id: 'about', label: 'navItems.about' },
+                { id: 'service', label: 'navItems.service' },
+                { id: 'experience', label: 'navItems.experience' },
+                { id: 'project', label: 'navItems.project' },
+                { id: 'skill', label: 'navItems.skill' },
+                { id: 'contact', label: 'navItems.contact' },
             ];
+
+            const scrollToSection = (id: string) => {
+                itemActive.value = id;
+                const element = document.getElementById(id);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            };
 
             const handleScroll = () => {
                 isScrolled.value = window.scrollY > 40;
@@ -35,10 +45,12 @@
             });
 
             return {
+                t,
                 isOpen,
                 navItems,
                 itemActive,
                 isScrolled,
+                scrollToSection,
             };
         },
     });
@@ -70,7 +82,7 @@
                     <li
                         v-for="item in navItems"
                         :key="item.id"
-                        @click="itemActive = item.id"
+                        @click="() => scrollToSection(item.id)"
                         class="relative cursor-pointer py-1 transition-colors duration-200 ease-out"
                         :class="
                             item.id === itemActive
@@ -78,7 +90,7 @@
                                 : 'hover:text-neutral-900 dark:hover:text-neutral-200'
                         "
                     >
-                        {{ item.label }}
+                        {{ t(item.label) }}
 
                         <span
                             class="absolute left-1/2 -translate-x-1/2 -bottom-1 h-0.5 bg-green-600 dark:bg-green-400 transition-all duration-300 ease-out"
@@ -130,7 +142,7 @@
                                 : 'hover:text-neutral-900 dark:hover:text-neutral-200'
                         "
                     >
-                        {{ item.label }}
+                        {{ t(item.label) }}
 
                         <span
                             class="absolute left-0 -bottom-1 h-0.5 bg-green-600 dark:bg-green-400 transition-all duration-300 ease-out"
