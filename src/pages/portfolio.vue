@@ -13,5 +13,6 @@
 <template>
     <HeaderSection />
     <HeroSection />
-    <LongText />
+    <AboutSection />
+    <WorkProcessSection />
 </template>

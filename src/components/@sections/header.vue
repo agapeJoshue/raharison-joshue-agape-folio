@@ -15,6 +15,8 @@
             const itemActive = ref<string>('hero');
             const isScrolled = ref(false);
 
+            const HEADER_OFFSET = isScrolled ? 64 : 80;
+
             const navItems: NavItem[] = [
                 { id: 'about', label: 'navItems.about' },
                 { id: 'service', label: 'navItems.service' },
@@ -27,9 +29,16 @@
             const scrollToSection = (id: string) => {
                 itemActive.value = id;
                 const element = document.getElementById(id);
-                if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                }
+
+                if (!element) return;
+
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.scrollY - HEADER_OFFSET;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth',
+                });
             };
 
             const handleScroll = () => {
@@ -59,20 +68,27 @@
 <template>
     <header
         class="sticky top-0 z-50 w-full transition-[background,backdrop-filter,box-shadow] duration-300 ease-out"
-        :class="isScrolled ? 'backdrop-blur-3xl shadow-sm' : 'bg-transparent'"
+        :class="
+            isScrolled
+                ? 'bg-white/70 dark:bg-black/70 lg:bg-white/30 lg:dark:bg-black/30 backdrop-blur-3xl shadow-sm shadow-neutral-200 dark:shadow-neutral-800'
+                : 'bg-transparent'
+        "
     >
         <nav class="max-w-7xl mx-auto px-4">
             <div
                 class="flex items-center justify-between transition-[height] duration-300 ease-out"
                 :class="[isScrolled ? 'h-16 sm:h-16 lg:h-16' : 'h-20 sm:h-16 lg:h-20']"
             >
-                <div class="flex items-center gap-3 transition-all duration-300 ease-out">
+                <div
+                    class="flex items-center gap-3 transition-all duration-300 ease-out"
+                    @click="() => scrollToSection('hero')"
+                >
                     <TerminalIcon :size="26" class="text-green-700 dark:text-green-400" />
 
                     <h5
                         class="text-xl font-semibold tracking-tight bg-linear-to-r from-green-700 via-green-600 to-green-500 dark:from-green-400 dark:via-green-500 dark:to-green-600 bg-clip-text text-transparent select-none"
                     >
-                        Coder.
+                        DevOps.
                     </h5>
                 </div>
 

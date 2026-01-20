@@ -3,9 +3,14 @@
 
 @custom-variant dark (&:where(.my-app-dark, .my-app-dark *));
 
+* {
+    user-select: none;
+}
+
 body::-webkit-scrollbar {
     width: 4px;
 }
+
 body::-webkit-scrollbar-thumb {
     border-radius: 50rem;
     -webkit-border-radius: 50rem;

@@ -1,5 +1,21 @@
 import type { App } from 'vue';
-import { Moon, Sun, SunMoon, Gem, Terminal, Menu, X, Download, ChevronUp } from 'lucide-vue-next';
+import {
+    Moon,
+    Sun,
+    SunMoon,
+    Gem,
+    Terminal,
+    Menu,
+    X,
+    Download,
+    ChevronUp,
+    CircleCheckBig,
+    CalendarFold,
+    CalendarRange,
+    ChartSpline,
+    CodeXml,
+    Server,
+} from 'lucide-vue-next';
 
 export default {
     install(app: App) {
@@ -12,5 +28,11 @@ export default {
         app.component('ChevronUp', ChevronUp);
         app.component('Download', Download);
         app.component('TerminalIcon', Terminal);
+        app.component('CircleCheckBig', CircleCheckBig);
+        app.component('CalendarFold', CalendarFold);
+        app.component('CalendarRange', CalendarRange);
+        app.component('ChartSpline', ChartSpline);
+        app.component('CodeXml', CodeXml);
+        app.component('Server', Server);
     },
 };

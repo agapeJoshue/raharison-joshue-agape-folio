@@ -5,26 +5,40 @@
         name: 'HeroSection',
         setup() {
             const isScrolled = ref(false);
+            const isPad = ref(false);
 
             const resumes = [
-                { value: '3+', label: 'Années d’expérience' },
+                { value: '3+', label: "Années d'expérience" },
                 { value: '10+', label: 'Projets réalisés' },
-                { value: '06+', label: 'Services' },
+                { value: '6+', label: 'Services proposés' },
             ];
 
             const handleScroll = () => {
                 isScrolled.value = window.scrollY > 40;
             };
 
+            const handleResize = () => {
+                isPad.value = window.innerHeight > 1000;
+            };
+
             onMounted(() => {
+                handleScroll();
+                handleResize();
+
                 window.addEventListener('scroll', handleScroll, { passive: true });
+                window.addEventListener('resize', handleResize, { passive: true });
             });
 
             onUnmounted(() => {
                 window.removeEventListener('scroll', handleScroll);
+                window.removeEventListener('resize', handleResize);
             });
 
-            return { isScrolled, resumes };
+            return {
+                isScrolled,
+                isPad,
+                resumes,
+            };
         },
     });
 </script>
@@ -32,15 +46,19 @@
 <template>
     <section
         id="hero"
-        class="w-full flex items-start lg:items-center bg-linear-to-b from-white dark:from-black to-zinc-100 dark:to-zinc-900 transition-[min-height] duration-300 ease-out"
-        :class="isScrolled ? 'min-h-[calc(100vh-4rem)]' : 'min-h-[calc(100vh-5rem)]'"
+        class="w-full pb-20 flex items-start lg:items-center bg-linear-to-b from-white dark:from-black to-zinc-50 dark:to-zinc-950 transition-[min-height] duration-300 ease-out"
+        :class="
+            isScrolled
+                ? `${isPad ? 'min-h-175' : 'min-h-[calc(100vh-4rem)]'}`
+                : `${isPad ? 'min-h-175' : 'min-h-[calc(100vh-5rem)]'}`
+        "
     >
-        <div class="w-full max-w-7xl mx-auto px-5 py-10">
+        <div class="w-full max-w-7xl mx-auto px-5 pt-10">
             <div
                 class="flex flex-col md:flex-row-reverse items-center justify-between gap-16 lg:gap-12"
             >
                 <div
-                    class="relative group w-full max-w-sm sm:max-w-md lg:max-w-lg aspect-square overflow-hidden rounded-tl-xl rounded-tr-[50%] rounded-br-xl rounded-bl-[50%] sm:rounded-tl-[50%] sm:rounded-br-[50%] md:rounded-tr-xl md:rounded-bl-xl border-4 border-green-600 dark:border-green-400 transition-all duration-500 ease-out profile-frame"
+                    class="relative group w-full max-w-sm sm:max-w-md lg:max-w-lg aspect-square overflow-hidden rounded-tl-xl rounded-tr-[50%] rounded-br-xl rounded-bl-[50%] sm:rounded-tl-[50%] sm:rounded-br-[50%] md:rounded-tr-xl md:rounded-bl-xl border-4 border-emerald-600 dark:border-emerald-400 transition-all duration-500 ease-out profile-frame"
                 >
                     <span
                         class="absolute inset-0 rounded-inherit pointer-events-none border-4 border-transparent profile-border-animate"
@@ -62,15 +80,15 @@
                     <h1
                         class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-shadow-2xs"
                     >
-                        <span class="text-green-600 dark:text-green-400">Joshué</span>
+                        <span class="text-emerald-600 dark:text-emerald-400">Joshué</span>
                         <span class="text-neutral-900 dark:text-neutral-50 ml-4">Agapé</span>
                     </h1>
                     <h2
-                        class="relative inline-block text-lg sm:text-xl font-semibold text-black dark:text-white mt-6"
+                        class="relative inline-block text-lg sm:text-xl font-semibold text-black dark:text-white"
                     >
                         Développeur Full-Stack Web & Mobile
                         <span
-                            class="hidden md:flex absolute -bottom-2 left-0 h-0.5 w-1/2 bg-linear-to-r from-green-600 dark:from-green-500 to-transparent"
+                            class="hidden md:flex absolute -bottom-2 left-0 h-0.5 w-1/2 bg-linear-to-r from-emerald-600 dark:from-emerald-500 to-transparent"
                         />
                     </h2>
                     <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed mt-4">
@@ -83,7 +101,7 @@
                         <div
                             v-for="(resume, i) in resumes"
                             :key="i"
-                            class="text-center p-5 rounded-md bg-emerald-300/30 dark:bg-green-700/30 backdrop-blur-lg hover:scale-[1.03] transition-all border border-green-400 dark:border-green-700 space-y-1.5"
+                            class="text-center p-5 rounded-md bg-emerald-300/30 dark:bg-green-700/30 backdrop-blur-lg hover:scale-[1.03] transition-all border border-emerald-400 dark:border-emerald-700 space-y-1.5"
                         >
                             <p
                                 class="font-bold text-lg sm:text-xl lg:text-2xl text-neutral-800 dark:text-neutral-200"
@@ -104,7 +122,7 @@
                 <div
                     v-for="(resume, i) in resumes"
                     :key="i"
-                    class="text-center p-5 rounded-md bg-emerald-300/30 dark:bg-green-700/30 backdrop-blur-lg border border-green-400 dark:border-green-700 space-y-1.5"
+                    class="text-center p-5 rounded-md bg-emerald-300/30 dark:bg-emerald-700/30 backdrop-blur-lg border border-emerald-400 dark:border-emerald-700 space-y-1.5"
                 >
                     <p class="font-bold text-xl text-neutral-800 dark:text-neutral-200">
                         {{ resume.value }}
