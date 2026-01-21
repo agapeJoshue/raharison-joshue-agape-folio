@@ -21,5 +21,88 @@
         "project": "Projects",
         "skill": "Skills",
         "contact": "Contact"
+    },
+    "hero": {
+        "hello": "Hello, I am",
+        "title": "Full-Stack Developer with an OPS / DevOps focus",
+        "description": "Passionate about development, I am constantly driven by designing innovative solutions and continuously improving my technical skills.",
+        "resumes": {
+            "experience": "Years of experience",
+            "project": "Completed projects",
+            "service": "Services offered"
+        }
+    },
+    "about": {
+        "about_title": "About me",
+        "about_subtitle": "Discover my background, skills, and approach to modern software development.",
+        "projects_cta": "My projects",
+        "download_cv": "Download CV",
+        "career_title": "My background",
+        "career_description": "A passionate web developer with over 3 years of experience, I design modern, high-performance, user-centered applications. My growth is driven by continuous technology monitoring and hands-on projects focused on quality, maintainability, and performance.",
+        "education_title": "Education",
+        "education_degree": "Professional Bachelor's Degree — Software Engineering & Databases",
+        "education_institution": "University of Fianarantsoa · National School of Computer Science",
+        "secondary_degree": "Scientific Baccalaureate — Series C",
+        "secondary_institution": "Saint-Joseph de Cluny High School, Fianarantsoa"
+    },
+    "experience": {
+        "title": "Professional Experience",
+        "subtitle": "My Career Journey",
+
+        "auto_flow": {
+            "title": "Development of an AI-based Email Analysis Automation App with n8n",
+            "description": "Design and development of a complete solution ensuring reliability, performance, and data synchronization between front-end and back-end. Implemented a dynamic interface to visualize analyzed emails, a real-time system via WebSocket, and integration of data processed by n8n workflows with filtering and organization.",
+            "company": "ENI Final Year Project",
+            "period": "Oct. 2025 - Nov. 2025",
+            "location": "Fianarantsoa, Madagascar"
+        },
+
+        "planning": {
+            "title": "Project Planning and Tracking Application",
+            "description": "Developed a project management application including project, sprint, and task creation, progress tracking, email invitations, drag-and-drop task updates, meeting management synchronized with Google Calendar, real-time chat, asynchronous tasks handling, and full containerization for easy deployment.",
+            "company": "Personal Project",
+            "period": "Aug. 2025 - Ongoing Improvements",
+            "location": "Fianarantsoa, Madagascar"
+        },
+
+        "mandika_apk": {
+            "title": "Mandika Application Development",
+            "description": "Full development of the app including image capture and enhancement, form configuration, data extraction via a configurable OCR engine, and creation of interfaces for visualization, editing, and export (CSV, JSON, PDF), all in accordance with the specifications.",
+            "company": "RafalTech",
+            "period": "Oct. 2025 - Nov. 2025",
+            "location": "Antananarivo, Madagascar"
+        },
+
+        "stock_flow": {
+            "title": "Stock Management Application",
+            "description": "Designed and developed a professional stock management application allowing product management, updates, and categorization, with automatic alerts for low stock levels and a complete inventory tracking and adjustment module.",
+            "company": "Personal Project",
+            "period": "Jul. 2025 - Aug. 2025",
+            "location": "Fianarantsoa, Madagascar"
+        },
+
+        "sfyritech_meeting": {
+            "title": "Web Solution for Appointment Management with Google Calendar Sync",
+            "description": "Designed and developed a real-time appointment management application synchronized with users' Google Calendar. Front-end development with Quasar and Angular.js, back-end with NestJS, implementing a RESTful API and WebSocket for real-time communication.",
+            "company": "Internship - SfyriTech",
+            "period": "Aug. 2024 - Dec. 2024",
+            "location": "Antananarivo, Madagascar (remote)"
+        },
+
+        "hello_archi": {
+            "title": "API Development for Hello Archi Platform",
+            "description": "Optimized existing code to improve performance and usability. Developed new features according to client requirements and fixed bugs to enhance overall user experience.",
+            "company": "SfyriTech",
+            "period": "May 2024 - Sept. 2024",
+            "location": "Antananarivo, Madagascar (remote)"
+        },
+
+        "open_delivery": {
+            "title": "Full-Stack Developer",
+            "description": "Designed and developed front-end and back-end aspects of websites, applications, and web services. Implemented software solutions according to specifications and developed features tailored to client needs.",
+            "company": "Internship - Open Data / Delivery",
+            "period": "Sept. 2023 - Nov. 2023",
+            "location": "Antsirabe, Madagascar"
+        }
     }
 }

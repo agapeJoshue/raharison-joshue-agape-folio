@@ -15,7 +15,7 @@
             const { locale, t } = useI18n();
 
             const options: LocaleOption[] = [
-                { label: 'languages.mg', code: 'mg' },
+                /*{ label: 'languages.mg', code: 'mg' },*/
                 { label: 'languages.fr', code: 'fr' },
                 { label: 'languages.en', code: 'en' },
             ];

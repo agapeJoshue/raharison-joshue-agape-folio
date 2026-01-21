@@ -15,4 +15,5 @@
     <HeroSection />
     <AboutSection />
     <WorkProcessSection />
+    <ExperienceSection />
 </template>

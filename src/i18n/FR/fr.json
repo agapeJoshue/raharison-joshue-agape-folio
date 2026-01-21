@@ -21,5 +21,88 @@
         "project": "Projets",
         "skill": "Compétences",
         "contact": "Contact"
+    },
+    "hero": {
+        "hello": "Bonjour, je suis",
+        "title": "Développeur Full-Stack orienté OPS / DevOps",
+        "description": "Passionné par le développement, je suis constamment motivé par la conception de solutions innovantes et par l’amélioration continue de mes compétences techniques.",
+        "resumes": {
+            "experience": "Années d’expérience",
+            "project": "Projets réalisés",
+            "service": "Services proposés"
+        }
+    },
+    "about": {
+        "about_title": "À propos de moi",
+        "about_subtitle": "Découvrez mon parcours, mes compétences et mon approche du développement logiciel moderne.",
+        "projects_cta": "Mes projets",
+        "download_cv": "Télécharger le CV",
+        "career_title": "Mon parcours",
+        "career_description": "Développeur web passionné avec plus de 3 ans d’expérience, je conçois des applications modernes, performantes et centrées sur l’utilisateur. Mon évolution repose sur une veille technologique constante et sur des projets concrets orientés vers la qualité, la maintenabilité et la performance.",
+        "education_title": "Formations",
+        "education_degree": "Licence professionnelle — Génie logiciel et bases de données",
+        "education_institution": "Université de Fianarantsoa · École Nationale d’Informatique",
+        "secondary_degree": "Baccalauréat scientifique — Série C",
+        "secondary_institution": "Lycée Saint-Joseph de Cluny, Fianarantsoa"
+    },
+    "experience": {
+        "title": "Expérience Professionnelle",
+        "subtitle": "Découvrez mon parcours professionnel",
+
+        "auto_flow": {
+            "title": "Développement d'une application d'automatisation de l'analyse des e-mails via IA et n8n",
+            "description": "Conception et développement d'une solution complète assurant la fiabilité, la performance et la synchronisation des données entre front-end et back-end. Mise en place d'une interface dynamique pour visualiser les e-mails analysés, d'un système temps réel via WebSocket et d'une intégration des données traitées par les workflows n8n avec filtrage et organisation.",
+            "company": "Projet de fin d'année ENI",
+            "period": "Oct. 2025 - Nov. 2025",
+            "location": "Fianarantsoa, Madagascar"
+        },
+
+        "planning": {
+            "title": "Application de planification et de suivi de projets",
+            "description": "Développement d'une application de gestion de projet intégrant création de projets, sprints et tâches, suivi d’avancement, invitations par e-mail, drag-and-drop pour la mise à jour des tâches, gestion de réunions synchronisées avec Google Calendar, chat en temps réel, tâches asynchrones et conteneurisation complète pour faciliter le déploiement.",
+            "company": "Projet Personnel",
+            "period": "Août 2025 - Amélioration continue",
+            "location": "Fianarantsoa, Madagascar"
+        },
+
+        "mandika_apk": {
+            "title": "Développement de l’application Mandika",
+            "description": "Développement complet de l'application incluant la capture et l’amélioration d’images, le paramétrage des formulaires, l’extraction de données via un moteur OCR adaptable et la création des interfaces de visualisation, d’édition et d’export (CSV, JSON, PDF), conformément au cahier des charges.",
+            "company": "RafalTech",
+            "period": "Oct. 2025 - Nov. 2025",
+            "location": "Antananarivo, Madagascar"
+        },
+
+        "stock_flow": {
+            "title": "Application de gestion des stocks",
+            "description": "Conception et développement d'une application professionnelle permettant la gestion, la mise à jour et la classification des produits, avec alertes automatiques sur les niveaux faibles et un module complet de suivi et d’ajustement des inventaires.",
+            "company": "Projet Personnel",
+            "period": "Juil. 2025 - Août 2025",
+            "location": "Fianarantsoa, Madagascar"
+        },
+
+        "sfyritech_meeting": {
+            "title": "Solution web de gestion de rendez-vous synchronisée avec Google Agenda",
+            "description": "Conception et développement d'une application de gestion de rendez-vous synchronisée en temps réel avec Google Agenda. Développement front-end avec Quasar et Angular.js, back-end avec NestJS, et mise en place d’une API RESTful et de WebSocket pour la communication temps réel.",
+            "company": "Stage - SfyriTech",
+            "period": "Août 2024 - Déc. 2024",
+            "location": "Antananarivo, Madagascar (remote)"
+        },
+
+        "hello_archi": {
+            "title": "Développement de l'API de la plateforme Hello Archi",
+            "description": "Optimisation du code existant pour améliorer performance et ergonomie. Développement de nouvelles fonctionnalités selon les besoins clients et correction des bugs pour améliorer l’expérience utilisateur.",
+            "company": "SfyriTech",
+            "period": "Mai 2024 - Sept. 2024",
+            "location": "Antananarivo, Madagascar (remote)"
+        },
+
+        "open_delivery": {
+            "title": "Développeur Full-Stack",
+            "description": "Conception et développement des aspects front-end et back-end de sites, applications et services web. Mise en œuvre de solutions logicielles conformément au cahier des charges et développement de fonctionnalités adaptées aux besoins clients.",
+            "company": "Stage - Open Data / Delivery",
+            "period": "Sept. 2023 - Nov. 2023",
+            "location": "Antsirabe, Madagascar"
+        }
     }
 }

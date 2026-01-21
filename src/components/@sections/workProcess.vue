@@ -41,7 +41,7 @@
 <template>
     <section
         id="work-process"
-        class="relative w-full bg-linear-to-b from-zinc-100 dark:from-zinc-900 to-zinc-50 dark:to-zinc-950"
+        class="relative w-full pb-20 bg-linear-to-b from-zinc-100 dark:from-zinc-900 to-zinc-200/50 dark:to-zinc-800/50"
     >
         <div class="max-w-400 mx-auto">
             <div
@@ -49,7 +49,7 @@
             >
                 <div class="lg:pe-10 xl:pe-35.75 max-xs:mb-3 max-xl:mb-8">
                     <h1
-                        class="max-xl:text-center text-lg md:text-xl xl:text-3xl font-bold tracking-[0.20em] uppercase text-zinc-900 dark:text-zinc-100"
+                        class="max-xl:text-center text-lg md:text-xl xl:text-2xl font-bold tracking-[0.20rem] uppercase text-zinc-900 dark:text-zinc-100"
                     >
                         Processus de travail
                     </h1>
@@ -74,8 +74,8 @@
                     <div
                         v-for="(step, i) in workStepData"
                         :key="`step-${i}`"
-                        class="border-2 border-gray-100 dark:border-gray-800 group mt-3 p-4 sm:p-8 bg-white dark:bg-neutral-900 aspect-auto sm:max-w-78 rounded-xl hover:drop-shadow-2xl transition-all"
-                        :class="i % 2 === 1 ? 'ms-3 mt-6' : 'mb-6'"
+                        class="border-2 border-emerald-100 dark:border-emerald-950 dark:hover:border-emerald-800 group p-4 sm:p-8 bg-white dark:bg-neutral-900 aspect-auto sm:max-w-78 rounded-xl hover:drop-shadow-2xl transition-all cursor-pointer ease"
+                        :class="i % 2 === 1 ? 'ml-3 mt-6' : 'mb-6'"
                     >
                         <div
                             class="w-11 h-11 sm:w-18 sm:h-18 flex items-center justify-center bg-emerald-100/80 dark:bg-emerald-500/15 group-hover:bg-emerald-400 dark:group-hover:bg-emerald-700 text-center center rounded-md transition-all"

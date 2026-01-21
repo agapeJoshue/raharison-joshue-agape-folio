@@ -1,16 +1,18 @@
 <script lang="ts">
     import { defineComponent, onMounted, onUnmounted, ref } from 'vue';
+    import { useI18n } from 'vue-i18n';
 
     export default defineComponent({
         name: 'HeroSection',
         setup() {
+            const { t } = useI18n();
             const isScrolled = ref(false);
             const isPad = ref(false);
 
             const resumes = [
-                { value: '3+', label: "Années d'expérience" },
-                { value: '10+', label: 'Projets réalisés' },
-                { value: '6+', label: 'Services proposés' },
+                { value: '3+', label: 'hero.resumes.experience' },
+                { value: '10+', label: 'hero.resumes.project' },
+                { value: '6+', label: 'hero.resumes.service' },
             ];
 
             const handleScroll = () => {
@@ -35,6 +37,7 @@
             });
 
             return {
+                t,
                 isScrolled,
                 isPad,
                 resumes,
@@ -53,7 +56,7 @@
                 : `${isPad ? 'min-h-175' : 'min-h-[calc(100vh-5rem)]'}`
         "
     >
-        <div class="w-full max-w-7xl mx-auto px-5 pt-10">
+        <div class="w-full max-w-340 mx-auto px-5 pt-10">
             <div
                 class="flex flex-col md:flex-row-reverse items-center justify-between gap-16 lg:gap-12"
             >
@@ -75,7 +78,7 @@
                     <p
                         class="text-sm tracking-widest uppercase text-neutral-500 dark:text-neutral-400"
                     >
-                        Bonjour, je suis
+                        {{ t('hero.hello') }}
                     </p>
                     <h1
                         class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-shadow-2xs"
@@ -86,15 +89,13 @@
                     <h2
                         class="relative inline-block text-lg sm:text-xl font-semibold text-black dark:text-white"
                     >
-                        Développeur Full-Stack Web & Mobile
+                        {{ t('hero.title') }}
                         <span
                             class="hidden md:flex absolute -bottom-2 left-0 h-0.5 w-1/2 bg-linear-to-r from-emerald-600 dark:from-emerald-500 to-transparent"
                         />
                     </h2>
                     <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed mt-4">
-                        Passionné par le développement, je suis constamment motivé par l'idée de
-                        concevoir des solutions innovantes et de perfectionner mes compétences
-                        techniques.
+                        {{ t('hero.description') }}
                     </p>
 
                     <div class="md:hidden grid lg:grid grid-cols-3 gap-x-3 mt-20">
@@ -111,7 +112,7 @@
                             <p
                                 class="text-xs lg:text-sm font-medium text-neutral-600 dark:text-neutral-400"
                             >
-                                {{ resume.label }}
+                                {{ t(resume.label) }}
                             </p>
                         </div>
                     </div>
@@ -128,7 +129,7 @@
                         {{ resume.value }}
                     </p>
                     <p class="text-sm font-medium text-neutral-600 dark:text-neutral-400">
-                        {{ resume.label }}
+                        {{ t(resume.label) }}
                     </p>
                 </div>
             </div>

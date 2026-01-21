@@ -1,5 +1,9 @@
 @import 'tailwindcss';
 @import 'tailwindcss-primeui';
+@import 'swiper/css';
+@import 'swiper/css/pagination';
+@import 'swiper/css/navigation';
+@import 'swiper/css/effect-fade';
 
 @custom-variant dark (&:where(.my-app-dark, .my-app-dark *));
 

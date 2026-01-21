@@ -18,13 +18,13 @@
             const formations = [
                 {
                     year: '2024',
-                    title: 'Licence Professionnelle — Génie Logiciel & Bases de Données',
-                    place: 'Université de Fianarantsoa · École Nationale d’Informatique',
+                    title: 'about.education_degree',
+                    place: 'about.education_institution',
                 },
                 {
                     year: '2021',
-                    title: 'Baccalauréat Scientifique — Série C',
-                    place: 'Lycée Saint-Joseph de Cluny, Fianarantsoa',
+                    title: 'about.secondary_degree',
+                    place: 'about.secondary_institution',
                 },
             ];
 
@@ -60,14 +60,13 @@
                     <h1
                         class="text-xl md:text-2xl font-bold tracking-[0.35em] uppercase text-zinc-900 dark:text-zinc-100"
                     >
-                        À propos
+                        {{ t('about.about_title') }}
                     </h1>
 
                     <p
                         class="text-sm md:text-base text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto leading-relaxed"
                     >
-                        Découvrez mon parcours, mes compétences et mon approche du développement
-                        logiciel moderne.
+                        {{ t('about.about_subtitle') }}
                     </p>
 
                     <div
@@ -90,12 +89,12 @@
                         <div class="mt-10 flex flex-wrap justify-center md:justify-start gap-4">
                             <Button
                                 @click="() => scrollToSection('project')"
-                                label="Mes projets"
+                                :label="t('about.projects_cta')"
                                 class="px-6 bg-emerald-600 text-white dark:text-black dark:bg-emerald-400"
                             />
 
                             <Button
-                                label="Télécharger le CV"
+                                :label="t('about.download_cv')"
                                 outlined
                                 class="px-6 border-black text-black dark:border-white dark:text-white"
                             >
@@ -109,15 +108,11 @@
                     <div class="space-y-16">
                         <div class="space-y-6">
                             <h2 class="text-2xl font-semibold text-zinc-900 dark:text-zinc-100">
-                                Mon parcours
+                                {{ t('about.career_title') }}
                             </h2>
 
                             <p class="text-zinc-600 dark:text-zinc-300 leading-relaxed max-w-prose">
-                                Développeur web passionné avec plus de 3 ans d’expérience, je
-                                conçois des applications modernes, performantes et centrées sur
-                                l’utilisateur. Mon évolution repose sur une veille technologique
-                                constante et des projets concrets orientés qualité, maintenabilité
-                                et performance.
+                                {{ t('about.career_description') }}
                             </p>
                         </div>
 
@@ -125,7 +120,7 @@
                             <h3
                                 class="text-sm font-semibold uppercase tracking-[0.35em] text-zinc-900 dark:text-zinc-100"
                             >
-                                Formations
+                                {{ t('about.education_title') }}
                             </h3>
 
                             <ul
@@ -152,10 +147,10 @@
                                     <h3
                                         className="font-semibold mt-2 text-neutral-900 dark:text-neutral-100 text-base"
                                     >
-                                        {{ formation.title }}
+                                        {{ t(formation.title) }}
                                     </h3>
                                     <p className="text-xs text-neutral-600 dark:text-neutral-400">
-                                        {{ formation.place }}
+                                        {{ t(formation.place) }}
                                     </p>
                                 </li>
                             </ul>

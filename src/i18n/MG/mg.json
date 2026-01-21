@@ -21,5 +21,28 @@
         "project": "Tetikasa",
         "skill": "Fahaiza-manao",
         "contact": "Fifandraisana"
+    },
+    "hero": {
+        "hello": "Manao ahoana, izaho dia",
+        "title": "Mpamorona rindranasa Full-Stack mifantoka amin’ny OPS / DevOps",
+        "description": "Tiako fatratra ny fampivoarana rindranasa, ary mandrisika ahy hatrany ny famoronana vahaolana vaovao sy ny fanatsarana tsy tapaka ny fahaiza-manao ara-teknika ananako.",
+        "resumes": {
+            "experience": "Taona niasana",
+            "project": "Tetikasa vita",
+            "service": "Tolotra omenay"
+        }
+    },
+    "about": {
+        "about_title": "Momba ahy",
+        "about_subtitle": "Fantaro ny lalana nodiaviko, ny fahaiza-manaoko ary ny fomba fijeriko ny fampivoarana rindranasa maoderina.",
+        "projects_cta": "Tetikasa nataoko",
+        "download_cv": "Sintomy ny CV",
+        "career_title": "Ny lalana nodiaviko",
+        "career_description": "Mpamorona tranonkala feno fahavononana manana traikefa mihoatra ny 3 taona aho, mamolavola rindranasa maoderina, mahomby ary mifantoka amin’ny mpampiasa. Ny fandrosoako dia vokatry ny fanarahana hatrany ny fivoaran’ny teknolojia sy ny tetikasa tena izy mifantoka amin’ny kalitao, ny fikojakojana ary ny fahombiazana.",
+        "education_title": "Fianarana",
+        "education_degree": "Licence professionnelle — Génie Logiciel sy Tahiry Angona",
+        "education_institution": "Oniversiten’i Fianarantsoa · Sekoly Nasionalin’ny Informatika",
+        "secondary_degree": "Baccalauréat siantifika — Série C",
+        "secondary_institution": "Lisea Saint-Joseph de Cluny, Fianarantsoa"
     }
 }
