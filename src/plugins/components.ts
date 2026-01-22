@@ -6,8 +6,9 @@ import HeaderSection from '@/components/@sections/header.vue';
 import HeroSection from '@/components/@sections/hero.vue';
 import AboutSection from '@/components/@sections/about.vue';
 import WorkProcessSection from '@/components/@sections/workProcess.vue';
-import ProjectSection from '@/components/@sections/project.vue';
 import ExperienceSection from '@/components/@sections/experience.vue';
+import ProjectSection from '@/components/@sections/project.vue';
+import ServiceSection from '@/components/@sections/service.vue';
 
 export default {
     install(app: App) {
@@ -19,7 +20,8 @@ export default {
         app.component('HeroSection', HeroSection);
         app.component('AboutSection', AboutSection);
         app.component('WorkProcessSection', WorkProcessSection);
-        app.component('ProjectSection', ProjectSection);
         app.component('ExperienceSection', ExperienceSection);
+        app.component('ProjectSection', ProjectSection);
+        app.component('ServiceSection', ServiceSection);
     },
 };

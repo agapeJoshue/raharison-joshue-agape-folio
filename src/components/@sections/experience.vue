@@ -19,12 +19,11 @@
 
             const experiences: Experience[] = [
                 {
-                    title: "Automatisation de l'analyse des e-mails via IA et n8n",
-                    description:
-                        "Conception et développement d'une solution complète assurant la fiabilité et la performance. Mise en place d'une interface dynamique pour visualiser les e-mails analysés et intégration des données traitées par les workflows n8n avec filtrage et organisation.",
-                    company: "Projet de fin d'année ENI",
-                    period: 'Oct. 2025 - Nov. 2025',
-                    location: 'Fianarantsoa, Madagascar',
+                    title: 'experience.auto_flow.title',
+                    description: 'experience.auto_flow.description',
+                    company: 'experience.auto_flow.company',
+                    period: 'experience.auto_flow.period',
+                    location: 'experience.auto_flow.location',
                     technologies: [
                         'React.js',
                         'Shadcn UI',
@@ -37,12 +36,11 @@
                     ],
                 },
                 {
-                    title: 'Développement de l’application Mandika',
-                    description:
-                        "Développement complet de l'application incluant la capture et l’amélioration d’images. Création des interfaces de visualisation, d’édition et d’export de données et mise en place d’un moteur OCR adaptable pour extraire les informations conformément au cahier des charges.",
-                    company: 'RafalTech',
-                    period: 'Oct. 2025 - Nov. 2025',
-                    location: 'Antananarivo, Madagascar',
+                    title: 'experience.mandika_apk.title',
+                    description: 'experience.mandika_apk.description',
+                    company: 'experience.mandika_apk.company',
+                    period: 'experience.mandika_apk.period',
+                    location: 'experience.mandika_apk.location',
                     technologies: [
                         'Flutter',
                         'Django',
@@ -52,12 +50,11 @@
                     ],
                 },
                 {
-                    title: 'Gestion de rendez-vous synchronisée avec Google Agenda',
-                    description:
-                        "Conception et développement d'une application de gestion de rendez-vous synchronisée avec Google Agenda. Mise en place d’une API RESTful et WebSocket pour la communication temps réel et développement front-end et back-end pour une interface utilisateur fluide et réactive.",
-                    company: 'Stage - SfyriTech',
-                    period: 'Août 2024 - Déc. 2024',
-                    location: 'Antananarivo, Madagascar (remote)',
+                    title: 'experience.sfyritech_meeting.title',
+                    description: 'experience.sfyritech_meeting.description',
+                    company: 'experience.sfyritech_meeting.company',
+                    period: 'experience.sfyritech_meeting.period',
+                    location: 'experience.sfyritech_meeting.location',
                     technologies: [
                         'Vue.js',
                         'Quasar',
@@ -70,21 +67,19 @@
                     ],
                 },
                 {
-                    title: "Développement de l'API de la plateforme Hello Archi",
-                    description:
-                        'Optimisation du code existant pour améliorer performance et ergonomie. Développement de nouvelles fonctionnalités selon les besoins clients et correction des bugs pour améliorer l’expérience utilisateur.',
-                    company: 'SfyriTech',
-                    period: 'Mai 2024 - Sept. 2024',
-                    location: 'Antananarivo, Madagascar (remote)',
+                    title: 'experience.hello_archi.title',
+                    description: 'experience.hello_archi.description',
+                    company: 'experience.hello_archi.company',
+                    period: 'experience.hello_archi.period',
+                    location: 'experience.hello_archi.location',
                     technologies: ['Node.js', 'Express', 'Docker'],
                 },
                 {
-                    title: 'Développeur Full-Stack',
-                    description:
-                        'Conception et développement des aspects front-end et back-end de sites et applications web. Mise en œuvre de solutions logicielles adaptées aux besoins clients et développement de fonctionnalités personnalisées selon le cahier des charges.',
-                    company: 'Stage - Open Data / Delivery',
-                    period: 'Sept. 2023 - Nov. 2023',
-                    location: 'Antsirabe, Madagascar',
+                    title: 'experience.open_delivery.title',
+                    description: 'experience.open_delivery.description',
+                    company: 'experience.open_delivery.company',
+                    period: 'experience.open_delivery.period',
+                    location: 'experience.open_delivery.location',
                     technologies: ['PHP', 'Laravel', 'jQuery', 'MySQL'],
                 },
             ];

@@ -136,7 +136,7 @@
             </div>
         </div>
 
-        <div class="w-full py-20 bg-gray-950 dark:bg-gray-900 text-center space-y-8">
+        <div class="w-full py-20 bg-gray-950 text-center space-y-8">
             <h1
                 class="text-[2.5rem] font-bold tracking-[-0.02em] text-neutral-100 max-w-150 mx-auto"
             >

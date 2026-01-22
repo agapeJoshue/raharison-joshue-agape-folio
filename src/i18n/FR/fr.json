@@ -50,40 +50,24 @@
         "subtitle": "Découvrez mon parcours professionnel",
 
         "auto_flow": {
-            "title": "Développement d'une application d'automatisation de l'analyse des e-mails via IA et n8n",
-            "description": "Conception et développement d'une solution complète assurant la fiabilité, la performance et la synchronisation des données entre front-end et back-end. Mise en place d'une interface dynamique pour visualiser les e-mails analysés, d'un système temps réel via WebSocket et d'une intégration des données traitées par les workflows n8n avec filtrage et organisation.",
+            "title": "Automatisation de l'analyse des e-mails via IA et n8n",
+            "description": "Conception et développement d'une solution complète assurant la fiabilité et la performance. Mise en place d'une interface dynamique pour visualiser les e-mails analysés et intégration des données traitées par les workflows n8n avec filtrage et organisation.",
             "company": "Projet de fin d'année ENI",
             "period": "Oct. 2025 - Nov. 2025",
             "location": "Fianarantsoa, Madagascar"
         },
 
-        "planning": {
-            "title": "Application de planification et de suivi de projets",
-            "description": "Développement d'une application de gestion de projet intégrant création de projets, sprints et tâches, suivi d’avancement, invitations par e-mail, drag-and-drop pour la mise à jour des tâches, gestion de réunions synchronisées avec Google Calendar, chat en temps réel, tâches asynchrones et conteneurisation complète pour faciliter le déploiement.",
-            "company": "Projet Personnel",
-            "period": "Août 2025 - Amélioration continue",
-            "location": "Fianarantsoa, Madagascar"
-        },
-
         "mandika_apk": {
             "title": "Développement de l’application Mandika",
-            "description": "Développement complet de l'application incluant la capture et l’amélioration d’images, le paramétrage des formulaires, l’extraction de données via un moteur OCR adaptable et la création des interfaces de visualisation, d’édition et d’export (CSV, JSON, PDF), conformément au cahier des charges.",
+            "description": "Développement complet de l'application incluant la capture et l’amélioration d’images. Création des interfaces de visualisation, d’édition et d’export de données et mise en place d’un moteur OCR adaptable pour extraire les informations conformément au cahier des charges.",
             "company": "RafalTech",
             "period": "Oct. 2025 - Nov. 2025",
             "location": "Antananarivo, Madagascar"
         },
 
-        "stock_flow": {
-            "title": "Application de gestion des stocks",
-            "description": "Conception et développement d'une application professionnelle permettant la gestion, la mise à jour et la classification des produits, avec alertes automatiques sur les niveaux faibles et un module complet de suivi et d’ajustement des inventaires.",
-            "company": "Projet Personnel",
-            "period": "Juil. 2025 - Août 2025",
-            "location": "Fianarantsoa, Madagascar"
-        },
-
         "sfyritech_meeting": {
-            "title": "Solution web de gestion de rendez-vous synchronisée avec Google Agenda",
-            "description": "Conception et développement d'une application de gestion de rendez-vous synchronisée en temps réel avec Google Agenda. Développement front-end avec Quasar et Angular.js, back-end avec NestJS, et mise en place d’une API RESTful et de WebSocket pour la communication temps réel.",
+            "title": "Gestion de rendez-vous synchronisée avec Google Agenda",
+            "description": "Conception et développement d'une application de gestion de rendez-vous synchronisée avec Google Agenda. Mise en place d’une API RESTful et WebSocket pour la communication temps réel et développement front-end et back-end pour une interface utilisateur fluide et réactive.",
             "company": "Stage - SfyriTech",
             "period": "Août 2024 - Déc. 2024",
             "location": "Antananarivo, Madagascar (remote)"
@@ -98,8 +82,8 @@
         },
 
         "open_delivery": {
-            "title": "Développeur Full-Stack",
-            "description": "Conception et développement des aspects front-end et back-end de sites, applications et services web. Mise en œuvre de solutions logicielles conformément au cahier des charges et développement de fonctionnalités adaptées aux besoins clients.",
+            "title": "Application pour la gestion des commandes et des livraisons",
+            "description": "Conception et développement des aspects front-end et back-end de sites et applications web. Mise en œuvre de solutions logicielles adaptées aux besoins clients et développement de fonctionnalités personnalisées selon le cahier des charges.",
             "company": "Stage - Open Data / Delivery",
             "period": "Sept. 2023 - Nov. 2023",
             "location": "Antsirabe, Madagascar"

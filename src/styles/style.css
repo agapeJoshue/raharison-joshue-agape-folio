@@ -24,17 +24,13 @@ body::-webkit-scrollbar-thumb {
 }
 
 body::-webkit-scrollbar-thumb {
-    background: var(--color-green-700);
+    background: var(--color-emerald-600);
 }
 
 body.dark::-webkit-scrollbar-thumb {
-    background: var(--color-green-400);
+    background: var(--color-emerald-400);
 }
 
 body::-webkit-scrollbar-track {
-    background: var(--color-zinc-100);
-}
-
-body.dark::-webkit-scrollbar-track {
-    background: var(--color-zinc-900);
+    background: transparent;
 }
