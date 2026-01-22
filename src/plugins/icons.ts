@@ -15,6 +15,7 @@ import {
     ChartSpline,
     CodeXml,
     Server,
+    ArrowRight,
 } from 'lucide-vue-next';
 
 export default {
@@ -34,5 +35,6 @@ export default {
         app.component('ChartSpline', ChartSpline);
         app.component('CodeXml', CodeXml);
         app.component('Server', Server);
+        app.component('ArrowRight', ArrowRight);
     },
 };

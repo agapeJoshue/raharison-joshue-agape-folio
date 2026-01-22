@@ -16,4 +16,5 @@
     <AboutSection />
     <WorkProcessSection />
     <ExperienceSection />
+    <ProjectSection />
 </template>

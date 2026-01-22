@@ -1,4 +1,5 @@
 import type { App } from 'vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
 import ToggleMode from '@/components/toggleMode.vue';
 import ToggleLocale from '@/components/toggleLocale.vue';
 import HeaderSection from '@/components/@sections/header.vue';
@@ -10,6 +11,8 @@ import ExperienceSection from '@/components/@sections/experience.vue';
 
 export default {
     install(app: App) {
+        app.component('Swiper', Swiper);
+        app.component('SwiperSlide', SwiperSlide);
         app.component('ToggleMode', ToggleMode);
         app.component('ToggleLocale', ToggleLocale);
         app.component('HeaderSection', HeaderSection);
