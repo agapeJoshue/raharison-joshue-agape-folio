@@ -19,43 +19,45 @@
 
             const experiences: Experience[] = [
                 {
-                    title: 'experience.auto_flow.title',
-                    description: 'experience.auto_flow.description',
-                    company: 'experience.auto_flow.company',
-                    period: 'experience.auto_flow.period',
-                    location: 'experience.auto_flow.location',
+                    title: "Automatisation de l'analyse des e-mails via IA et n8n",
+                    description:
+                        "Conception et développement d'une solution complète assurant la fiabilité et la performance. Mise en place d'une interface dynamique pour visualiser les e-mails analysés et intégration des données traitées par les workflows n8n avec filtrage et organisation.",
+                    company: "Projet de fin d'année ENI",
+                    period: 'Oct. 2025 - Nov. 2025',
+                    location: 'Fianarantsoa, Madagascar',
                     technologies: [
                         'React.js',
                         'Shadcn UI',
                         'TypeScript',
                         'PostgreSQL',
                         'Flask',
-                        'WebSocket',
                         'Redis',
                         'N8N',
                         'Docker',
-                    ]
+                    ],
                 },
                 {
-                    title: 'experience.mandika_apk.title',
-                    description: 'experience.mandika_apk.description',
-                    company: 'experience.mandika_apk.company',
-                    period: 'experience.mandika_apk.period',
-                    location: 'experience.mandika_apk.location',
+                    title: 'Développement de l’application Mandika',
+                    description:
+                        "Développement complet de l'application incluant la capture et l’amélioration d’images. Création des interfaces de visualisation, d’édition et d’export de données et mise en place d’un moteur OCR adaptable pour extraire les informations conformément au cahier des charges.",
+                    company: 'RafalTech',
+                    period: 'Oct. 2025 - Nov. 2025',
+                    location: 'Antananarivo, Madagascar',
                     technologies: [
                         'Flutter',
                         'Django',
                         'PostgreSQL',
                         'Tesseract OCR',
                         'OpenAI API',
-                    ]
+                    ],
                 },
                 {
-                    title: 'experience.sfyritech_meeting.title',
-                    description: 'experience.sfyritech_meeting.description',
-                    company: 'experience.sfyritech_meeting.company',
-                    period: 'experience.sfyritech_meeting.period',
-                    location: 'experience.sfyritech_meeting.location',
+                    title: 'Gestion de rendez-vous synchronisée avec Google Agenda',
+                    description:
+                        "Conception et développement d'une application de gestion de rendez-vous synchronisée avec Google Agenda. Mise en place d’une API RESTful et WebSocket pour la communication temps réel et développement front-end et back-end pour une interface utilisateur fluide et réactive.",
+                    company: 'Stage - SfyriTech',
+                    period: 'Août 2024 - Déc. 2024',
+                    location: 'Antananarivo, Madagascar (remote)',
                     technologies: [
                         'Vue.js',
                         'Quasar',
@@ -65,23 +67,25 @@
                         'Prisma ORM',
                         'WebSocket',
                         'Google Calendar API',
-                    ]
+                    ],
                 },
                 {
-                    title: 'experience.hello_archi.title',
-                    description: 'experience.hello_archi.description',
-                    company: 'experience.hello_archi.company',
-                    period: 'experience.hello_archi.period',
-                    location: 'experience.hello_archi.location',
-                    technologies: ['Node.js', 'Express', 'Docker']
+                    title: "Développement de l'API de la plateforme Hello Archi",
+                    description:
+                        'Optimisation du code existant pour améliorer performance et ergonomie. Développement de nouvelles fonctionnalités selon les besoins clients et correction des bugs pour améliorer l’expérience utilisateur.',
+                    company: 'SfyriTech',
+                    period: 'Mai 2024 - Sept. 2024',
+                    location: 'Antananarivo, Madagascar (remote)',
+                    technologies: ['Node.js', 'Express', 'Docker'],
                 },
                 {
-                    title: 'experience.open_delivery.title',
-                    description: 'experience.open_delivery.description',
-                    company: 'experience.open_delivery.company',
-                    period: 'experience.open_delivery.period',
-                    location: 'experience.open_delivery.location',
-                    technologies: ['PHP', 'Laravel', 'jQuery', 'MySQL']
+                    title: 'Développeur Full-Stack',
+                    description:
+                        'Conception et développement des aspects front-end et back-end de sites et applications web. Mise en œuvre de solutions logicielles adaptées aux besoins clients et développement de fonctionnalités personnalisées selon le cahier des charges.',
+                    company: 'Stage - Open Data / Delivery',
+                    period: 'Sept. 2023 - Nov. 2023',
+                    location: 'Antsirabe, Madagascar',
+                    technologies: ['PHP', 'Laravel', 'jQuery', 'MySQL'],
                 },
             ];
 
@@ -116,13 +120,9 @@
                     class="group relative rounded-2xl bg-white dark:bg-neutral-800/50 aspect-auto border-2 border-emerald-100 dark:border-emerald-950 dark:hover:border-emerald-800 p-6 transition-all duration-500 ease-out hover:-translate-y-0.5 hover:shadow-xl"
                     :class="(index + 1) % 2 === 0 ? 'lg:ml-5 lg:mt-10' : 'lg:mr-5 lg:mb-10'"
                 >
-                    <div
-                        class="absolute left-0 top-6 h-[calc(100%-3rem)] w-1 rounded-full bg-emerald-500/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                    />
-
                     <div class="flex items-start gap-4 mb-4">
                         <div
-                            class="shrink-0 p-3 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400"
+                            class="max-w-11 h-11 sm:max-w-16 sm:h-16 w-full flex items-center justify-center bg-emerald-100/80 dark:bg-emerald-500/15 group-hover:bg-emerald-400 dark:group-hover:bg-emerald-700 text-xl text-emerald-600 dark:text-emerald-400 group-hover:text-white font-semibold text-center center rounded-md transition-all"
                         >
                             {{
                                 experiences.length - index < 9

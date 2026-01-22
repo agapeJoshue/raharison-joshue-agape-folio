@@ -60,8 +60,8 @@
 </script>
 
 <template>
-    <section id="project" class="w-full bg-white dark:bg-black py-15 lg:py-20">
-        <div class="max-w-7xl mx-auto px-4">
+    <section id="project" class="w-full bg-white dark:bg-black pt-15 lg:pt-20">
+        <div class="max-w-7xl mx-auto px-4 mb-20">
             <div class="text-center space-y-6 mb-14">
                 <h1
                     class="text-xl md:text-2xl font-bold tracking-[0.35em] uppercase text-zinc-900 dark:text-zinc-100"
@@ -132,8 +132,25 @@
             </div>
 
             <div class="flex justify-center mt-16">
-                <Button label="More projects" />
+                <Button class="px-5" label="More projects" />
             </div>
+        </div>
+
+        <div class="w-full py-20 bg-gray-950 dark:bg-gray-900 text-center space-y-8">
+            <h1
+                class="text-[2.5rem] font-bold tracking-[-0.02em] text-neutral-100 max-w-150 mx-auto"
+            >
+                Do you have a Project Idea? Let's discuss your project!
+            </h1>
+            <p class="text-lg max-w-150 text-neutral-400 mx-auto">
+                I'm always open to discussing new projects and creative ideas. Let's connect and
+                build something amazing together.
+            </p>
+            <Button
+                class="pl-8 pr-6 py-3 text-base font-medium flex items-center gap-x-2.5 justify-center mx-auto hover:gap-x-4 hover:scale-[1.1] group transition"
+            >
+                Let's work Together <ArrowRight :size="20" />
+            </Button>
         </div>
     </section>
 </template>
