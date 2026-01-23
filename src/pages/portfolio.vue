@@ -11,7 +11,8 @@
     <HeroSection />
     <AboutSection />
     <WorkProcessSection />
-    <ExperienceSection />
     <ProjectSection />
+    <ExperienceSection />
     <ServiceSection />
+    <SkillSection />
 </template>

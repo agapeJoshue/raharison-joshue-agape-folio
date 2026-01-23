@@ -87,7 +87,7 @@
                 <article
                     v-for="project in projects"
                     :key="project.name"
-                    class="group relative rounded-2xl border border-neutral-200/60 dark:border-neutral-800 bg-white dark:bg-neutral-800/50 aspect-auto shadow-sm hover:shadow-2xl transition-all duration-500 ease-out hover:-translate-y-1 overflow-hidden"
+                    class="group relative rounded-2xl border border-neutral-200/60 dark:border-neutral-800 bg-white dark:bg-gray-950 aspect-auto shadow-sm hover:shadow-2xl transition-all duration-500 ease-out hover:-translate-y-1 overflow-hidden"
                 >
                     <div class="relative overflow-hidden">
                         <img
@@ -136,7 +136,7 @@
             </div>
         </div>
 
-        <div class="w-full py-20 bg-gray-950 text-center space-y-8">
+        <div class="w-full py-20 bg-emerald-950 dark:bg-emerald-950/60 text-center space-y-8">
             <h1
                 class="text-[2.5rem] font-bold tracking-[-0.02em] text-neutral-100 max-w-150 mx-auto"
             >
@@ -147,7 +147,7 @@
                 build something amazing together.
             </p>
             <Button
-                class="pl-8 pr-6 py-3 text-base font-medium flex items-center gap-x-2.5 justify-center mx-auto hover:gap-x-4 hover:scale-[1.1] group transition"
+                class="pl-8 pr-6 py-3 mt-15 text-base font-medium flex items-center gap-x-2.5 justify-center mx-auto hover:gap-x-4 hover:scale-[1.1] group transition"
             >
                 Let's work Together <ArrowRight :size="20" />
             </Button>

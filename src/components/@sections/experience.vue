@@ -1,5 +1,6 @@
 <script lang="ts">
     import { defineComponent } from 'vue';
+    import { Pagination } from 'swiper/modules';
     import { useI18n } from 'vue-i18n';
 
     type Experience = {
@@ -9,6 +10,7 @@
         period: string;
         location: string;
         technologies: string[];
+        image: string;
     };
 
     export default defineComponent({
@@ -24,16 +26,8 @@
                     company: 'experience.auto_flow.company',
                     period: 'experience.auto_flow.period',
                     location: 'experience.auto_flow.location',
-                    technologies: [
-                        'React.js',
-                        'Shadcn UI',
-                        'TypeScript',
-                        'PostgreSQL',
-                        'Flask',
-                        'Redis',
-                        'N8N',
-                        'Docker',
-                    ],
+                    technologies: ['React.js', 'PostgreSQL', 'Flask', 'N8N', 'Docker'],
+                    image: '/imgs/experiences/n8n-autoflow.png',
                 },
                 {
                     title: 'experience.mandika_apk.title',
@@ -48,6 +42,7 @@
                         'Tesseract OCR',
                         'OpenAI API',
                     ],
+                    image: '/imgs/experiences/flutter-django.png',
                 },
                 {
                     title: 'experience.sfyritech_meeting.title',
@@ -56,15 +51,13 @@
                     period: 'experience.sfyritech_meeting.period',
                     location: 'experience.sfyritech_meeting.location',
                     technologies: [
-                        'Vue.js',
                         'Quasar',
-                        'TypeScript',
                         'PostgreSQL',
                         'Nest.js',
                         'Prisma ORM',
-                        'WebSocket',
                         'Google Calendar API',
                     ],
+                    image: '/imgs/experiences/nest-vue.webp',
                 },
                 {
                     title: 'experience.hello_archi.title',
@@ -72,7 +65,8 @@
                     company: 'experience.hello_archi.company',
                     period: 'experience.hello_archi.period',
                     location: 'experience.hello_archi.location',
-                    technologies: ['Node.js', 'Express', 'Docker'],
+                    technologies: ['Node.js', 'Express', 'Docker', 'websocket'],
+                    image: '/imgs/experiences/node-express.jpg',
                 },
                 {
                     title: 'experience.open_delivery.title',
@@ -80,18 +74,28 @@
                     company: 'experience.open_delivery.company',
                     period: 'experience.open_delivery.period',
                     location: 'experience.open_delivery.location',
-                    technologies: ['PHP', 'Laravel', 'jQuery', 'MySQL'],
+                    technologies: ['vue.js', 'PHP', 'Laravel', 'jQuery', 'MySQL'],
+                    image: '/imgs/experiences/laravel.png',
                 },
             ];
 
-            return { t, experiences };
+            const customBreakpoints = {
+                535: { slidesPerView: 1.2, spaceBetween: 16 },
+                640: { slidesPerView: 1.2, spaceBetween: 16 },
+                768: { slidesPerView: 2, spaceBetween: 20 },
+                1100: { slidesPerView: 2.5, spaceBetween: 20 },
+                1220: { slidesPerView: 3, spaceBetween: 24 },
+                1500: { slidesPerView: 4, spaceBetween: 24 },
+            };
+
+            return { t, Pagination, experiences, customBreakpoints };
         },
     });
 </script>
 
 <template>
-    <section id="experience" class="w-full bg-zinc-200/50 dark:bg-zinc-800/50">
-        <div class="mx-auto max-w-375 px-4 py-20">
+    <section id="experience" class="w-full bg-white dark:bg-black">
+        <div class="mx-auto max-w-375 px-4 pt-20 pb-8">
             <div class="text-center space-y-4 mb-14">
                 <h1
                     class="text-xl md:text-2xl font-bold tracking-[0.25em] uppercase text-zinc-900 dark:text-zinc-100"
@@ -108,57 +112,54 @@
                 />
             </div>
 
-            <div class="grid grid-cols-1 gap-y-5 lg:grid-cols-2 lg:gap-0">
-                <article
-                    v-for="(exp, index) in experiences"
-                    :key="index"
-                    class="group relative rounded-2xl bg-white dark:bg-neutral-800/50 aspect-auto border-2 border-emerald-100 dark:border-emerald-950 dark:hover:border-emerald-800 p-6 transition-all duration-500 ease-out hover:-translate-y-0.5 hover:shadow-xl"
-                    :class="(index + 1) % 2 === 0 ? 'lg:ml-5 lg:mt-10' : 'lg:mr-5 lg:mb-10'"
-                >
-                    <div class="flex items-start gap-4 mb-4">
-                        <div
-                            class="max-w-11 h-11 sm:max-w-16 sm:h-16 w-full flex items-center justify-center bg-emerald-100/80 dark:bg-emerald-500/15 group-hover:bg-emerald-400 dark:group-hover:bg-emerald-700 text-xl text-emerald-600 dark:text-emerald-400 group-hover:text-white font-semibold text-center center rounded-md transition-all"
-                        >
-                            {{
-                                experiences.length - index < 9
-                                    ? `0${experiences.length - index}`
-                                    : experiences.length - index
-                            }}
+            <Swiper
+                :modules="[Pagination]"
+                :grabCursor="true"
+                :breakpoints="customBreakpoints"
+                :pagination="{ clickable: true }"
+                class="pb-16"
+            >
+                <SwiperSlide v-for="(exp, index) in experiences" :key="index" class="h-auto">
+                    <article
+                        class="group relative overflow-hidden rounded-2xl bg-white dark:bg-gray-950 border border-emerald-100 dark:border-emerald-800 shadow-sm hover:shadow-2xl transition-all duration-500 mb-16"
+                    >
+                        <div class="overflow-hidden">
+                            <img
+                                :src="exp.image"
+                                :alt="t(exp.title)"
+                                class="h-56 w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            />
                         </div>
 
-                        <div>
-                            <h3 class="text-lg font-semibold text-zinc-900 dark:text-white">
+                        <div class="p-6 space-y-3">
+                            <h3
+                                class="text-lg font-semibold text-gray-900 dark:text-gray-100 line-clamp-2"
+                            >
                                 {{ t(exp.title) }}
                             </h3>
-                            <p class="text-sm text-zinc-500 dark:text-zinc-400">
-                                {{ t(exp.company) }}
+
+                            <p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-3">
+                                {{ t(exp.description) }}
                             </p>
+
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span
+                                    v-for="tech in exp.technologies"
+                                    :key="tech"
+                                    class="rounded-full bg-emerald-50 dark:bg-emerald-900/30 px-3 py-1 text-xs font-medium text-emerald-600 dark:text-emerald-400"
+                                >
+                                    {{ tech }}
+                                </span>
+                            </div>
+
+                            <div class="flex justify-between text-xs text-gray-400 pt-4">
+                                <span>{{ t(exp.company) }}</span>
+                                <span>{{ t(exp.period) }}</span>
+                            </div>
                         </div>
-                    </div>
-
-                    <div
-                        class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-zinc-500 dark:text-zinc-400 mb-4"
-                    >
-                        <span>{{ t(exp.period) }}</span>
-                        <span class="opacity-40">•</span>
-                        <span>{{ t(exp.location) }}</span>
-                    </div>
-
-                    <p class="text-sm leading-relaxed text-zinc-600 dark:text-zinc-300 mb-5">
-                        {{ t(exp.description) }}
-                    </p>
-
-                    <div class="flex flex-wrap gap-2">
-                        <span
-                            v-for="tech in exp.technologies"
-                            :key="tech"
-                            class="px-3 py-1 rounded-full text-xs font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-200 transition-colors hover:bg-emerald-500/10 hover:text-emerald-600"
-                        >
-                            {{ tech }}
-                        </span>
-                    </div>
-                </article>
-            </div>
+                    </article>
+                </SwiperSlide>
+            </Swiper>
         </div>
     </section>
 </template>

@@ -50,9 +50,9 @@
 <template>
     <section
         id="about"
-        class="relative w-full pb-12 bg-linear-to-b from-zinc-50 to-zinc-100 dark:from-zinc-950 dark:to-zinc-900"
+        class="relative pt-10 w-full bg-linear-to-b from-gray-100/80 to-gray-100/90 dark:from-gray-900/80 dark:to-gray-900/90"
     >
-        <div class="max-w-400 mx-auto">
+        <div class="max-w-400 mx-auto pb-15 lg:pb-0">
             <div
                 class="bg-linear-to-b from-white to-transparent dark:from-black rounded-4xl lg:rounded-[4rem] personal-shadow px-6 pt-10 lg:p-16 2xl:px-25 space-y-16"
             >

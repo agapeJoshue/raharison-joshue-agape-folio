@@ -43,17 +43,14 @@
 </script>
 
 <template>
-    <section
-        id="service"
-        class="w-full py-20 bg-linear-to-b from-white to-zinc-50 dark:from-black dark:to-zinc-950"
-    >
+    <section id="service" class="w-full py-20 bg-gray-100 dark:bg-gray-900">
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid xl:grid-cols-2 gap-10 lg:gap-20 items-center">
                 <div class="flex flex-col justify-center text-center md:text-left">
                     <p
-                        class="text-emerald-500 text-xl md:text-2xl lg:text-3xl xl:text-5xl font-semibold uppercase tracking-wide mb-6 md:mb-8 lg:mb-10 xl:mb-16"
+                        class="text-emerald-500 text-xl md:text-[22px] lg:text-2xl xl:text-3xl font-semibold uppercase tracking-wide mb-6 md:mb-8 lg:mb-10 xl:mb-16"
                     >
-                        Ce que je fais
+                        Ce que je fais ?
                     </p>
                     <div
                         class="space-y-4 font-light text-neutral-600 dark:text-neutral-400 text-sm sm:text-base md:text-[17px] lg:text-[18px] xl:text-[19px]"
@@ -84,10 +81,10 @@
                         :key="role.id"
                         @mouseenter="setMouseHover(index)"
                         @mouseleave="setMouseHover(null)"
-                        class="relative p-6 border-2 border-emerald-100 dark:border-emerald-950 dark:hover:border-emerald-800 bg-white dark:bg-neutral-900 aspect-auto rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden"
+                        class="relative p-6 border-2 border-emerald-50 dark:border-emerald-950 dark:hover:border-emerald-600 bg-white dark:bg-gray-950 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden"
                     >
                         <div
-                            class="absolute left-0 top-0 h-full bg-emerald-500 transition-all duration-300"
+                            class="absolute left-0 top-0 h-full bg-emerald-500 dark:bg-emerald-600 transition-all duration-300"
                             :class="hoveredIndex === index ? 'w-1' : 'w-0'"
                         ></div>
 

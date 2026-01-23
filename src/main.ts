@@ -9,6 +9,7 @@ import iconsPlugin from '@/plugins/icons';
 import ComponentsPlugin from '@/plugins/components';
 import PrimeVueComponentsPlugin from '@/plugins/primevue';
 import DirectivesPlugin from '@/plugins/directives';
+import Vue3Marquee from 'vue3-marquee';
 
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme === 'dark') {
@@ -28,6 +29,7 @@ if (savedTheme === 'dark') {
 const app = createApp(App);
 app.use(router);
 app.use(i18n);
+app.use(Vue3Marquee);
 
 app.use(iconsPlugin);
 app.use(DirectivesPlugin);

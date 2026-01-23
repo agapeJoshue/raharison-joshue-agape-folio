@@ -41,11 +41,11 @@
 <template>
     <section
         id="work-process"
-        class="relative w-full pb-20 bg-linear-to-b from-zinc-100 dark:from-zinc-900 to-zinc-200/50 dark:to-zinc-800/50"
+        class="relative w-full pb-12 xl:pb-0 bg-gray-100/90 dark:bg-gray-900/90"
     >
         <div class="max-w-400 mx-auto">
             <div
-                class="bg-linear-to-b from-transparent to-white dark:to-black rounded-4xl lg:rounded-[4rem] personal-shadow px-5 pt-10 pb-5 md:px-6 md:py-10 lg:py-12 xl:py-28 max-xxl:px-4 lg:p-16 2xl:px-25 space-y-16 grid xl:grid-cols-2 xl:items-center"
+                class="bg-transparent rounded-4xl lg:rounded-[4rem] px-5 pt-10 pb-5 md:px-6 md:py-10 lg:py-12 xl:py-28 max-xxl:px-4 lg:p-16 2xl:px-25 space-y-16 grid xl:grid-cols-2 xl:items-center"
             >
                 <div class="lg:pe-10 xl:pe-35.75 max-xs:mb-3 max-xl:mb-8">
                     <h1
@@ -74,7 +74,7 @@
                     <div
                         v-for="(step, i) in workStepData"
                         :key="`step-${i}`"
-                        class="border-2 border-emerald-100 dark:border-emerald-950 dark:hover:border-emerald-800 group p-4 sm:p-8 bg-white dark:bg-neutral-900 aspect-auto sm:max-w-78 rounded-xl hover:drop-shadow-2xl transition-all cursor-pointer ease"
+                        class="border-2 border-emerald-100 dark:border-emerald-950 dark:hover:border-emerald-800 group p-4 sm:p-8 bg-white dark:bg-gray-950 aspect-auto sm:max-w-78 rounded-xl hover:drop-shadow-2xl transition-all cursor-pointer ease"
                         :class="i % 2 === 1 ? 'ml-3 mt-6' : 'mb-6'"
                     >
                         <div
@@ -104,9 +104,3 @@
         </div>
     </section>
 </template>
-
-<style scoped>
-    .personal-shadow {
-        box-shadow: 0 50px 100px -100px rgba(0, 0, 0, 0.15);
-    }
-</style>

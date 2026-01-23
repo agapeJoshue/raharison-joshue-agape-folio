@@ -49,7 +49,7 @@
 <template>
     <section
         id="hero"
-        class="w-full pb-20 flex items-start lg:items-center bg-linear-to-b from-white dark:from-black to-zinc-50 dark:to-zinc-950 transition-[min-height] duration-300 ease-out"
+        class="w-full pb-10 flex items-start lg:items-center bg-linear-to-b from-white dark:from-black to-gray-100/80 dark:to-gray-900/80 transition-[min-height] duration-300 ease-out"
         :class="
             isScrolled
                 ? `${isPad ? 'min-h-175' : 'min-h-[calc(100vh-4rem)]'}`
@@ -61,7 +61,7 @@
                 class="flex flex-col md:flex-row-reverse items-center justify-between gap-16 lg:gap-12"
             >
                 <div
-                    class="relative group w-full max-w-sm sm:max-w-md lg:max-w-lg aspect-square overflow-hidden rounded-tl-xl rounded-tr-[50%] rounded-br-xl rounded-bl-[50%] sm:rounded-tl-[50%] sm:rounded-br-[50%] md:rounded-tr-xl md:rounded-bl-xl border-4 border-emerald-600 dark:border-emerald-400 transition-all duration-500 ease-out profile-frame"
+                    class="relative group w-full max-w-sm sm:max-w-md lg:max-w-lg aspect-square overflow-hidden rounded-tl-xl rounded-tr-[50%] rounded-br-xl rounded-bl-[50%] sm:rounded-tl-[50%] sm:rounded-br-[50%] md:rounded-tr-xl md:rounded-bl-xl border-4 border-emerald-500 dark:border-emerald-400 transition-all duration-500 ease-out profile-frame"
                 >
                     <span
                         class="absolute inset-0 rounded-inherit pointer-events-none border-4 border-transparent profile-border-animate"
@@ -76,7 +76,7 @@
 
                 <div class="w-full max-w-xl text-center md:text-left space-y-7 md:mt-16 lg:mt-0">
                     <p
-                        class="text-sm tracking-widest uppercase text-neutral-500 dark:text-neutral-400"
+                        class="text-sm tracking-widest uppercase text-neutral-600 dark:text-neutral-300"
                     >
                         {{ t('hero.hello') }}
                     </p>
