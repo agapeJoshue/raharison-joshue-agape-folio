@@ -1,19 +1,13 @@
 <script lang="ts">
     import { defineComponent } from 'vue';
     import { useI18n } from 'vue-i18n';
+    import { scrollToSection } from '../../services/utilsService';
 
     export default defineComponent({
         name: 'AboutSection',
 
         setup() {
             const { t } = useI18n();
-
-            const socials = [
-                { name: 'Facebook', icon: 'pi pi-facebook', url: '#' },
-                { name: 'LinkedIn', icon: 'pi pi-linkedin', url: '#' },
-                { name: 'Instagram', icon: 'pi pi-instagram', url: '#' },
-                { name: 'Website', icon: 'pi pi-globe', url: '#' },
-            ];
 
             const formations = [
                 {
@@ -28,21 +22,7 @@
                 },
             ];
 
-            const scrollToSection = (id: string) => {
-                const element = document.getElementById(id);
-
-                if (!element) return;
-
-                const elementPosition = element.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.scrollY - 64;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth',
-                });
-            };
-
-            return { t, socials, formations, scrollToSection };
+            return { t, formations, scrollToSection };
         },
     });
 </script>

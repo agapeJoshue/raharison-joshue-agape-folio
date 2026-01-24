@@ -1,34 +1,12 @@
 <script lang="ts">
     import { defineComponent, ref } from 'vue';
     import { useI18n } from 'vue-i18n';
-
-    interface Role {
-        id: number;
-        title: string;
-        description: string;
-    }
+    import { services } from '../../data/service.data';
 
     export default defineComponent({
         name: 'ServiceSection',
         setup() {
             const { t } = useI18n();
-            const rolesData: Role[] = [
-                {
-                    id: 1,
-                    title: 'service.full_stack.title',
-                    description: 'service.full_stack.description',
-                },
-                {
-                    id: 3,
-                    title: 'service.designer.title',
-                    description: 'service.designer.description',
-                },
-                {
-                    id: 4,
-                    title: 'service.ops.title',
-                    description: 'service.ops.description',
-                },
-            ];
 
             const hoveredIndex = ref<number | null>(null);
 
@@ -36,7 +14,7 @@
                 hoveredIndex.value = index;
             };
 
-            return { t, rolesData, hoveredIndex, setMouseHover };
+            return { t, services, hoveredIndex, setMouseHover };
         },
     });
 </script>
@@ -66,7 +44,7 @@
 
                 <div class="grid grid-cols-1 gap-y-4 md:grid-cols-2 md:gap-5 xl:grid-cols-1">
                     <div
-                        v-for="(role, index) in rolesData"
+                        v-for="(role, index) in services"
                         :key="role.id"
                         @mouseenter="setMouseHover(index)"
                         @mouseleave="setMouseHover(null)"

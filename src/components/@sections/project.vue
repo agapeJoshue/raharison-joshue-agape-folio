@@ -2,15 +2,8 @@
     import { defineComponent } from 'vue';
     import { useThemeStore } from '../../hooks/useThemeStore';
     import { useI18n } from 'vue-i18n';
-
-    type project = {
-        category: string;
-        name: string;
-        description: string;
-        rating: number;
-        images: { light: string; dark: string };
-        links: { code?: string; demo?: string };
-    };
+    import { scrollToSection } from '../../services/utilsService';
+    import { projects } from '../../data/project.data';
 
     export default defineComponent({
         name: 'ProjectSection',
@@ -18,55 +11,7 @@
         setup() {
             const { t } = useI18n();
             const { isDark } = useThemeStore();
-            const projects: project[] = [
-                {
-                    category: 'project.category.web_application',
-                    name: 'AutoFlow with n8n',
-                    description: 'project.auto_flow',
-                    rating: 4,
-                    images: {
-                        light: '/imgs/auto_flow/login_page_light.png',
-                        dark: '/imgs/auto_flow/login_page_dark.png',
-                    },
-                    links: { code: '', demo: '' },
-                },
-                {
-                    category: 'project.category.web_application',
-                    name: 'Planning',
-                    description: 'project.planning',
-                    rating: 5,
-                    images: {
-                        light: '/imgs/planning/login_page_light.png',
-                        dark: '/imgs/planning/login_page_dark.png',
-                    },
-                    links: { code: '', demo: '' },
-                },
-                {
-                    category: 'project.category.web_application',
-                    name: 'Stock Flow Inventory',
-                    description: 'project.stock_flow',
-                    rating: 3,
-                    images: {
-                        light: '/imgs/stock_flow/login_page_light.png',
-                        dark: '/imgs/stock_flow/login_page_light.png',
-                    },
-                    links: { code: '', demo: '' },
-                },
-            ];
 
-            const scrollToSection = (id: string) => {
-                const element = document.getElementById(id);
-
-                if (!element) return;
-
-                const elementPosition = element.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.scrollY - 64;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth',
-                });
-            };
             return { t, isDark, projects, scrollToSection };
         },
     });
@@ -157,7 +102,7 @@
             <p class="text-lg max-w-150 text-neutral-400 mx-auto">
                 {{ t('project.open_to_project') }}
             </p>
-            
+
             <Button
                 @click="() => scrollToSection('contact')"
                 class="pl-8 pr-6 py-3 mt-15 text-base font-medium flex items-center gap-x-2.5 justify-center mx-auto hover:gap-x-4 hover:scale-[1.1] group transition"
