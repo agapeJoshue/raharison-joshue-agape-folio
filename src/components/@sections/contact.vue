@@ -17,8 +17,8 @@
             const username = ref<Field<string>>({ value: '', error: false, error_message: '' });
             const email = ref<Field<string>>({ value: '', error: false, error_message: '' });
             const location = ref<Field<string>>({ value: '', error: false, error_message: '' });
-            const budget = ref<Field<number | null>>({
-                value: null,
+            const budget = ref<Field<number>>({
+                value: 0,
                 error: false,
                 error_message: '',
             });
@@ -48,7 +48,7 @@
                 if (!email.value.value.trim()) check(email.value, 'L’adresse e-mail est requise');
                 if (!location.value.value.trim())
                     check(location.value, 'La localisation est requise');
-                if (budget.value.value === null) check(budget.value, 'Le budget est requis');
+                if (budget.value.value === 0) check(budget.value, 'Le budget est requis');
                 if (!subject.value.value.trim()) check(subject.value, 'Le sujet est requis');
                 if (!message.value.value.trim()) check(message.value, 'Le message est requis');
 
@@ -127,7 +127,7 @@
                         </ContactCard>
                     </a>
 
-                    <ContactCard title="Téléphone">
+                    <ContactCard title="Téléphone" class="mt-5">
                         <template #icon>
                             <Phone :size="22" class="text-emerald-600 dark:text-emerald-400" />
                         </template>
@@ -135,38 +135,6 @@
                         <span class="text-neutral-400 mx-1">ou</span>
                         +261 33 68 473 73
                     </ContactCard>
-                </div>
-
-                <div class="flex gap-2 pt-8">
-                    <SocialIcon tooltip="Facebook" class="group">
-                        <Facebook
-                            class="text-emerald-600 dark:text-emerald-400 group-hover:text-white"
-                        />
-                    </SocialIcon>
-
-                    <SocialIcon tooltip="Instagram" class="group">
-                        <Instagram
-                            class="text-emerald-600 dark:text-emerald-400 group-hover:text-white"
-                        />
-                    </SocialIcon>
-
-                    <SocialIcon tooltip="LinkedIn" class="group">
-                        <Linkedin
-                            class="text-emerald-600 dark:text-emerald-400 group-hover:text-white"
-                        />
-                    </SocialIcon>
-
-                    <SocialIcon tooltip="GitHub" class="group">
-                        <Github
-                            class="text-emerald-600 dark:text-emerald-400 group-hover:text-white"
-                        />
-                    </SocialIcon>
-
-                    <SocialIcon tooltip="GitLab" class="group">
-                        <Gitlab
-                            class="text-emerald-600 dark:text-emerald-400 group-hover:text-white"
-                        />
-                    </SocialIcon>
                 </div>
             </div>
 

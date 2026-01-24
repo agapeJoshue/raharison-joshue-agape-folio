@@ -52,7 +52,7 @@
         "auto_flow": {
             "title": "Automatisation de l'analyse des e-mails via IA et n8n",
             "description": "Conception et développement d'une solution complète assurant la fiabilité et la performance. Mise en place d'une interface dynamique pour visualiser les e-mails analysés et intégration des données traitées par les workflows n8n avec filtrage et organisation.",
-            "company": "Projet de fin d'année ENI",
+            "company": "ENI",
             "period": "Oct. 2025 - Nov. 2025",
             "location": "Fianarantsoa, Madagascar"
         },
@@ -68,7 +68,7 @@
         "sfyritech_meeting": {
             "title": "Gestion de rendez-vous synchronisée avec Google Agenda",
             "description": "Conception et développement d'une application de gestion de rendez-vous synchronisée avec Google Agenda. Mise en place d’une API RESTful et WebSocket pour la communication temps réel et développement front-end et back-end pour une interface utilisateur fluide et réactive.",
-            "company": "Stage - SfyriTech",
+            "company": "SfyriTech",
             "period": "Août 2024 - Déc. 2024",
             "location": "Antananarivo, Madagascar (remote)"
         },
@@ -84,9 +84,15 @@
         "open_delivery": {
             "title": "Application pour la gestion des commandes et des livraisons",
             "description": "Conception et développement des aspects front-end et back-end de sites et applications web. Mise en œuvre de solutions logicielles adaptées aux besoins clients et développement de fonctionnalités personnalisées selon le cahier des charges.",
-            "company": "Stage - Open Data / Delivery",
+            "company": "Open Data / Delivery",
             "period": "Sept. 2023 - Nov. 2023",
             "location": "Antsirabe, Madagascar"
         }
+    },
+    "footer": {
+        "message1": "Créé avec passion et dédication.",
+        "message2": "Conçu & Développé par Joshué Agapé",
+        "follow_me": "Suivez-moi",
+        "droit": "Tous Droits Réservés"
     }
 }
