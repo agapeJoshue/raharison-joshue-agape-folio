@@ -97,7 +97,7 @@
         }"
     >
         <div
-            class="max-w-7xl w-full mx-auto p-6 sm:p-10 lg:p-14 xl:px-20 xl:py-20 lg:absolute lg:top-10 lg:left-1/2 lg:-translate-x-1/2 bg-white dark:bg-gray-950 personal-shadow rounded-3xl grid grid-cols-1 lg:grid-cols-2 gap-16 animate-fade-up"
+            class="max-w-7xl w-full mx-auto p-6 sm:p-10 lg:p-14 xl:px-20 xl:py-20 lg:absolute lg:top-10 lg:left-1/2 lg:-translate-x-1/2 bg-white dark:bg-gray-950 personal-shadow rounded-3xl grid grid-cols-1 lg:grid-cols-2 gap-16 animate-fade-up dark:border border-gray-700"
         >
             <div class="space-y-10">
                 <div class="space-y-4">
@@ -152,7 +152,7 @@
                             id="username"
                             type="text"
                             v-model="username.value"
-                            class="w-full mt-1 bg-gray-50 dark:bg-zinc-950"
+                            class="w-full mt-1 bg-gray-50 dark:bg-transparent"
                             :class="username.error ? 'border-red-600 dark:border-red-400' : ''"
                             :placeholder="t('contact.form.name_placeholder')"
                         />
@@ -169,7 +169,7 @@
                             id="email"
                             type="email"
                             v-model="email.value"
-                            class="w-full mt-1 bg-gray-50 dark:bg-zinc-950"
+                            class="w-full mt-1 bg-gray-50 dark:bg-transparent"
                             :class="email.error ? 'border-red-600 dark:border-red-400' : ''"
                             :placeholder="t('contact.form.email_placeholder')"
                         />
@@ -186,7 +186,7 @@
                             id="location"
                             type="text"
                             v-model="location.value"
-                            class="w-full mt-1 bg-gray-50 dark:bg-zinc-950"
+                            class="w-full mt-1 bg-gray-50 dark:bg-transparent"
                             :class="location.error ? 'border-red-600 dark:border-red-400' : ''"
                             :placeholder="t('contact.form.location_placeholder')"
                         />
@@ -207,7 +207,8 @@
                                 mode="currency"
                                 currency="EUR"
                                 locale="de-DE"
-                                class="w-full mt-1 bg-gray-50 dark:bg-zinc-950"
+                                inputClass="bg-gray-50 dark:bg-transparent"
+                                class="w-full mt-1"
                                 :class="budget.error ? 'border-red-600 dark:border-red-400' : ''"
                             />
                             <small
@@ -222,7 +223,7 @@
                                 id="subject"
                                 type="text"
                                 v-model="subject.value"
-                                class="w-full mt-1 bg-gray-50 dark:bg-zinc-950"
+                                class="w-full mt-1 bg-gray-50 dark:bg-transparent"
                                 :class="subject.error ? 'border-red-600 dark:border-red-400' : ''"
                                 :placeholder="t('contact.form.subject_placeholder')"
                             />
@@ -241,7 +242,7 @@
                             v-model="message.value"
                             rows="4"
                             style="resize: none"
-                            class="w-full mt-1 bg-gray-50 dark:bg-zinc-950"
+                            class="w-full mt-1 bg-gray-50 dark:bg-transparent"
                             :class="message.error ? 'border-red-600 dark:border-red-400' : ''"
                             :placeholder="t('contact.form.message_placeholder')"
                         />

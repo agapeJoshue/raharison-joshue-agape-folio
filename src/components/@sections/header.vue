@@ -14,6 +14,7 @@
             const isOpen = ref(false);
             const itemActive = ref<string>('hero');
             const isScrolled = ref(false);
+            const showBtnScrollTop = ref(false);
 
             const HEADER_OFFSET = isScrolled ? 64 : 80;
 
@@ -41,7 +42,9 @@
 
             const handleScroll = () => {
                 const scrollPosition = window.scrollY;
+                // console.log(scrollPosition)
                 isScrolled.value = scrollPosition > 40;
+                showBtnScrollTop.value = scrollPosition > 720;
 
                 const sections = document.querySelectorAll('section[id]');
 
@@ -75,6 +78,7 @@
                 itemActive,
                 isScrolled,
                 scrollToSection,
+                showBtnScrollTop,
             };
         },
     });
@@ -185,6 +189,14 @@
             </div>
         </nav>
     </header>
+
+    <button
+        @click="() => scrollToSection('hero')"
+        v-if="showBtnScrollTop"
+        class="fixed bottom-10 right-10 w-16 h-16 hover:scale-[1.1] rounded-full bg-emerald-400 hover:bg-emerald-500 dark:bg-emerald-400 dark:hover:bg-emerald-500 text-white flex items-center justify-center z-50 animate-bounce cursor-pointer transition-all"
+    >
+        <ChevronUp :size="40" />
+    </button>
 </template>
 
 <style scoped></style>

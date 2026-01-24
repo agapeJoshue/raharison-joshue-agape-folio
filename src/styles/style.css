@@ -34,3 +34,32 @@ body.dark::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-track {
     background: transparent;
 }
+
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    transition: width 0.3s ease;
+    background: var(--color-zinc-950);
+    -webkit-transition: width 0.3s ease;
+    -moz-transition: width 0.3s ease;
+    -ms-transition: width 0.3s ease;
+    -o-transition: width 0.3s ease;
+}
+
+.dark .swiper-pagination-bullet {
+    background: var(--color-zinc-50);
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    width: 22px;
+    border-radius: 10px;
+    background: var(--color-emerald-600);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.dark .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: var(--color-emerald-400);
+}

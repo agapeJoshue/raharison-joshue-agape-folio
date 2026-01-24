@@ -105,7 +105,7 @@
 
 <template>
     <section id="skill" class="relative bg-white dark:bg-black py-20">
-        <div class="mx-auto max-w-7xl px-6">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6">
             <div class="text-center mb-8 space-y-4">
                 <h2
                     class="text-2xl md:text-3xl font-semibold tracking-widest uppercase text-gray-900 dark:text-gray-100"
@@ -146,7 +146,7 @@
                 class="pb-24 mt-20"
             >
                 <SwiperSlide v-for="(skill, index) in skills" :key="index" class="px-1">
-                    <article class="group relative px-6 md:px-10 py-5 mb-8">
+                    <article class="group relative px-0 md:px-10 py-5 mb-15">
                         <h3
                             class="mb-5 text-center text-2xl font-semibold text-gray-900 dark:text-gray-100"
                         >
@@ -160,7 +160,7 @@
                         </p>
 
                         <div
-                            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-12 gap-y-8"
+                            class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-8 sm:gap-x-10 md:gap-x-12 gap-y-8"
                         >
                             <div v-for="tech in skill.techs" :key="tech.name" class="space-y-2">
                                 <div class="flex justify-between items-center">

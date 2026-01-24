@@ -26,9 +26,9 @@
 <template>
     <section id="footer" class="w-full bg-gray-950 dark:bg-gray-900 text-gray-200">
         <div
-            class="max-w-7xl mx-auto pt-32 pb-10 px-6 md:px-12 flex flex-col md:flex-row justify-between items-start gap-10"
+            class="max-w-7xl mx-auto pt-12 lg:pt-20 xl:pt-32 pb-10 px-6 md:px-12 flex flex-col lg:flex-row justify-between items-center lg:items-start gap-10"
         >
-            <div class="flex flex-col gap-4 md:w-1/3">
+            <div class="flex flex-col items-center lg:items-start gap-4 lg:w-1/3">
                 <div
                     class="flex items-center gap-3 cursor-pointer transition-transform duration-300 hover:scale-105"
                     @click="() => scrollToSection('hero')"
@@ -43,13 +43,13 @@
                 <p class="text-gray-300 leading-relaxed">{{ t('footer.message1') }}</p>
             </div>
 
-            <div class="md:w-1/3 text-center">
+            <div class="lg:w-1/3 text-center">
                 <p class="text-sm text-gray-400">© {{ currentYear }} - {{ t('footer.droit') }}</p>
                 <p class="mt-1 text-gray-400">{{ t('footer.message2') }}</p>
                 <p class="mt-4 text-sm text-gray-500">Vue 3 + TypeScript + Vite + PrimeVue</p>
             </div>
 
-            <div class="md:w-1/3 flex flex-col items-center md:items-end gap-4">
+            <div class="lg:w-1/3 flex flex-col items-center lg:items-end gap-4">
                 <h3 class="text-base font-bold text-neutral-400 mb-4">
                     {{ t('footer.follow_me') }}
                 </h3>
