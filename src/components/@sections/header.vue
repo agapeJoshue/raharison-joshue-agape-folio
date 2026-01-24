@@ -27,9 +27,7 @@
             ];
 
             const scrollToSection = (id: string) => {
-                itemActive.value = id;
                 const element = document.getElementById(id);
-
                 if (!element) return;
 
                 const elementPosition = element.getBoundingClientRect().top;
@@ -42,8 +40,24 @@
             };
 
             const handleScroll = () => {
-                //console.log(window.scrollY)
-                isScrolled.value = window.scrollY > 40;
+                const scrollPosition = window.scrollY;
+                isScrolled.value = scrollPosition > 40;
+
+                const sections = document.querySelectorAll('section[id]');
+
+                let currentSectionId = itemActive.value;
+
+                sections.forEach((section) => {
+                    const rect = section.getBoundingClientRect();
+                    const sectionTop = rect.top + window.scrollY - (HEADER_OFFSET + 5);
+                    const sectionBottom = sectionTop + rect.height;
+
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                        currentSectionId = section.id;
+                    }
+                });
+
+                itemActive.value = currentSectionId;
             };
 
             onMounted(() => {

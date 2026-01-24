@@ -1,6 +1,7 @@
 <script lang="ts">
     import { defineComponent } from 'vue';
     import { CalendarRange, ChartSpline, CodeXml, Server, type LucideIcon } from 'lucide-vue-next';
+    import { useI18n } from 'vue-i18n';
 
     interface WorkStep {
         title: string;
@@ -11,29 +12,30 @@
     export default defineComponent({
         name: 'WorkProcessSection',
         setup() {
+            const { t } = useI18n();
             const workStepData: WorkStep[] = [
                 {
-                    title: 'Découverte & Analyse des besoins',
-                    description: 'Comprendre objectifs, utilisateurs et données.',
+                    title: 'work_process.steps.s1.title',
+                    description: 'work_process.steps.s1.description',
                     icon: CalendarRange,
                 },
                 {
-                    title: 'Analyse & Architecture',
-                    description: 'Concevoir architecture et modèles analytiques.',
+                    title: 'work_process.steps.s2.title',
+                    description: 'work_process.steps.s2.description',
                     icon: ChartSpline,
                 },
                 {
-                    title: 'Développement & Traitement des données',
-                    description: 'Créer applications et pipelines de données.',
+                    title: 'work_process.steps.s3.title',
+                    description: 'work_process.steps.s3.description',
                     icon: CodeXml,
                 },
                 {
-                    title: 'Validation & Déploiement',
-                    description: 'Tester, déployer et optimiser pour l’usage réel.',
+                    title: 'work_process.steps.s4.title',
+                    description: 'work_process.steps.s4.description',
                     icon: Server,
                 },
             ];
-            return { workStepData };
+            return { t, workStepData };
         },
     });
 </script>
@@ -51,22 +53,17 @@
                     <h1
                         class="max-xl:text-center text-lg md:text-xl xl:text-2xl font-bold tracking-[0.20rem] uppercase text-zinc-900 dark:text-zinc-100"
                     >
-                        Processus de travail
+                        {{ t('work_process.title') }}
                     </h1>
                     <p
                         class="mt-6 mb-4 md:text-[18px] text-sm font-normal max-xl:text-center text-gray-500 dark:text-neutral-400"
                     >
-                        Guidé par la résolution de problèmes et basé sur les données, je conçois et
-                        développe des solutions digitales scalables, fiables et performantes. Chaque
-                        système, fonctionnalité et analyse est pensé avec précision — alliant
-                        excellence technique et impact concret sur le business.
+                        {{ t('work_process.subtitle.s1') }}
                     </p>
                     <p
                         class="mt-6 md:text-[18px] text-sm font-normal max-xl:text-center text-gray-500 dark:text-neutral-400"
                     >
-                        Je combine développement full-stack et analyse de données pour livrer des
-                        applications robustes, des insights exploitables et des résultats
-                        mesurables.
+                        {{ t('work_process.subtitle.s2') }}
                     </p>
                 </div>
 
@@ -91,11 +88,11 @@
                                 <span class="mr-2 text-emerald-600 dark:text-emerald-400"
                                     >{{ `0${i + 1}` }}.</span
                                 >
-                                {{ step.title }}
+                                {{ t(step.title) }}
                             </h3>
 
                             <p class="text-sm text-zinc-600 dark:text-zinc-400">
-                                {{ step.description }}
+                                {{ t(step.description) }}
                             </p>
                         </div>
                     </div>

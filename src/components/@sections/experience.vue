@@ -8,7 +8,6 @@
         description: string;
         company: string;
         period: string;
-        location: string;
         technologies: string[];
         image: string;
     };
@@ -23,18 +22,16 @@
                 {
                     title: 'experience.auto_flow.title',
                     description: 'experience.auto_flow.description',
-                    company: 'experience.auto_flow.company',
+                    company: 'ENI',
                     period: 'experience.auto_flow.period',
-                    location: 'experience.auto_flow.location',
                     technologies: ['React.js', 'PostgreSQL', 'Flask', 'N8N', 'Docker'],
                     image: '/imgs/experiences/n8n-autoflow.png',
                 },
                 {
                     title: 'experience.mandika_apk.title',
                     description: 'experience.mandika_apk.description',
-                    company: 'experience.mandika_apk.company',
+                    company: 'RafalTech',
                     period: 'experience.mandika_apk.period',
-                    location: 'experience.mandika_apk.location',
                     technologies: [
                         'Flutter',
                         'Django',
@@ -47,9 +44,8 @@
                 {
                     title: 'experience.sfyritech_meeting.title',
                     description: 'experience.sfyritech_meeting.description',
-                    company: 'experience.sfyritech_meeting.company',
+                    company: 'SfyriTech',
                     period: 'experience.sfyritech_meeting.period',
-                    location: 'experience.sfyritech_meeting.location',
                     technologies: [
                         'Quasar',
                         'PostgreSQL',
@@ -62,18 +58,16 @@
                 {
                     title: 'experience.hello_archi.title',
                     description: 'experience.hello_archi.description',
-                    company: 'experience.hello_archi.company',
+                    company: 'SfyriTech',
                     period: 'experience.hello_archi.period',
-                    location: 'experience.hello_archi.location',
                     technologies: ['Node.js', 'Express', 'Docker', 'websocket'],
                     image: '/imgs/experiences/node-express.jpg',
                 },
                 {
                     title: 'experience.open_delivery.title',
                     description: 'experience.open_delivery.description',
-                    company: 'experience.open_delivery.company',
+                    company: 'Open Data / Delivery',
                     period: 'experience.open_delivery.period',
-                    location: 'experience.open_delivery.location',
                     technologies: ['vue.js', 'PHP', 'Laravel', 'jQuery', 'MySQL'],
                     image: '/imgs/experiences/laravel.png',
                 },
@@ -100,11 +94,11 @@
                 <h1
                     class="text-xl md:text-2xl font-bold tracking-[0.25em] uppercase text-zinc-900 dark:text-zinc-100"
                 >
-                    Expérience Professionnelle
+                    {{ t('experience.title') }}
                 </h1>
 
                 <p class="text-sm md:text-base text-zinc-500 dark:text-zinc-400 max-w-xl mx-auto">
-                    Découvrez mon parcours professionnel et les projets sur lesquels j’ai travaillé.
+                    {{ t('experience.subtitle') }}
                 </p>
 
                 <div
@@ -153,7 +147,7 @@
                             </div>
 
                             <div class="flex justify-between text-xs text-gray-400 pt-4">
-                                <span>{{ t(exp.company) }}</span>
+                                <span>{{ exp.company }}</span>
                                 <span>{{ t(exp.period) }}</span>
                             </div>
                         </div>

@@ -1,6 +1,7 @@
 <script lang="ts">
     import { defineComponent } from 'vue';
     import { useThemeStore } from '../../hooks/useThemeStore';
+    import { useI18n } from 'vue-i18n';
 
     type project = {
         category: string;
@@ -15,13 +16,13 @@
         name: 'ProjectSection',
 
         setup() {
+            const { t } = useI18n();
             const { isDark } = useThemeStore();
             const projects: project[] = [
                 {
-                    category: 'Application Web',
-                    name: 'Automate with n8n',
-                    description:
-                        'Application web permettant l’automatisation intelligente de l’analyse des e-mails grâce à l’IA et à des workflows n8n personnalisés.',
+                    category: 'project.category.web_application',
+                    name: 'AutoFlow with n8n',
+                    description: 'project.auto_flow',
                     rating: 4,
                     images: {
                         light: '/imgs/auto_flow/login_page_light.png',
@@ -30,10 +31,9 @@
                     links: { code: '', demo: '' },
                 },
                 {
-                    category: 'Application Web',
+                    category: 'project.category.web_application',
                     name: 'Planning',
-                    description:
-                        'Application web moderne dédiée à la planification, à la gestion des projets et à l’organisation efficace de réunions collaboratives.',
+                    description: 'project.planning',
                     rating: 5,
                     images: {
                         light: '/imgs/planning/login_page_light.png',
@@ -42,10 +42,9 @@
                     links: { code: '', demo: '' },
                 },
                 {
-                    category: 'Application Web',
+                    category: 'project.category.web_application',
                     name: 'Stock Flow Inventory',
-                    description:
-                        'Application web complète conçue pour gérer les produits, suivre les stocks en temps réel et simplifier les opérations d’inventaire.',
+                    description: 'project.stock_flow',
                     rating: 3,
                     images: {
                         light: '/imgs/stock_flow/login_page_light.png',
@@ -54,7 +53,7 @@
                     links: { code: '', demo: '' },
                 },
             ];
-            return { isDark, projects };
+            return { t, isDark, projects };
         },
     });
 </script>
@@ -66,14 +65,13 @@
                 <h1
                     class="text-xl md:text-2xl font-bold tracking-[0.35em] uppercase text-zinc-900 dark:text-zinc-100"
                 >
-                    Mes projets
+                    {{ t('project.title') }}
                 </h1>
 
                 <p
                     class="text-sm md:text-base text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto leading-relaxed"
                 >
-                    Une sélection de projets illustrant mon expertise en développement web et
-                    conception d’applications modernes.
+                    {{ t('project.subtitle') }}
                 </p>
 
                 <div
@@ -103,7 +101,7 @@
 
                     <div class="p-5">
                         <p class="text-xs font-medium uppercase tracking-wide text-emerald-500">
-                            {{ project.category }}
+                            {{ t(project.category) }}
                         </p>
 
                         <h3 class="mt-1 text-lg font-semibold text-neutral-900 dark:text-white">
@@ -113,7 +111,7 @@
                         <p
                             class="mt-3 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400 line-clamp-3"
                         >
-                            {{ project.description }}
+                            {{ t(project.description) }}
                         </p>
 
                         <div class="mt-6 flex items-center justify-between">
@@ -121,7 +119,7 @@
                                 :to="project.links.demo || '#'"
                                 class="inline-flex items-center gap-2 rounded-lg pl-5 pr-4 py-3 text-sm font-medium text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/30 hover:bg-emerald-100 dark:hover:bg-emerald-900/50 transition-all duration-300 group-hover:gap-3"
                             >
-                                Présentation du projet
+                                {{ t('project.action.demo') }}
                                 <ArrowRight :size="16" />
                             </router-link>
 
@@ -132,7 +130,7 @@
             </div>
 
             <div class="flex justify-center mt-16">
-                <Button class="px-5" label="More projects" />
+                <Button class="px-5" :label="t('project.action.more_projects')" />
             </div>
         </div>
 
@@ -140,19 +138,16 @@
             <h1
                 class="text-[2.5rem] font-bold tracking-[-0.02em] text-neutral-100 max-w-150 mx-auto"
             >
-                Do you have a Project Idea? Let's discuss your project!
+                {{ t('project.project_idea') }}
             </h1>
             <p class="text-lg max-w-150 text-neutral-400 mx-auto">
-                I'm always open to discussing new projects and creative ideas. Let's connect and
-                build something amazing together.
+                {{ t('project.open_to_project') }}
             </p>
             <Button
                 class="pl-8 pr-6 py-3 mt-15 text-base font-medium flex items-center gap-x-2.5 justify-center mx-auto hover:gap-x-4 hover:scale-[1.1] group transition"
             >
-                Let's work Together <ArrowRight :size="20" />
+                {{ t('project.action.lets_work_together') }} <ArrowRight :size="20" />
             </Button>
         </div>
     </section>
 </template>
-
-<style scoped></style>

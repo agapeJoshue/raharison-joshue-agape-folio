@@ -1,6 +1,7 @@
 <script lang="ts">
     import { defineComponent, ref } from 'vue';
     import { useThemeStore } from '../../hooks/useThemeStore';
+    import { useI18n } from 'vue-i18n';
 
     interface Field<T> {
         value: T;
@@ -11,6 +12,7 @@
     export default defineComponent({
         name: 'ContactSection',
         setup() {
+            const { t } = useI18n();
             const { isDark } = useThemeStore();
             const errorNumber = ref(0);
 
@@ -44,13 +46,13 @@
                     field.error_message = msg;
                 };
 
-                if (!username.value.value.trim()) check(username.value, 'Le nom est requis');
-                if (!email.value.value.trim()) check(email.value, 'L’adresse e-mail est requise');
+                if (!username.value.value.trim()) check(username.value, 'contact.form.name_error');
+                if (!email.value.value.trim()) check(email.value, 'contact.form.email_error');
                 if (!location.value.value.trim())
-                    check(location.value, 'La localisation est requise');
-                if (budget.value.value === 0) check(budget.value, 'Le budget est requis');
-                if (!subject.value.value.trim()) check(subject.value, 'Le sujet est requis');
-                if (!message.value.value.trim()) check(message.value, 'Le message est requis');
+                    check(location.value, 'contact.form.location_error');
+                if (budget.value.value === 0) check(budget.value, 'contact.form.budget_error');
+                if (!subject.value.value.trim()) check(subject.value, 'contact.form.subject_error');
+                if (!message.value.value.trim()) check(message.value, 'contact.form.message_error');
 
                 return error;
             };
@@ -71,6 +73,7 @@
             };
 
             return {
+                t,
                 isDark,
                 errorNumber,
                 username,
@@ -101,17 +104,16 @@
                     <h1
                         class="font-extrabold text-3xl sm:text-4xl tracking-tight text-emerald-600 dark:text-emerald-400"
                     >
-                        Discutons de votre projet
+                        {{ t('contact.title') }}
                     </h1>
 
                     <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed max-w-md">
-                        Je suis disponible pour des missions freelance. Contactez-moi si vous pensez
-                        que je peux correspondre à votre projet.
+                        {{ t('contact.subtitle') }}
                     </p>
                 </div>
 
                 <div class="space-y-5">
-                    <ContactCard title="Adresse">
+                    <ContactCard :title="t('contact.address')">
                         <template #icon>
                             <MapPin :size="22" class="text-emerald-600 dark:text-emerald-400" />
                         </template>
@@ -119,7 +121,7 @@
                     </ContactCard>
 
                     <a href="mailto:agapedev.dark@gmail.com">
-                        <ContactCard title="Email">
+                        <ContactCard :title="t('contact.email')">
                             <template #icon>
                                 <Mail :size="22" class="text-emerald-600 dark:text-emerald-400" />
                             </template>
@@ -127,7 +129,7 @@
                         </ContactCard>
                     </a>
 
-                    <ContactCard title="Téléphone" class="mt-5">
+                    <ContactCard :title="t('contact.phone')" class="mt-5">
                         <template #icon>
                             <Phone :size="22" class="text-emerald-600 dark:text-emerald-400" />
                         </template>
@@ -140,65 +142,64 @@
 
             <div class="flex flex-col space-y-8">
                 <p class="text-neutral-700 dark:text-neutral-300 leading-relaxed">
-                    Je suis toujours ouvert à discuter de projets de développement ou d’opportunités
-                    de partenariat.
+                    {{ t('contact.form_message') }}
                 </p>
 
                 <div class="w-full space-y-4">
                     <div class="w-full">
-                        <label for="username">Nom</label>
+                        <label for="username">{{ t('contact.form.name') }}</label>
                         <InputText
                             id="username"
                             type="text"
                             v-model="username.value"
                             class="w-full mt-1 bg-gray-50 dark:bg-zinc-950"
                             :class="username.error ? 'border-red-600 dark:border-red-400' : ''"
-                            placeholder="Entrez votre nom complet"
+                            :placeholder="t('contact.form.name_placeholder')"
                         />
                         <small
                             v-if="username.error"
                             class="text-red-600 dark:text-red-400 font-medium"
-                            >{{ username.error_message }}</small
+                            >{{ t(username.error_message) }}</small
                         >
                     </div>
 
                     <div class="w-full">
-                        <label for="email">Adresse e-mail</label>
+                        <label for="email">{{ t('contact.form.email') }}</label>
                         <InputText
                             id="email"
                             type="email"
                             v-model="email.value"
                             class="w-full mt-1 bg-gray-50 dark:bg-zinc-950"
                             :class="email.error ? 'border-red-600 dark:border-red-400' : ''"
-                            placeholder="Entrez votre adresse e-mail"
+                            :placeholder="t('contact.form.email_placeholder')"
                         />
                         <small
                             v-if="email.error"
                             class="text-red-600 dark:text-red-400 font-medium"
-                            >{{ email.error_message }}</small
+                            >{{ t(email.error_message) }}</small
                         >
                     </div>
 
                     <div class="w-full">
-                        <label for="location">Localisation</label>
+                        <label for="location">{{ t('contact.form.location') }}</label>
                         <InputText
                             id="location"
                             type="text"
                             v-model="location.value"
                             class="w-full mt-1 bg-gray-50 dark:bg-zinc-950"
                             :class="location.error ? 'border-red-600 dark:border-red-400' : ''"
-                            placeholder="Entrez votre ville ou pays"
+                            :placeholder="t('contact.form.location_placeholder')"
                         />
                         <small
                             v-if="location.error"
                             class="text-red-600 dark:text-red-400 font-medium"
-                            >{{ location.error_message }}</small
+                            >{{ t(location.error_message) }}</small
                         >
                     </div>
 
                     <div class="grid grid-cols-3 gap-x-4">
                         <div class="w-full">
-                            <label for="budget">Budget</label>
+                            <label for="budget">{{ t('contact.form.budget') }}</label>
                             <InputNumber
                                 v-model="budget.value"
                                 inputId="currency-germany"
@@ -212,29 +213,29 @@
                             <small
                                 v-if="budget.error"
                                 class="text-red-600 dark:text-red-400 font-medium"
-                                >{{ budget.error_message }}</small
+                                >{{ t(budget.error_message) }}</small
                             >
                         </div>
                         <div class="w-full col-span-2">
-                            <label for="subject">Sujet</label>
+                            <label for="subject">{{ t('contact.form.subject') }}</label>
                             <InputText
                                 id="subject"
                                 type="text"
                                 v-model="subject.value"
                                 class="w-full mt-1 bg-gray-50 dark:bg-zinc-950"
                                 :class="subject.error ? 'border-red-600 dark:border-red-400' : ''"
-                                placeholder="Entrez le sujet de votre message"
+                                :placeholder="t('contact.form.subject_placeholder')"
                             />
                             <small
                                 v-if="subject.error"
                                 class="text-red-600 dark:text-red-400 font-medium"
-                                >{{ subject.error_message }}</small
+                                >{{ t(subject.error_message) }}</small
                             >
                         </div>
                     </div>
 
                     <div class="w-full">
-                        <label for="message">Message</label>
+                        <label for="message">{{ t('contact.form.message') }}</label>
                         <Textarea
                             id="message"
                             v-model="message.value"
@@ -242,18 +243,18 @@
                             style="resize: none"
                             class="w-full mt-1 bg-gray-50 dark:bg-zinc-950"
                             :class="message.error ? 'border-red-600 dark:border-red-400' : ''"
-                            placeholder="Décrivez brièvement votre projet ou votre demande"
+                            :placeholder="t('contact.form.message_placeholder')"
                         />
                         <small
                             v-if="message.error"
                             class="text-red-600 dark:text-red-400 font-medium"
-                            >{{ message.error_message }}</small
+                            >{{ t(message.error_message) }}</small
                         >
                     </div>
 
-                    <Button @click="onSubmit" class="text-base font-medium px-4" size="large"
-                        >Submit <SendHorizonal :size="18"
-                    /></Button>
+                    <Button @click="onSubmit" class="text-base font-medium px-4" size="large">
+                        {{ t('contact.form.submit') }} <SendHorizonal :size="18" />
+                    </Button>
                 </div>
             </div>
         </div>

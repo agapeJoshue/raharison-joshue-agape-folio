@@ -45,64 +45,160 @@
         "secondary_degree": "Scientific Baccalaureate — Series C",
         "secondary_institution": "Saint-Joseph de Cluny High School, Fianarantsoa"
     },
+    "work_process": {
+        "title": "Work Process",
+        "subtitle": {
+            "s1": "Guided by problem-solving and data-driven, I design and develop scalable, reliable, and high-performance digital solutions. Every system, feature, and analysis is crafted with precision.",
+            "s2": "I combine full-stack development and data analysis to deliver robust applications, actionable insights, and measurable results."
+        },
+        "steps": {
+            "s1": {
+                "title": "Discovery & Requirement Analysis",
+                "description": "Understanding objectives, users, and data."
+            },
+            "s2": {
+                "title": "Analysis & Architecture",
+                "description": "Designing architecture and analytical models."
+            },
+            "s3": {
+                "title": "Development & Data Processing",
+                "description": "Building applications and data pipelines."
+            },
+            "s4": {
+                "title": "Testing & Deployment",
+                "description": "Testing, deploying, and optimizing for real-world use."
+            }
+        }
+    },
+    "project": {
+        "title": "My Projects",
+        "subtitle": "A selection of projects showcasing my expertise in web development and modern application design.",
+        "category": {
+            "web_application": "Web Application"
+        },
+        "auto_flow": "Web application enabling intelligent automation of email analysis using AI and custom n8n workflows.",
+        "planning": "Modern web application dedicated to project planning, management, and efficient organization of collaborative meetings.",
+        "stock_flow": "Comprehensive web application designed to manage products, track real-time stock, and streamline inventory operations.",
+        "action": {
+            "demo": "View Project",
+            "more_projects": "See More Projects",
+            "lets_work_together": "Let's Work Together"
+        },
+        "project_idea": "Do you have a project idea? Let's discuss it!",
+        "open_to_project": "I am always open to discussing new projects and creative ideas. Let's connect and build something amazing together."
+    },
     "experience": {
-        "title": "Professional Experience",
-        "subtitle": "My Career Journey",
+        "title": "My Professional Experience",
+        "subtitle": "Discover my professional journey and the projects I have worked on.",
 
         "auto_flow": {
-            "title": "Development of an AI-based Email Analysis Automation App with n8n",
-            "description": "Design and development of a complete solution ensuring reliability, performance, and data synchronization between front-end and back-end. Implemented a dynamic interface to visualize analyzed emails, a real-time system via WebSocket, and integration of data processed by n8n workflows with filtering and organization.",
-            "company": "ENI Final Year Project",
-            "period": "Oct. 2025 - Nov. 2025",
-            "location": "Fianarantsoa, Madagascar"
-        },
-
-        "planning": {
-            "title": "Project Planning and Tracking Application",
-            "description": "Developed a project management application including project, sprint, and task creation, progress tracking, email invitations, drag-and-drop task updates, meeting management synchronized with Google Calendar, real-time chat, asynchronous tasks handling, and full containerization for easy deployment.",
-            "company": "Personal Project",
-            "period": "Aug. 2025 - Ongoing Improvements",
-            "location": "Fianarantsoa, Madagascar"
+            "title": "Email Analysis Automation via AI and n8n",
+            "description": "Design and development of a complete solution ensuring reliability and performance. Implementation of a dynamic interface to visualize analyzed emails and integration of data processed by n8n workflows with filtering and organization.",
+            "period": "Oct. 2025 - Nov. 2025"
         },
 
         "mandika_apk": {
-            "title": "Mandika Application Development",
-            "description": "Full development of the app including image capture and enhancement, form configuration, data extraction via a configurable OCR engine, and creation of interfaces for visualization, editing, and export (CSV, JSON, PDF), all in accordance with the specifications.",
-            "company": "RafalTech",
-            "period": "Oct. 2025 - Nov. 2025",
-            "location": "Antananarivo, Madagascar"
-        },
-
-        "stock_flow": {
-            "title": "Stock Management Application",
-            "description": "Designed and developed a professional stock management application allowing product management, updates, and categorization, with automatic alerts for low stock levels and a complete inventory tracking and adjustment module.",
-            "company": "Personal Project",
-            "period": "Jul. 2025 - Aug. 2025",
-            "location": "Fianarantsoa, Madagascar"
+            "title": "Mobile Application Development - Mandika",
+            "description": "Full development of the application including image capture and enhancement. Creation of visualization, editing, and data export interfaces, and implementation of an adaptable OCR engine to extract information according to specifications.",
+            "period": "Oct. 2025 - Nov. 2025"
         },
 
         "sfyritech_meeting": {
-            "title": "Web Solution for Appointment Management with Google Calendar Sync",
-            "description": "Designed and developed a real-time appointment management application synchronized with users' Google Calendar. Front-end development with Quasar and Angular.js, back-end with NestJS, implementing a RESTful API and WebSocket for real-time communication.",
-            "company": "Internship - SfyriTech",
-            "period": "Aug. 2024 - Dec. 2024",
-            "location": "Antananarivo, Madagascar (remote)"
+            "title": "Appointment Management Synchronized with Google Calendar",
+            "description": "Design and development of an appointment management application synchronized with Google Calendar. Implementation of a RESTful and WebSocket API for real-time communication and front-end and back-end development for a smooth and responsive user interface.",
+            "period": "Aug. 2024 - Dec. 2024"
         },
 
         "hello_archi": {
-            "title": "API Development for Hello Archi Platform",
-            "description": "Optimized existing code to improve performance and usability. Developed new features according to client requirements and fixed bugs to enhance overall user experience.",
-            "company": "SfyriTech",
-            "period": "May 2024 - Sept. 2024",
-            "location": "Antananarivo, Madagascar (remote)"
+            "title": "API Development for the Hello Archi Platform",
+            "description": "Optimization of existing code to improve performance and usability. Development of new features according to client requirements and bug fixes to enhance the user experience.",
+            "period": "May 2024 - Sept. 2024"
         },
 
         "open_delivery": {
-            "title": "Full-Stack Developer",
-            "description": "Designed and developed front-end and back-end aspects of websites, applications, and web services. Implemented software solutions according to specifications and developed features tailored to client needs.",
-            "company": "Internship - Open Data / Delivery",
-            "period": "Sept. 2023 - Nov. 2023",
-            "location": "Antsirabe, Madagascar"
+            "title": "Order and Delivery Management Application",
+            "description": "Design and development of front-end and back-end aspects of websites and web applications. Implementation of software solutions tailored to client needs and development of custom features according to specifications.",
+            "period": "Sept. 2023 - Nov. 2023"
         }
+    },
+    "service": {
+        "what_i_do": "What I Do?",
+        "response": {
+            "r1": "I design and develop high-performance, responsive web and mobile applications, combining intuitive front-end with robust back-end. My work covers the entire project lifecycle, from design to production, ensuring an optimal user experience.",
+            "r2": "I combine creativity, ergonomic design, and technical expertise to deliver complete, scalable, and secure solutions, while handling deployment and maintenance using modern DevOps practices."
+        },
+        "say_hello": "Say Hello!",
+        "full_stack": {
+            "title": "Fullstack Web & Mobile Development",
+            "description": "I design and develop high-performance, responsive web and mobile applications. From planning to implementation, I create intuitive interfaces and robust features to deliver an optimal user experience."
+        },
+        "designer": {
+            "title": "UI/UX Design",
+            "description": "I design ergonomic and visually appealing interfaces, combining user research with visual design. My approach ensures every interaction is clear, intuitive, and enjoyable for the user."
+        },
+        "ops": {
+            "title": "Ops & Deployment",
+            "description": "I manage the integration, deployment, and maintenance of applications. Using Docker, CI/CD, and monitoring, I ensure service availability, performance, and security in production."
+        }
+    },
+    "skill": {
+        "title": "My Skills",
+        "subtitle": "A clear summary of my technical expertise and the tools I master.",
+        "front": {
+            "title": "Front-End Web & Mobile Development",
+            "subtitle": "Design and development of high-performance, responsive, and accessible interfaces for web and mobile applications. Proficient with modern frameworks, UI integration, performance optimization, accessibility, animations, and efficient API consumption."
+        },
+        "back": {
+            "title": "Back-End Development",
+            "subtitle": "Architecture and development of secure and scalable back-end services. API design, database management, authentication, performance optimization, testing, integrations, and reliable cloud deployment aligned with business requirements."
+        },
+        "ops": {
+            "title": "UI/UX Design & DevOps",
+            "subtitle": "User-centered design and DevOps practices for reliable delivery. Prototyping, user testing, design systems, automation, CI/CD, security, monitoring, continuous performance improvement, collaboration, quality, scalability, and documentation."
+        },
+        "soft_skill": "Soft Skills",
+        "problemSolving": "Problem Solving",
+        "teamwork": "Teamwork",
+        "communication": "Communication",
+        "timeManagement": "Time Management",
+        "adaptability": "Adaptability",
+        "creativity": "Creativity",
+        "attentionToDetail": "Attention to Detail",
+        "autonomy": "Autonomy"
+    },
+    "contact": {
+        "title": "Let's Discuss Your Project",
+        "subtitle": "I am available for freelance work. Feel free to contact me if you think I could be a good fit for your project.",
+        "address": "Address",
+        "email": "Email Address",
+        "phone": "Phone",
+        "form_message": "I am always open to discussing development projects or collaboration opportunities.",
+        "form": {
+            "name": "Name",
+            "name_placeholder": "Enter your full name",
+            "email": "Email Address",
+            "email_placeholder": "Enter your email address",
+            "location": "Location",
+            "location_placeholder": "Where are you located?",
+            "budget": "Budget",
+            "subject": "Subject",
+            "subject_placeholder": "Enter the subject of your message",
+            "message": "Message",
+            "message_placeholder": "Briefly describe your project or request",
+            "name_error": "Name is required",
+            "email_error": "Email address is required",
+            "email_error2": "Email address is not valid",
+            "location_error": "Location is required",
+            "budget_error": "Budget is required",
+            "subject_error": "Subject is required",
+            "message_error": "Message is required",
+            "submit": "Submit"
+        }
+    },
+    "footer": {
+        "message1": "Created with passion and dedication.",
+        "message2": "Designed & Developed by Joshué Agapé",
+        "follow_me": "Follow Me",
+        "droit": "All Rights Reserved"
     }
 }

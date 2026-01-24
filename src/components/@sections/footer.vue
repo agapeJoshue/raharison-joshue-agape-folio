@@ -54,27 +54,27 @@
                     {{ t('footer.follow_me') }}
                 </h3>
                 <div class="flex gap-3">
-                    <SocialIcon tooltip="Facebook" class="group">
+                    <SocialIcon tooltip="Facebook" link="#" class="group">
                         <Facebook
                             class="transition-transform transform hover:scale-125 hover:text-white"
                         />
                     </SocialIcon>
-                    <SocialIcon tooltip="Instagram" class="group">
+                    <SocialIcon tooltip="Instagram" link="#" class="group">
                         <Instagram
                             class="transition-transform transform hover:scale-125 hover:text-white"
                         />
                     </SocialIcon>
-                    <SocialIcon tooltip="LinkedIn" class="group">
+                    <SocialIcon tooltip="LinkedIn" link="#" class="group">
                         <Linkedin
                             class="transition-transform transform hover:scale-125 hover:text-white"
                         />
                     </SocialIcon>
-                    <SocialIcon tooltip="GitHub" class="group">
+                    <SocialIcon tooltip="GitHub" link="#" class="group">
                         <Github
                             class="transition-transform transform hover:scale-125 hover:text-white"
                         />
                     </SocialIcon>
-                    <SocialIcon tooltip="GitLab" class="group">
+                    <SocialIcon tooltip="GitLab" link="#" class="group">
                         <Gitlab
                             class="transition-transform transform hover:scale-125 hover:text-white"
                         />

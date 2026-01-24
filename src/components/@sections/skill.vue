@@ -2,10 +2,11 @@
     import { defineComponent } from 'vue';
     import { Pagination } from 'swiper/modules';
     import { useThemeStore } from '../../hooks/useThemeStore';
+    import { useI18n } from 'vue-i18n';
 
     type Skill = {
         title: string;
-        subtitle?: string;
+        subtitle: string;
         techs: { name: string; value: number }[];
     };
 
@@ -13,12 +14,12 @@
         name: 'SkillSection',
 
         setup() {
+            const { t } = useI18n();
             const { isDark } = useThemeStore();
             const skills: Skill[] = [
                 {
-                    title: 'Front-End web & mobile',
-                    subtitle:
-                        'Conception et développement d’interfaces performantes, responsives et accessibles pour applications web et mobiles. Maîtrise des frameworks modernes, intégration UI, performances, accessibilité, animations, consommation d’API optimisée.',
+                    title: 'skill.front.title',
+                    subtitle: 'skill.front.subtitle',
                     techs: [
                         { name: 'Vue.js', value: 90 },
                         { name: 'React', value: 90 },
@@ -31,9 +32,8 @@
                     ],
                 },
                 {
-                    title: 'Back-End',
-                    subtitle:
-                        'Architecture et développement de services backend sécurisés et scalables. Conception d’API, bases de données, authentification, performance, tests, intégrations, déploiement cloud fiable orienté métier, résilience, monitoring.',
+                    title: 'skill.back.title',
+                    subtitle: 'skill.back.subtitle',
                     techs: [
                         { name: 'Node.js', value: 90 },
                         { name: 'Express.js', value: 90 },
@@ -46,9 +46,8 @@
                     ],
                 },
                 {
-                    title: 'UI / UX Design & DevOps',
-                    subtitle:
-                        'Design centré utilisateur et pratiques DevOps pour livraisons fiables. Prototypage, tests utilisateurs, design systems, automatisation, CI/CD, sécurité, surveillance, amélioration continue performance, collaboration, qualité, scalabilité, documentation.',
+                    title: 'skill.ops.title',
+                    subtitle: 'skill.ops.subtitle',
                     techs: [
                         { name: 'Figma', value: 50 },
                         { name: 'Adobe XD', value: 40 },
@@ -62,14 +61,14 @@
             ];
 
             const softSkill = [
-                'Résolution de problèmes',
-                "Travail d'équipe",
-                'Communication',
-                'Gestion du temps',
-                'Adaptabilité',
-                'Créativité',
-                'Attention aux détails',
-                'Autonomie',
+                'skill.problemSolving',
+                'skill.teamwork',
+                'skill.communication',
+                'skill.timeManagement',
+                'skill.adaptability',
+                'skill.creativity',
+                'skill.attentionToDetail',
+                'skill.autonomy',
             ];
 
             const bibliotheques = [
@@ -99,7 +98,7 @@
                 { name: 'Sequelize', icon: '/imgs/techs/sequelize.jpg' },
             ];
 
-            return { isDark, skills, Pagination, softSkill, bibliotheques };
+            return { t, isDark, skills, Pagination, softSkill, bibliotheques };
         },
     });
 </script>
@@ -111,13 +110,13 @@
                 <h2
                     class="text-2xl md:text-3xl font-semibold tracking-widest uppercase text-gray-900 dark:text-gray-100"
                 >
-                    Compétences
+                    {{ t('skill.title') }}
                 </h2>
 
                 <p
                     class="max-w-2xl mx-auto text-sm md:text-base text-gray-500 dark:text-gray-400 leading-relaxed"
                 >
-                    Une synthèse claire de mon expertise technique et de mes outils.
+                    {{ t('skill.subtitle') }}
                 </p>
 
                 <div
@@ -151,13 +150,13 @@
                         <h3
                             class="mb-5 text-center text-2xl font-semibold text-gray-900 dark:text-gray-100"
                         >
-                            {{ skill.title }}
+                            {{ t(skill.title) }}
                         </h3>
 
                         <p
                             class="text-neutral-600 dark:text-neutral-400 font-medium pb-12 text-center max-w-200 mx-auto"
                         >
-                            {{ skill.subtitle }}
+                            {{ t(skill.subtitle) }}
                         </p>
 
                         <div
@@ -187,7 +186,7 @@
                 <h3
                     class="text-center text-xl md:text-2xl font-semibold mb-10 text-gray-900 dark:text-gray-100"
                 >
-                    Compétences relationnelles
+                    {{ t('skill.soft_skill') }}
                 </h3>
 
                 <div class="flex flex-wrap justify-center gap-4">
@@ -196,7 +195,7 @@
                         :key="index"
                         class="inline-flex items-center rounded-full px-5 py-2 text-sm font-medium bg-gray-50 dark:bg-zinc-900 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-zinc-800 transition-all duration-300 hover:bg-emerald-600 hover:text-white hover:border-emerald-600 hover:scale-105"
                     >
-                        {{ skill }}
+                        {{ t(skill) }}
                     </span>
                 </div>
             </div>

@@ -45,48 +45,154 @@
         "secondary_degree": "Baccalauréat scientifique — Série C",
         "secondary_institution": "Lycée Saint-Joseph de Cluny, Fianarantsoa"
     },
+    "work_process": {
+        "title": "Processus de travail",
+        "subtitle": {
+            "s1": "Guidé par la résolution de problèmes et basé sur les données, je conçois et développe des solutions digitales scalables, fiables et performantes. Chaque système, fonctionnalité et analyse est pensé avec précision.",
+            "s2": "Je combine développement full-stack et analyse de données pour livrer des applications robustes, des insights exploitables et des résultats mesurables."
+        },
+        "steps": {
+            "s1": {
+                "title": "Découverte & Analyse des besoins",
+                "description": "Comprendre objectifs, utilisateurs et données."
+            },
+            "s2": {
+                "title": "Analyse & Architecture",
+                "description": "Concevoir architecture et modèles analytiques."
+            },
+            "s3": {
+                "title": "Développement & Traitement des données",
+                "description": "Créer applications et pipelines de données."
+            },
+            "s4": {
+                "title": "Validation & Déploiement",
+                "description": "Tester, déployer et optimiser pour l’usage réel."
+            }
+        }
+    },
+    "project": {
+        "title": "Mes projets",
+        "subtitle": "Une sélection de projets illustrant mon expertise en développement web et en conception d’applications modernes.",
+        "category": {
+            "web_application": "Application Web"
+        },
+        "auto_flow": "Application web permettant l’automatisation intelligente de l’analyse des e-mails grâce à l’IA et à des workflows personnalisés avec n8n.",
+        "planning": "Application web moderne dédiée à la planification, à la gestion de projets et à l’organisation efficace de réunions collaboratives.",
+        "stock_flow": "Application web complète conçue pour gérer les produits, suivre les stocks en temps réel et simplifier les opérations d’inventaire.",
+        "action": {
+            "demo": "Voir le projet",
+            "more_projects": "Voir plus de projets",
+            "lets_work_together": "Travaillons ensemble"
+        },
+        "project_idea": "Vous avez une idée de projet ? Discutons-en !",
+        "open_to_project": "Je suis toujours ouvert à discuter de nouveaux projets et idées créatives. Connectons-nous et créons quelque chose d’incroyable ensemble."
+    },
     "experience": {
-        "title": "Expérience Professionnelle",
-        "subtitle": "Découvrez mon parcours professionnel",
+        "title": "Mon Expérience Professionnelle",
+        "subtitle": "Découvrez mon parcours professionnel et les projets sur lesquels j’ai travaillé.",
 
         "auto_flow": {
             "title": "Automatisation de l'analyse des e-mails via IA et n8n",
             "description": "Conception et développement d'une solution complète assurant la fiabilité et la performance. Mise en place d'une interface dynamique pour visualiser les e-mails analysés et intégration des données traitées par les workflows n8n avec filtrage et organisation.",
-            "company": "ENI",
-            "period": "Oct. 2025 - Nov. 2025",
-            "location": "Fianarantsoa, Madagascar"
+            "period": "Oct. 2025 - Nov. 2025"
         },
 
         "mandika_apk": {
-            "title": "Développement de l’application Mandika",
+            "title": "Développement de l’application mobile - Mandika",
             "description": "Développement complet de l'application incluant la capture et l’amélioration d’images. Création des interfaces de visualisation, d’édition et d’export de données et mise en place d’un moteur OCR adaptable pour extraire les informations conformément au cahier des charges.",
-            "company": "RafalTech",
-            "period": "Oct. 2025 - Nov. 2025",
-            "location": "Antananarivo, Madagascar"
+            "period": "Oct. 2025 - Nov. 2025"
         },
 
         "sfyritech_meeting": {
             "title": "Gestion de rendez-vous synchronisée avec Google Agenda",
             "description": "Conception et développement d'une application de gestion de rendez-vous synchronisée avec Google Agenda. Mise en place d’une API RESTful et WebSocket pour la communication temps réel et développement front-end et back-end pour une interface utilisateur fluide et réactive.",
-            "company": "SfyriTech",
-            "period": "Août 2024 - Déc. 2024",
-            "location": "Antananarivo, Madagascar (remote)"
+            "period": "Août 2024 - Déc. 2024"
         },
 
         "hello_archi": {
             "title": "Développement de l'API de la plateforme Hello Archi",
             "description": "Optimisation du code existant pour améliorer performance et ergonomie. Développement de nouvelles fonctionnalités selon les besoins clients et correction des bugs pour améliorer l’expérience utilisateur.",
-            "company": "SfyriTech",
-            "period": "Mai 2024 - Sept. 2024",
-            "location": "Antananarivo, Madagascar (remote)"
+            "period": "Mai 2024 - Sept. 2024"
         },
 
         "open_delivery": {
             "title": "Application pour la gestion des commandes et des livraisons",
             "description": "Conception et développement des aspects front-end et back-end de sites et applications web. Mise en œuvre de solutions logicielles adaptées aux besoins clients et développement de fonctionnalités personnalisées selon le cahier des charges.",
-            "company": "Open Data / Delivery",
-            "period": "Sept. 2023 - Nov. 2023",
-            "location": "Antsirabe, Madagascar"
+            "period": "Sept. 2023 - Nov. 2023"
+        }
+    },
+    "service": {
+        "what_i_do": "Ce que je fais ?",
+        "response": {
+            "r1": "Je conçois et développe des applications web et mobiles performantes et responsives, en alliant front-end intuitif et back-end robuste. Mon travail couvre l’ensemble du cycle de vie des projets, de la conception à la production, pour garantir une expérience utilisateur optimale.",
+            "r2": "Je combine créativité, design ergonomique et expertise technique pour livrer des solutions complètes, scalables et sécurisées, tout en assurant le déploiement et la maintenance via des pratiques DevOps modernes."
+        },
+        "say_hello": "Dites Bonjour !",
+        "full_stack": {
+            "title": "Développement Web & Mobile Fullstack",
+            "description": "Je conçois et développe des applications web et mobiles performantes et responsives. De la planification à l’implémentation, je crée des interfaces intuitives et des fonctionnalités robustes pour offrir une expérience utilisateur optimale."
+        },
+        "designer": {
+            "title": "Design UI/UX",
+            "description": "Je conçois des interfaces ergonomiques et esthétiques, alliant recherche utilisateur et design visuel. Mon approche vise à rendre chaque interaction claire, intuitive et agréable pour l’utilisateur."
+        },
+        "ops": {
+            "title": "Ops & Déploiement",
+            "description": "Je gère l’intégration, le déploiement et la maintenance des applications. Avec Docker, CI/CD et monitoring, je garantis la disponibilité, la performance et la sécurité des services en production."
+        }
+    },
+    "skill": {
+        "title": "Mes Compétences",
+        "subtitle": "Une synthèse claire de mon expertise technique et des outils que je maîtrise.",
+        "front": {
+            "title": "Développement Front-End Web & Mobile",
+            "subtitle": "Conception et développement d’interfaces performantes, responsives et accessibles pour les applications web et mobiles. Maîtrise des frameworks modernes, intégration UI, optimisation des performances, accessibilité, animations et consommation efficace des API."
+        },
+        "back": {
+            "title": "Développement Back-End",
+            "subtitle": "Architecture et développement de services back-end sécurisés et scalables. Conception d’API, gestion de bases de données, authentification, optimisation des performances, tests, intégrations et déploiement cloud fiable orienté métier."
+        },
+        "ops": {
+            "title": "Design UI/UX & DevOps",
+            "subtitle": "Design centré utilisateur et pratiques DevOps pour des livraisons fiables. Prototypage, tests utilisateurs, design systems, automatisation, CI/CD, sécurité, monitoring, amélioration continue des performances, collaboration, qualité, scalabilité et documentation."
+        },
+        "soft_skill": "Compétences relationnelles",
+        "problemSolving": "Résolution de problèmes",
+        "teamwork": "Travail d'équipe",
+        "communication": "Communication",
+        "timeManagement": "Gestion du temps",
+        "adaptability": "Adaptabilité",
+        "creativity": "Créativité",
+        "attentionToDetail": "Attention aux détails",
+        "autonomy": "Autonomie"
+    },
+    "contact": {
+        "title": "Discutons de votre projet",
+        "subtitle": "Je suis disponible pour des missions freelance. N’hésitez pas à me contacter si vous pensez que je peux correspondre à votre projet.",
+        "address": "Adresse",
+        "email": "Adresse e-mail",
+        "phone": "Téléphone",
+        "form_message": "Je suis toujours ouvert à discuter de projets de développement ou d’opportunités de collaboration.",
+        "form": {
+            "name": "Nom",
+            "name_placeholder": "Entrez votre nom complet",
+            "email": "Adresse e-mail",
+            "email_placeholder": "Entrez votre adresse e-mail",
+            "location": "Localisation",
+            "location_placeholder": "Où êtes-vous situé ?",
+            "budget": "Budget",
+            "subject": "Sujet",
+            "subject_placeholder": "Entrez le sujet de votre message",
+            "message": "Message",
+            "message_placeholder": "Décrivez brièvement votre projet ou votre demande",
+            "name_error": "Le nom est requis",
+            "email_error": "L’adresse e-mail est requise",
+            "email_error2": "L’adresse e-mail n’est pas valide",
+            "location_error": "La localisation est requise",
+            "budget_error": "Le budget est requis",
+            "subject_error": "Le sujet est requis",
+            "message_error": "Le message est requis",
+            "submit": "Submettre"
         }
     },
     "footer": {
