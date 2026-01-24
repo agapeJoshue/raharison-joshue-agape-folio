@@ -75,7 +75,7 @@
                     />
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 md:gap-5 xl:grid-cols-1">
+                <div class="grid grid-cols-1 gap-y-4 md:grid-cols-2 md:gap-5 xl:grid-cols-1">
                     <div
                         v-for="(role, index) in rolesData"
                         :key="role.id"

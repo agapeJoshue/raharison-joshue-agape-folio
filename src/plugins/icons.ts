@@ -16,6 +16,16 @@ import {
     CodeXml,
     Server,
     ArrowRight,
+    MapPin,
+    Mail,
+    Phone,
+    SendHorizonal,
+    Facebook,
+    Linkedin,
+    Gitlab,
+    Github,
+    Instagram,
+    Euro,
 } from 'lucide-vue-next';
 
 export default {
@@ -36,5 +46,15 @@ export default {
         app.component('CodeXml', CodeXml);
         app.component('Server', Server);
         app.component('ArrowRight', ArrowRight);
+        app.component('MapPin', MapPin);
+        app.component('Mail', Mail);
+        app.component('Phone', Phone);
+        app.component('SendHorizonal', SendHorizonal);
+        app.component('Facebook', Facebook);
+        app.component('Linkedin', Linkedin);
+        app.component('Gitlab', Gitlab);
+        app.component('Github', Github);
+        app.component('Instagram', Instagram);
+        app.component('Euro', Euro);
     },
 };

@@ -15,4 +15,6 @@
     <ExperienceSection />
     <ServiceSection />
     <SkillSection />
+    <ContactSection />
+    <FooterSection />
 </template>

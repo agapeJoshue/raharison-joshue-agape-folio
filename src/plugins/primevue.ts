@@ -16,6 +16,10 @@ import Galleria from 'primevue/galleria';
 import Image from 'primevue/image';
 import Chip from 'primevue/chip';
 import ProgressBar from 'primevue/progressbar';
+import InputMask from 'primevue/inputmask';
+import InputNumber from 'primevue/inputnumber';
+import IconField from 'primevue/iconfield';
+import InputIcon from 'primevue/inputicon';
 
 export default {
     install(app: App) {
@@ -36,5 +40,9 @@ export default {
         app.component('Image', Image);
         app.component('Chip', Chip);
         app.component('ProgressBar', ProgressBar);
+        app.component('InputMask', InputMask);
+        app.component('InputNumber', InputNumber);
+        app.component('IconField', IconField);
+        app.component('InputIcon', InputIcon);
     },
 };

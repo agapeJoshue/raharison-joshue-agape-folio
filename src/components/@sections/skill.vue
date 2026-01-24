@@ -17,7 +17,8 @@
             const skills: Skill[] = [
                 {
                     title: 'Front-End web & mobile',
-                    subtitle: '',
+                    subtitle:
+                        'Conception et développement d’interfaces performantes, responsives et accessibles pour applications web et mobiles. Maîtrise des frameworks modernes, intégration UI, performances, accessibilité, animations, consommation d’API optimisée.',
                     techs: [
                         { name: 'Vue.js', value: 90 },
                         { name: 'React', value: 90 },
@@ -31,7 +32,8 @@
                 },
                 {
                     title: 'Back-End',
-                    subtitle: '',
+                    subtitle:
+                        'Architecture et développement de services backend sécurisés et scalables. Conception d’API, bases de données, authentification, performance, tests, intégrations, déploiement cloud fiable orienté métier, résilience, monitoring.',
                     techs: [
                         { name: 'Node.js', value: 90 },
                         { name: 'Express.js', value: 90 },
@@ -45,7 +47,8 @@
                 },
                 {
                     title: 'UI / UX Design & DevOps',
-                    subtitle: '',
+                    subtitle:
+                        'Design centré utilisateur et pratiques DevOps pour livraisons fiables. Prototypage, tests utilisateurs, design systems, automatisation, CI/CD, sécurité, surveillance, amélioration continue performance, collaboration, qualité, scalabilité, documentation.',
                     techs: [
                         { name: 'Figma', value: 50 },
                         { name: 'Adobe XD', value: 40 },
@@ -122,19 +125,40 @@
                 />
             </div>
 
+            <Vue3Marquee
+                class="mt-15"
+                gradient
+                pauseOnHover
+                :gradientColor="isDark ? [0, 0, 0] : [255, 255, 255]"
+            >
+                <Chip
+                    v-for="(bibl, i) in bibliotheques"
+                    :key="i"
+                    :label="bibl.name"
+                    :image="bibl.icon"
+                    class="mr-5 pl-4 pr-5 overflow-hidden rounded-4xl font-medium"
+                />
+            </Vue3Marquee>
+
             <Swiper
                 :modules="[Pagination]"
                 :grabCursor="true"
                 :pagination="{ clickable: true }"
-                class="pb-24"
+                class="pb-24 mt-20"
             >
                 <SwiperSlide v-for="(skill, index) in skills" :key="index" class="px-1">
                     <article class="group relative px-6 md:px-10 py-5 mb-8">
                         <h3
-                            class="mb-10 text-center text-2xl font-semibold text-gray-900 dark:text-gray-100"
+                            class="mb-5 text-center text-2xl font-semibold text-gray-900 dark:text-gray-100"
                         >
                             {{ skill.title }}
                         </h3>
+
+                        <p
+                            class="text-neutral-600 dark:text-neutral-400 font-medium pb-12 text-center max-w-200 mx-auto"
+                        >
+                            {{ skill.subtitle }}
+                        </p>
 
                         <div
                             class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-12 gap-y-8"
@@ -158,21 +182,6 @@
                     </article>
                 </SwiperSlide>
             </Swiper>
-
-            <Vue3Marquee
-                class="mt-15"
-                gradient
-                pauseOnHover
-                :gradientColor="isDark ? [0, 0, 0] : [255, 255, 255]"
-            >
-                <Chip
-                    v-for="(bibl, i) in bibliotheques"
-                    :key="i"
-                    :label="bibl.name"
-                    :image="bibl.icon"
-                    class="mr-5 pl-4 pr-5 overflow-hidden rounded-4xl font-medium"
-                />
-            </Vue3Marquee>
 
             <div class="mt-20">
                 <h3

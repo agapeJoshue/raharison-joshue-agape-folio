@@ -1,6 +1,5 @@
 import type { App } from 'vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Vue3Marquee } from 'vue3-marquee';
 import ToggleMode from '@/components/toggleMode.vue';
 import ToggleLocale from '@/components/toggleLocale.vue';
 import HeaderSection from '@/components/@sections/header.vue';
@@ -11,6 +10,10 @@ import ExperienceSection from '@/components/@sections/experience.vue';
 import ProjectSection from '@/components/@sections/project.vue';
 import ServiceSection from '@/components/@sections/service.vue';
 import SkillSection from '@/components/@sections/skill.vue';
+import ContactSection from '@/components/@sections/contact.vue';
+import FooterSection from '@/components/@sections/footer.vue';
+import ContactCard from '@/components/ContactCard.vue';
+import SocialIcon from '@/components/SocialIcon.vue';
 
 export default {
     install(app: App) {
@@ -26,6 +29,9 @@ export default {
         app.component('ProjectSection', ProjectSection);
         app.component('ServiceSection', ServiceSection);
         app.component('SkillSection', SkillSection);
-        app.component('Vue3Marquee', Vue3Marquee);
+        app.component('ContactSection', ContactSection);
+        app.component('ContactCard', ContactCard);
+        app.component('FooterSection', FooterSection);
+        app.component('SocialIcon', SocialIcon);
     },
 };
