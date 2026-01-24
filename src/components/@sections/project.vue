@@ -53,7 +53,21 @@
                     links: { code: '', demo: '' },
                 },
             ];
-            return { t, isDark, projects };
+
+            const scrollToSection = (id: string) => {
+                const element = document.getElementById(id);
+
+                if (!element) return;
+
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.scrollY - 64;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth',
+                });
+            };
+            return { t, isDark, projects, scrollToSection };
         },
     });
 </script>
@@ -143,7 +157,9 @@
             <p class="text-lg max-w-150 text-neutral-400 mx-auto">
                 {{ t('project.open_to_project') }}
             </p>
+            
             <Button
+                @click="() => scrollToSection('contact')"
                 class="pl-8 pr-6 py-3 mt-15 text-base font-medium flex items-center gap-x-2.5 justify-center mx-auto hover:gap-x-4 hover:scale-[1.1] group transition"
             >
                 {{ t('project.action.lets_work_together') }} <ArrowRight :size="20" />
