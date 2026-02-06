@@ -10,7 +10,6 @@
     <HeaderSection />
     <HeroSection />
     <AboutSection />
-    <WorkProcessSection />
     <ProjectSection />
     <ExperienceSection />
     <ServiceSection />

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { defineComponent, ref } from 'vue';
+    import { defineComponent } from 'vue';
     import { useI18n } from 'vue-i18n';
     import { services } from '../../data/service.data';
 
@@ -8,29 +8,31 @@
         setup() {
             const { t } = useI18n();
 
-            const hoveredIndex = ref<number | null>(null);
-
-            const setMouseHover = (index: number | null) => {
-                hoveredIndex.value = index;
-            };
-
-            return { t, services, hoveredIndex, setMouseHover };
+            return { t, services };
         },
     });
 </script>
 
 <template>
-    <section id="service" class="w-full py-20 bg-gray-100 dark:bg-gray-900/70">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="grid xl:grid-cols-2 gap-10 lg:gap-20 items-center">
-                <div class="flex flex-col justify-center text-center md:text-left">
+    <section id="service" :class="['w-full py-20', 'bg-white/60', 'dark:bg-black/60']">
+        <div :class="['max-w-7xl mx-auto px-4']">
+            <div :class="['grid xl:grid-cols-2 gap-10 lg:gap-20 items-center']">
+                <div :class="['flex flex-col justify-center text-center md:text-left']">
                     <p
-                        class="text-emerald-600 dark:text-emerald-400 text-xl md:text-[22px] lg:text-2xl xl:text-3xl font-semibold uppercase tracking-wide mb-6 md:mb-8 lg:mb-10 xl:mb-16"
+                        :class="[
+                            'text-2xl md:text-[25px] lg:text-3xl xl:text-4xl font-bold uppercase tracking-wide mb-6 md:mb-8 lg:mb-10 xl:mb-16',
+                            'text-orange-600',
+                            'dark:text-yellow-400',
+                        ]"
                     >
                         {{ t('service.what_i_do') }}
                     </p>
                     <div
-                        class="space-y-4 font-medium text-neutral-600 dark:text-neutral-400 text-base"
+                        :class="[
+                            'space-y-4 font-medium text-lg',
+                            'text-neutral-700',
+                            'dark:text-neutral-300',
+                        ]"
                     >
                         <p>{{ t('service.response.r1') }}</p>
                         <p>{{ t('service.response.r2') }}</p>
@@ -38,31 +40,48 @@
 
                     <Button
                         :label="t('service.say_hello')"
-                        class="w-fit mt-6 md:mt-10 font-semibold rounded-lg px-6 py-3 text-sm mx-auto md:mx-0 sm:text-base transition-colors duration-300"
+                        :class="[
+                            'w-fit mt-6 md:mt-10 font-semibold rounded-lg px-5 py-2.5 text-sm mx-auto md:mx-0 sm:text-base transition-colors duration-300',
+                            'bg-orange-500 border-orange-500 hover:bg-orange-500/90 hover:border-orange-500/90',
+                            'dark:bg-yellow-500 dark:border-yellow-500 dark:hover:bg-yellow-500/90 dark:hover:border-yellow-500/90',
+                        ]"
                     />
                 </div>
 
-                <div class="grid grid-cols-1 gap-y-4 md:grid-cols-2 md:gap-5 xl:grid-cols-1">
+                <div :class="['grid grid-cols-1 gap-y-4 md:grid-cols-2 md:gap-5 xl:grid-cols-1']">
                     <div
-                        v-for="(role, index) in services"
+                        v-for="role in services"
                         :key="role.id"
-                        @mouseenter="setMouseHover(index)"
-                        @mouseleave="setMouseHover(null)"
-                        class="relative p-6 border-2 border-emerald-50 dark:border-emerald-950 dark:hover:border-emerald-600 bg-white/30 dark:bg-gray-950/30 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden"
+                        :class="[
+                            'relative p-6 group border rounded-xl shadow-md hover:shadow-xl backdrop-blur-lg transition-shadow duration-300 overflow-hidden',
+                            'bg-white/80 border-white/80 hover:border-orange-500',
+                            'dark:bg-zinc-900/80 dark:border-zinc-800 dark:hover:border-yellow-400',
+                        ]"
                     >
                         <div
-                            class="absolute left-0 top-0 h-full bg-emerald-500 dark:bg-emerald-600 transition-all duration-300"
-                            :class="hoveredIndex === index ? 'w-1' : 'w-0'"
-                        ></div>
+                            :class="[
+                                'absolute left-0 top-0 h-full transition-all w-0 group-hover:w-1 duration-300',
+                                'bg-orange-400',
+                                'dark:bg-yellow-500',
+                            ]"
+                        />
 
                         <div class="ml-4">
                             <h3
-                                class="text-xl sm:text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2"
+                                :class="[
+                                    'text-xl sm:text-2xl font-semibold mb-2',
+                                    'text-black',
+                                    'dark:text-white',
+                                ]"
                             >
                                 {{ t(role.title) }}
                             </h3>
                             <p
-                                class="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed"
+                                :class="[
+                                    'text-sm sm:text-base leading-relaxed',
+                                    'text-neutral-600',
+                                    'dark:text-neutral-300',
+                                ]"
                             >
                                 {{ t(role.description) }}
                             </p>

@@ -63,7 +63,11 @@
         v-model="selected"
         :options="options"
         optionLabel="label"
-        class="w-28 sm:w-38 bg-transparent border-gray-500"
+        :class="[
+            'w-28 sm:w-38 bg-transparent',
+            'border-zinc-200 hover:border-orange-500',
+            'dark:border-zinc-700 dark:hover:border-yellow-500',
+        ]"
         :placeholder="t('language')"
     >
         <template #value="{ value, placeholder }">

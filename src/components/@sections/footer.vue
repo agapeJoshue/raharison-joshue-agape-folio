@@ -30,23 +30,30 @@
         >
             <div class="flex flex-col items-center lg:items-start gap-4 lg:w-1/3">
                 <div
-                    class="flex items-center gap-3 cursor-pointer transition-transform duration-300 hover:scale-105"
+                    class="flex items-center gap-3 transition-all duration-300 ease-out"
                     @click="() => scrollToSection('hero')"
                 >
-                    <TerminalIcon :size="32" class="text-emerald-400" />
+                    <Gem :size="28" :class="['text-orange-500', 'dark:text-yellow-400']" />
+
                     <h5
-                        class="text-2xl font-bold bg-linear-to-r from-emerald-400 via-emerald-500 to-emerald-600 bg-clip-text text-transparent select-none"
+                        :class="[
+                            'text-[22px] font-bold tracking-tight select-none',
+                            'text-orange-500',
+                            'dark:text-yellow-400',
+                        ]"
                     >
-                        DevOps.
+                        Raharison<span :class="['text-orange-400', 'dark:text-yellow-300']">.</span>
                     </h5>
                 </div>
                 <p class="text-gray-300 leading-relaxed">{{ t('footer.message1') }}</p>
             </div>
 
-            <div class="lg:w-1/3 text-center">
-                <p class="text-sm text-gray-400">© {{ currentYear }} - {{ t('footer.droit') }}</p>
-                <p class="mt-1 text-gray-400">{{ t('footer.message2') }}</p>
-                <p class="mt-4 text-sm text-gray-500">Vue 3 + TypeScript + Vite + PrimeVue</p>
+            <div class="lg:w-1/3 text-center space-y-2.5">
+                <p :class="['text-base text-gray-300']">
+                    © {{ currentYear }} - {{ t('footer.droit') }}
+                </p>
+                <p :class="['text-base text-gray-300']">{{ t('footer.message2') }}</p>
+                <p :class="['text-base text-gray-400']">Vue 3 + TypeScript + Vite + PrimeVue</p>
             </div>
 
             <div class="lg:w-1/3 flex flex-col items-center lg:items-end gap-4">

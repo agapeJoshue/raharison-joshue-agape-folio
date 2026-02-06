@@ -6,21 +6,33 @@
 
 <template>
     <div
-        class="group flex items-center gap-5 p-5 rounded-2xl border border-neutral-200 dark:border-neutral-800 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400 hover:shadow-lg"
+        :class="[
+            'group flex items-center gap-5 p-5 rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer',
+            'border-neutral-200 hover:border-orange-400',
+            'dark:border-neutral-700 dark:hover:border-yellow-400',
+        ]"
     >
         <div
-            class="w-12 h-12 rounded-xl flex items-center justify-center bg-emerald-100 dark:bg-emerald-800/40 text-emerald-600 dark:text-emerald-400 transition-transform duration-300 group-hover:scale-110"
+            :class="[
+                'w-12 h-12 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110',
+                'bg-orange-500/10 text-orange-600',
+                'dark:bg-yellow-400/15 dark:text-yellow-400',
+            ]"
         >
             <slot name="icon" />
         </div>
 
         <div class="space-y-1">
             <h6
-                class="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400"
+                :class="[
+                    'text-xs font-semibold uppercase tracking-wider',
+                    'text-neutral-500',
+                    'dark:text-neutral-400',
+                ]"
             >
                 {{ title }}
             </h6>
-            <p class="font-medium text-neutral-800 dark:text-neutral-200">
+            <p :class="['font-medium', 'text-black', 'dark:text-white']">
                 <slot />
             </p>
         </div>

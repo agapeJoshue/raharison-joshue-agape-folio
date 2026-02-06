@@ -16,7 +16,7 @@
                 768: { slidesPerView: 2, spaceBetween: 20 },
                 1100: { slidesPerView: 2.5, spaceBetween: 20 },
                 1220: { slidesPerView: 3, spaceBetween: 24 },
-                1500: { slidesPerView: 4, spaceBetween: 24 },
+                1500: { slidesPerView: 4, spaceBetween: 20 },
             };
 
             return { t, Pagination, experiences, customBreakpoints };
@@ -25,21 +25,35 @@
 </script>
 
 <template>
-    <section id="experience" class="w-full bg-white dark:bg-black">
+    <section id="experience" class="w-full bg-white/80 dark:bg-black/80 backdrop-blur-3xl">
         <div class="mx-auto max-w-375 px-4 pt-20 pb-8">
             <div class="text-center space-y-4 mb-14">
                 <h1
-                    class="text-xl md:text-2xl font-bold tracking-[0.25em] uppercase text-zinc-900 dark:text-zinc-100"
+                    :class="[
+                        'text-xl md:text-2xl font-bold tracking-[0.35em] uppercase',
+                        'text-orange-600',
+                        'dark:text-yellow-400',
+                    ]"
                 >
                     {{ t('experience.title') }}
                 </h1>
 
-                <p class="text-sm md:text-base text-zinc-500 dark:text-zinc-400 max-w-xl mx-auto">
+                <p
+                    :class="[
+                        'text-base md:text-lg max-w-2xl mx-auto leading-relaxed',
+                        'text-zinc-600',
+                        'dark:text-zinc-300',
+                    ]"
+                >
                     {{ t('experience.subtitle') }}
                 </p>
 
                 <div
-                    class="mx-auto h-0.5 w-20 bg-linear-to-r from-transparent via-emerald-500 to-transparent"
+                    :class="[
+                        'mx-auto h-0.5 w-100 bg-linear-to-r from-transparent to-transparent',
+                        'via-orange-500',
+                        'dark:via-yellow-500',
+                    ]"
                 />
             </div>
 
@@ -52,24 +66,40 @@
             >
                 <SwiperSlide v-for="(exp, index) in experiences" :key="index" class="h-auto">
                     <article
-                        class="group relative overflow-hidden rounded-2xl bg-white dark:bg-gray-950 border border-emerald-100 dark:border-emerald-800 shadow-sm hover:shadow-2xl transition-all duration-500 mb-16"
+                        :class="[
+                            'group relative overflow-hidden rounded-xl border shadow-lg hover:shadow-2xl transition-all duration-500 mb-16',
+                            'bg-white/70 border-white/70 hover:border-orange-400',
+                            'dark:bg-zinc-900/70 dark:border-zinc-700 dark:hover:border-yellow-400',
+                        ]"
                     >
                         <div class="overflow-hidden">
                             <img
                                 :src="exp.image"
                                 :alt="t(exp.title)"
-                                class="h-56 w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                :class="[
+                                    'h-56 w-full object-cover transition-transform duration-700 group-hover:scale-110',
+                                ]"
                             />
                         </div>
 
                         <div class="p-6 space-y-3">
                             <h3
-                                class="text-lg font-semibold text-gray-900 dark:text-gray-100 line-clamp-2"
+                                :class="[
+                                    'text-lg font-semibold line-clamp-2',
+                                    'text-black',
+                                    'dark:text-white',
+                                ]"
                             >
                                 {{ t(exp.title) }}
                             </h3>
 
-                            <p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-3">
+                            <p
+                                :class="[
+                                    'text-sm line-clamp-5',
+                                    'text-neutral-600',
+                                    'dark:text-neutral-300',
+                                ]"
+                            >
                                 {{ t(exp.description) }}
                             </p>
 
@@ -77,13 +107,23 @@
                                 <span
                                     v-for="tech in exp.technologies"
                                     :key="tech"
-                                    class="rounded-full bg-emerald-50 dark:bg-emerald-900/30 px-3 py-1 text-xs font-medium text-emerald-600 dark:text-emerald-400"
+                                    :class="[
+                                        'rounded-full px-3 py-1 text-xs font-medium border',
+                                        'bg-orange-50 text-orange-600 border-orange-500',
+                                        'dark:bg-yellow-500/10 dark:text-yellow-400 dark:border-yellow-400',
+                                    ]"
                                 >
                                     {{ tech }}
                                 </span>
                             </div>
 
-                            <div class="flex justify-between text-xs text-gray-400 pt-4">
+                            <div
+                                :class="[
+                                    'flex justify-between text-xs  pt-4',
+                                    'text-gray-400',
+                                    'dark:text-gray-300',
+                                ]"
+                            >
                                 <span>{{ exp.company }}</span>
                                 <span>{{ t(exp.period) }}</span>
                             </div>

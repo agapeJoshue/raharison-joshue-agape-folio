@@ -48,19 +48,12 @@
     <Button
         v-if="!select"
         @click="() => toggleTheme()"
-        size="small"
         severity="secondary"
         variant="outlined"
-        v-tooltip="{
-            value: isDark ? t('themes.tooltip.light') : t('themes.tooltip.dark'),
-            showDelay: 1000,
-            autoHide: true,
-            hideDelay: 100,
-            pt: { text: 'text-xs font-medium' },
-        }"
+        class="p-2.25"
     >
-        <Sun v-if="isDark" :size="22" />
-        <Moon v-else :size="22" />
+        <Sun v-if="isDark" :size="20" />
+        <Moon v-else :size="20" />
     </Button>
 
     <Select

@@ -20,7 +20,7 @@
             const email = ref<Field<string>>({ value: '', error: false, error_message: '' });
             const location = ref<Field<string>>({ value: '', error: false, error_message: '' });
             const budget = ref<Field<number>>({
-                value: 0,
+                value: 1,
                 error: false,
                 error_message: '',
             });
@@ -97,17 +97,31 @@
         }"
     >
         <div
-            class="max-w-7xl w-full mx-auto p-6 sm:p-10 lg:p-14 xl:px-20 xl:py-20 lg:absolute lg:top-10 lg:left-1/2 lg:-translate-x-1/2 bg-white dark:bg-gray-950 personal-shadow rounded-3xl grid grid-cols-1 lg:grid-cols-2 gap-16 animate-fade-up dark:border border-gray-700"
+            :class="[
+                'max-w-7xl w-full mx-auto p-6 sm:p-10 lg:p-14 xl:px-20 xl:py-20 lg:absolute lg:top-10 lg:left-1/2 lg:-translate-x-1/2 backdrop-blur-3xl personal-shadow rounded-3xl grid grid-cols-1 lg:grid-cols-2 gap-16 animate-fade-up border',
+                'bg-white/80 border-white',
+                'dark:bg-black/80 dark:border-zinc-700',
+            ]"
         >
             <div class="space-y-10">
-                <div class="space-y-4">
+                <div class="space-y-15">
                     <h1
-                        class="font-extrabold text-3xl sm:text-4xl tracking-tight text-emerald-600 dark:text-emerald-400"
+                        :class="[
+                            'font-extrabold text-3xl sm:text-4xl tracking-tight',
+                            'text-orange-600',
+                            'dark:text-yellow-400',
+                        ]"
                     >
                         {{ t('contact.title') }}
                     </h1>
 
-                    <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed max-w-md">
+                    <p
+                        :class="[
+                            'text-lg leading-relaxed max-w-md',
+                            'text-neutral-600',
+                            'dark:text-neutral-300',
+                        ]"
+                    >
                         {{ t('contact.subtitle') }}
                     </p>
                 </div>
@@ -115,7 +129,7 @@
                 <div class="space-y-5">
                     <ContactCard :title="t('contact.address')">
                         <template #icon>
-                            <MapPin :size="22" class="text-emerald-600 dark:text-emerald-400" />
+                            <MapPin :size="22" />
                         </template>
                         Lot 021B III 3504FR Ankofafa William Fianarantsoa
                     </ContactCard>
@@ -123,7 +137,7 @@
                     <a href="mailto:agapedev.dark@gmail.com">
                         <ContactCard :title="t('contact.email')">
                             <template #icon>
-                                <Mail :size="22" class="text-emerald-600 dark:text-emerald-400" />
+                                <Mail :size="22" />
                             </template>
                             agapedev.dark@gmail.com
                         </ContactCard>
@@ -131,7 +145,7 @@
 
                     <ContactCard :title="t('contact.phone')" class="mt-5">
                         <template #icon>
-                            <Phone :size="22" class="text-emerald-600 dark:text-emerald-400" />
+                            <Phone :size="22" />
                         </template>
                         +261 34 24 393 87
                         <span class="text-neutral-400 mx-1">ou</span>
@@ -141,7 +155,13 @@
             </div>
 
             <div class="flex flex-col space-y-8">
-                <p class="text-neutral-700 dark:text-neutral-300 leading-relaxed">
+                <p
+                    :class="[
+                        'leading-relaxed font-medium text-lg',
+                        'text-neutral-700',
+                        'dark:text-neutral-300',
+                    ]"
+                >
                     {{ t('contact.form_message') }}
                 </p>
 
@@ -152,8 +172,15 @@
                             id="username"
                             type="text"
                             v-model="username.value"
-                            class="w-full mt-1 bg-gray-50 dark:bg-transparent"
-                            :class="username.error ? 'border-red-600 dark:border-red-400' : ''"
+                            :class="[
+                                'w-full mt-1 bg-transparent',
+                                username.error
+                                    ? 'border-red-600 dark:border-red-400'
+                                    : [
+                                          'border-zinc-300 hover:border-orange-500 focus:border-orange-500',
+                                          'dark:border-zinc-700 dark:hover:border-yellow-400 dark:focus:border-yellow-400',
+                                      ],
+                            ]"
                             :placeholder="t('contact.form.name_placeholder')"
                         />
                         <small
@@ -169,8 +196,15 @@
                             id="email"
                             type="email"
                             v-model="email.value"
-                            class="w-full mt-1 bg-gray-50 dark:bg-transparent"
-                            :class="email.error ? 'border-red-600 dark:border-red-400' : ''"
+                            :class="[
+                                'w-full mt-1 bg-transparent',
+                                email.error
+                                    ? 'border-red-600 dark:border-red-400'
+                                    : [
+                                          'border-zinc-300 hover:border-orange-500 focus:border-orange-500',
+                                          'dark:border-zinc-700 dark:hover:border-yellow-400 dark:focus:border-yellow-400',
+                                      ],
+                            ]"
                             :placeholder="t('contact.form.email_placeholder')"
                         />
                         <small
@@ -186,8 +220,15 @@
                             id="location"
                             type="text"
                             v-model="location.value"
-                            class="w-full mt-1 bg-gray-50 dark:bg-transparent"
-                            :class="location.error ? 'border-red-600 dark:border-red-400' : ''"
+                            :class="[
+                                'w-full mt-1 bg-transparent',
+                                location.error
+                                    ? 'border-red-600 dark:border-red-400'
+                                    : [
+                                          'border-zinc-300 hover:border-orange-500 focus:border-orange-500',
+                                          'dark:border-zinc-700 dark:hover:border-yellow-400 dark:focus:border-yellow-400',
+                                      ],
+                            ]"
                             :placeholder="t('contact.form.location_placeholder')"
                         />
                         <small
@@ -207,9 +248,9 @@
                                 mode="currency"
                                 currency="EUR"
                                 locale="de-DE"
-                                inputClass="bg-gray-50 dark:bg-transparent"
-                                class="w-full mt-1"
-                                :class="budget.error ? 'border-red-600 dark:border-red-400' : ''"
+                                :min="1"
+                                inputClass="w-full mt-1 bg-transparent border-zinc-300 hover:border-orange-500 focus:border-orange-500 dark:border-zinc-700 dark:hover:border-yellow-400 dark:focus:border-yellow-400"
+                                :class="[budget.error ? 'border-red-600 dark:border-red-400' : '']"
                             />
                             <small
                                 v-if="budget.error"
@@ -223,8 +264,15 @@
                                 id="subject"
                                 type="text"
                                 v-model="subject.value"
-                                class="w-full mt-1 bg-gray-50 dark:bg-transparent"
-                                :class="subject.error ? 'border-red-600 dark:border-red-400' : ''"
+                                :class="[
+                                    'w-full mt-1 bg-transparent',
+                                    subject.error
+                                        ? 'border-red-600 dark:border-red-400'
+                                        : [
+                                              'border-zinc-300 hover:border-orange-500 focus:border-orange-500',
+                                              'dark:border-zinc-700 dark:hover:border-yellow-400 dark:focus:border-yellow-400',
+                                          ],
+                                ]"
                                 :placeholder="t('contact.form.subject_placeholder')"
                             />
                             <small
@@ -242,8 +290,15 @@
                             v-model="message.value"
                             rows="4"
                             style="resize: none"
-                            class="w-full mt-1 bg-gray-50 dark:bg-transparent"
-                            :class="message.error ? 'border-red-600 dark:border-red-400' : ''"
+                            :class="[
+                                'w-full mt-1 bg-transparent',
+                                message.error
+                                    ? 'border-red-600 dark:border-red-400'
+                                    : [
+                                          'border-zinc-300 hover:border-orange-500 focus:border-orange-500',
+                                          'dark:border-zinc-700 dark:hover:border-yellow-400 dark:focus:border-yellow-400',
+                                      ],
+                            ]"
                             :placeholder="t('contact.form.message_placeholder')"
                         />
                         <small
@@ -253,7 +308,14 @@
                         >
                     </div>
 
-                    <Button @click="onSubmit" class="text-base font-medium px-4" size="large">
+                    <Button
+                        @click="onSubmit"
+                        :class="[
+                            'text-base font-semibold px-6 py-3',
+                            'bg-orange-500 border-orange-500 hover:bg-orange-500/90 hover:border-orange-500/90',
+                            'dark:bg-yellow-500 dark:border-yellow-500 dark:hover:bg-yellow-500/90 dark:hover:border-yellow-500/90',
+                        ]"
+                    >
                         {{ t('contact.form.submit') }} <SendHorizonal :size="18" />
                     </Button>
                 </div>
