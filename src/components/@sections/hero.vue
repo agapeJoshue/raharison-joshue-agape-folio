@@ -70,6 +70,9 @@
                         'border-orange-300',
                         'dark:border-orange-300',
                     ]"
+                    v-animateonscroll="{
+                        enterClass: 'animate-enter fade-in-20 animate-duration-1000',
+                    }"
                 >
                     <span
                         class="absolute inset-0 rounded-inherit pointer-events-none border-4 border-transparent profile-border-animate"
@@ -86,6 +89,9 @@
 
                 <div
                     :class="['w-full max-w-xl text-center md:text-left space-y-7 md:mt-16 lg:mt-0']"
+                    v-animateonscroll="{
+                        enterClass: 'animate-enter fade-in-20 animate-duration-1000',
+                    }"
                 >
                     <p
                         :class="[
@@ -131,6 +137,16 @@
                     >
                         {{ t('hero.description') }}
                     </p>
+
+                    <Button
+                        :class="[
+                            'mt-6 px-5 py-2.5 text-sm font-semibold',
+                            'bg-orange-500 border-orange-500 hover:bg-orange-500/90',
+                            'dark:bg-yellow-500 dark:border-yellow-500 dark:hover:bg-yellow-500/90',
+                        ]"
+                    >
+                        <Gem :size="20" /> AI Assistance
+                    </Button>
 
                     <div :class="['md:hidden grid lg:grid grid-cols-3 gap-x-3 mt-20']">
                         <div

@@ -65,7 +65,12 @@
             'dark:from-zinc-900/60 dark:to-zinc-900/90',
         ]"
     >
-        <div :class="['max-w-400 mx-auto pb-15 lg:pb-0']">
+        <div
+            :class="['max-w-400 mx-auto pb-15 lg:pb-0']"
+            v-animateonscroll="{
+                enterClass: 'animate-enter fade-in-10 slide-in-from-b-20 animate-duration-1000',
+            }"
+        >
             <div
                 :class="[
                     'rounded-4xl lg:rounded-[4rem] to-transparent bg-linear-to-b backdrop-blur-3xl personal-shadow px-6 pt-10 lg:p-16 2xl:p-25 space-y-16',
@@ -256,6 +261,10 @@
                             'text-orange-500',
                             'dark:text-yellow-400',
                         ]"
+                        v-animateonscroll="{
+                            enterClass:
+                                'animate-enter fade-in-10 slide-in-from-l-8 animate-duration-1000',
+                        }"
                     >
                         {{ t('work_process.title') }}
                     </h1>
@@ -265,6 +274,10 @@
                             'text-gray-600',
                             'dark:text-neutral-300',
                         ]"
+                        v-animateonscroll="{
+                            enterClass:
+                                'animate-enter fade-in-10 slide-in-from-l-8 animate-duration-1000',
+                        }"
                     >
                         {{ t('work_process.subtitle.s1') }}
                     </p>
@@ -274,6 +287,10 @@
                             'text-gray-600',
                             'dark:text-neutral-300',
                         ]"
+                        v-animateonscroll="{
+                            enterClass:
+                                'animate-enter fade-in-10 slide-in-from-l-8 animate-duration-1000',
+                        }"
                     >
                         {{ t('work_process.subtitle.s2') }}
                     </p>
@@ -289,6 +306,9 @@
                             'dark:bg-zinc-900 dark:border-zinc-900 dark:hover:border-yellow-500',
                             i % 2 === 1 ? 'ml-3 mt-6' : 'mb-6',
                         ]"
+                        v-animateonscroll="{
+                            enterClass: 'animate-enter fade-in-10 zoom-in-75 animate-duration-1000',
+                        }"
                     >
                         <div
                             :class="[

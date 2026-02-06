@@ -18,15 +18,19 @@
         <div :class="['max-w-7xl mx-auto px-4']">
             <div :class="['grid xl:grid-cols-2 gap-10 lg:gap-20 items-center']">
                 <div :class="['flex flex-col justify-center text-center md:text-left']">
-                    <p
+                    <h1
                         :class="[
                             'text-2xl md:text-[25px] lg:text-3xl xl:text-4xl font-bold uppercase tracking-wide mb-6 md:mb-8 lg:mb-10 xl:mb-16',
                             'text-orange-600',
                             'dark:text-yellow-400',
                         ]"
+                        v-animateonscroll="{
+                            enterClass:
+                                'animate-enter fade-in-10 slide-in-from-l-10 animate-duration-1000',
+                        }"
                     >
                         {{ t('service.what_i_do') }}
-                    </p>
+                    </h1>
                     <div
                         :class="[
                             'space-y-4 font-medium text-lg',
@@ -34,8 +38,22 @@
                             'dark:text-neutral-300',
                         ]"
                     >
-                        <p>{{ t('service.response.r1') }}</p>
-                        <p>{{ t('service.response.r2') }}</p>
+                        <p
+                            v-animateonscroll="{
+                                enterClass:
+                                    'animate-enter fade-in-10 slide-in-from-l-10 animate-duration-1000',
+                            }"
+                        >
+                            {{ t('service.response.r1') }}
+                        </p>
+                        <p
+                            v-animateonscroll="{
+                                enterClass:
+                                    'animate-enter fade-in-10 slide-in-from-l-10 animate-duration-1000',
+                            }"
+                        >
+                            {{ t('service.response.r2') }}
+                        </p>
                     </div>
 
                     <Button
@@ -45,6 +63,10 @@
                             'bg-orange-500 border-orange-500 hover:bg-orange-500/90 hover:border-orange-500/90',
                             'dark:bg-yellow-500 dark:border-yellow-500 dark:hover:bg-yellow-500/90 dark:hover:border-yellow-500/90',
                         ]"
+                        v-animateonscroll="{
+                            enterClass:
+                                'animate-enter fade-in-10 slide-in-from-l-10 animate-duration-1000',
+                        }"
                     />
                 </div>
 
@@ -57,6 +79,10 @@
                             'bg-white/80 border-white/80 hover:border-orange-500',
                             'dark:bg-zinc-900/80 dark:border-zinc-800 dark:hover:border-yellow-400',
                         ]"
+                        v-animateonscroll="{
+                            enterClass:
+                                'animate-enter fade-in-10 slide-in-from-r-16 animate-duration-1000',
+                        }"
                     >
                         <div
                             :class="[

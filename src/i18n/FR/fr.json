@@ -149,7 +149,7 @@
             "subtitle": "Conception et développement d’interfaces performantes, responsives et accessibles pour les applications web et mobiles. Maîtrise des frameworks modernes, intégration UI, optimisation des performances, accessibilité, animations et consommation efficace des API."
         },
         "back": {
-            "title": "Développement Back-End",
+            "title": "Développement des services Back-End",
             "subtitle": "Architecture et développement de services back-end sécurisés et scalables. Conception d’API, gestion de bases de données, authentification, optimisation des performances, tests, intégrations et déploiement cloud fiable orienté métier."
         },
         "ops": {

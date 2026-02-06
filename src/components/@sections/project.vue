@@ -30,6 +30,9 @@
                         'text-orange-600',
                         'dark:text-yellow-400',
                     ]"
+                    v-animateonscroll="{
+                        enterClass: 'animate-enter fade-in-10 animate-duration-1000',
+                    }"
                 >
                     {{ t('project.title') }}
                 </h1>
@@ -40,6 +43,9 @@
                         'text-zinc-600',
                         'dark:text-zinc-300',
                     ]"
+                    v-animateonscroll="{
+                        enterClass: 'animate-enter fade-in-10 animate-duration-1000',
+                    }"
                 >
                     {{ t('project.subtitle') }}
                 </p>
@@ -50,6 +56,9 @@
                         'via-orange-500',
                         'dark:via-yellow-500',
                     ]"
+                    v-animateonscroll="{
+                        enterClass: 'animate-enter fade-in-10 animate-duration-1000',
+                    }"
                 />
             </div>
 
@@ -66,6 +75,9 @@
                         'bg-white border-white',
                         'dark:bg-gray-950 dark:border-zinc-700',
                     ]"
+                    v-animateonscroll="{
+                        enterClass: 'animate-enter fade-in-10 zoom-in-50 animate-duration-1000',
+                    }"
                 >
                     <div :class="['relative overflow-hidden']">
                         <img
@@ -138,21 +150,34 @@
                         'dark:bg-yellow-500 dark:border-yellow-500 dark:hover:bg-yellow-500/90 dark:hover:border-yellow-500/90',
                     ]"
                     :label="t('project.action.more_projects')"
+                    v-animateonscroll="{
+                        enterClass: 'animate-enter fade-in-10 animate-duration-1000',
+                    }"
                 />
             </div>
         </div>
 
-        <div :class="['w-full py-20 text-center space-y-8', 'bg-zinc-200', 'dark:bg-zinc-800']">
+        <div
+            :class="['w-full px-4 py-20 text-center space-y-8', 'bg-zinc-200', 'dark:bg-zinc-800']"
+        >
             <h1
                 :class="[
-                    'text-[2.5rem] font-bold tracking-[-0.02em] max-w-150 mx-auto',
+                    'text-[2rem] md:text-[2.5rem] font-bold tracking-[-0.02em] max-w-150 mx-auto',
                     'text-neutral-900',
                     'dark:text-neutral-100',
                 ]"
+                v-animateonscroll="{
+                    enterClass: 'animate-enter fade-in-10 animate-duration-1000',
+                }"
             >
                 {{ t('project.project_idea') }}
             </h1>
-            <p :class="['text-lg max-w-150 mx-auto', 'text-neutral-700', 'dark:text-neutral-300']">
+            <p
+                :class="['text-lg max-w-150 mx-auto', 'text-neutral-700', 'dark:text-neutral-300']"
+                v-animateonscroll="{
+                    enterClass: 'animate-enter fade-in-10 animate-duration-1000',
+                }"
+            >
                 {{ t('project.open_to_project') }}
             </p>
 
@@ -163,6 +188,9 @@
                     'bg-orange-500 border-orange-500 hover:bg-orange-500/90 hover:border-orange-500/90',
                     'dark:bg-yellow-500 dark:border-yellow-500 dark:hover:bg-yellow-500/90 dark:hover:border-yellow-500/90',
                 ]"
+                v-animateonscroll="{
+                    enterClass: 'animate-enter fade-in-10 animate-duration-1000',
+                }"
             >
                 {{ t('project.action.lets_work_together') }} <ArrowRight :size="20" />
             </Button>

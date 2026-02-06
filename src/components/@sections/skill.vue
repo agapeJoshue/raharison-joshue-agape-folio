@@ -27,6 +27,9 @@
                         'text-orange-600',
                         'dark:text-yellow-400',
                     ]"
+                    v-animateonscroll="{
+                        enterClass: 'animate-enter fade-in-10 animate-duration-1000',
+                    }"
                 >
                     {{ t('skill.title') }}
                 </h1>
@@ -37,6 +40,9 @@
                         'text-zinc-600',
                         'dark:text-zinc-300',
                     ]"
+                    v-animateonscroll="{
+                        enterClass: 'animate-enter fade-in-10 animate-duration-1000',
+                    }"
                 >
                     {{ t('skill.subtitle') }}
                 </p>
@@ -47,6 +53,9 @@
                         'via-orange-500',
                         'dark:via-yellow-500',
                     ]"
+                    v-animateonscroll="{
+                        enterClass: 'animate-enter fade-in-10 animate-duration-1000',
+                    }"
                 />
             </div>
 
@@ -55,6 +64,9 @@
                 gradient
                 pauseOnHover
                 :gradientColor="isDark ? [0, 0, 0] : [255, 255, 255]"
+                v-animateonscroll="{
+                    enterClass: 'animate-enter fade-in-10 zoom-in-75 animate-duration-1000',
+                }"
             >
                 <Chip
                     v-for="(framework, i) in frameworks"
@@ -70,6 +82,9 @@
                 :grabCursor="true"
                 :pagination="{ clickable: true }"
                 class="pb-24 mt-20"
+                v-animateonscroll="{
+                    enterClass: 'animate-enter fade-in-10 slide-in-from-b-20 animate-duration-1000',
+                }"
             >
                 <SwiperSlide v-for="(skill, index) in skills" :key="index" class="px-1">
                     <article :class="['group relative px-0 md:px-10 py-5 mb-15']">
@@ -138,6 +153,10 @@
                         'text-orange-600',
                         'dark:text-yellow-400',
                     ]"
+                    v-animateonscroll="{
+                        enterClass:
+                            'animate-enter fade-in-10 zoom-in-50 slide-in-from-t-20 animate-duration-1000',
+                    }"
                 >
                     {{ t('skill.soft_skill') }}
                 </h3>
@@ -151,6 +170,10 @@
                             'bg-gray-50 text-gray-700 border-gray-200 hover:bg-orange-600 hover:text-white hover:border-orange-600',
                             'dark:bg-zinc-900 dark:text-gray-200 dark:border-zinc-800 dark:hover:bg-yellow-600 dark:hover:text-white dark:hover:border-yellow-600',
                         ]"
+                        v-animateonscroll="{
+                            enterClass:
+                                'animate-enter fade-in-10 zoom-in-50 slide-in-from-t-20 animate-duration-1000',
+                        }"
                     >
                         {{ t(skill) }}
                     </span>

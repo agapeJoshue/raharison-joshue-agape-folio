@@ -25,8 +25,11 @@
 </script>
 
 <template>
-    <section id="experience" class="w-full bg-white/80 dark:bg-black/80 backdrop-blur-3xl">
-        <div class="mx-auto max-w-375 px-4 pt-20 pb-8">
+    <section
+        id="experience"
+        :class="['w-full backdrop-blur-3xl', 'bg-white/80', 'dark:bg-black/80']"
+    >
+        <div class="mx-auto max-w-375 px-5 pt-20 pb-8">
             <div class="text-center space-y-4 mb-14">
                 <h1
                     :class="[
@@ -34,6 +37,9 @@
                         'text-orange-600',
                         'dark:text-yellow-400',
                     ]"
+                    v-animateonscroll="{
+                        enterClass: 'animate-enter fade-in-10 animate-duration-1000',
+                    }"
                 >
                     {{ t('experience.title') }}
                 </h1>
@@ -44,6 +50,9 @@
                         'text-zinc-600',
                         'dark:text-zinc-300',
                     ]"
+                    v-animateonscroll="{
+                        enterClass: 'animate-enter fade-in-10 animate-duration-1000',
+                    }"
                 >
                     {{ t('experience.subtitle') }}
                 </p>
@@ -54,6 +63,9 @@
                         'via-orange-500',
                         'dark:via-yellow-500',
                     ]"
+                    v-animateonscroll="{
+                        enterClass: 'animate-enter fade-in-10 animate-duration-1000',
+                    }"
                 />
             </div>
 
@@ -71,6 +83,10 @@
                             'bg-white/70 border-white/70 hover:border-orange-400',
                             'dark:bg-zinc-900/70 dark:border-zinc-700 dark:hover:border-yellow-400',
                         ]"
+                        v-animateonscroll="{
+                            enterClass:
+                                'animate-enter fade-in-10 zoom-in-50 slide-in-from-t-20 animate-duration-1000',
+                        }"
                     >
                         <div class="overflow-hidden">
                             <img

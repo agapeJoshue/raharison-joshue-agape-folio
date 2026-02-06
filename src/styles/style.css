@@ -24,11 +24,11 @@ body::-webkit-scrollbar-thumb {
 }
 
 body::-webkit-scrollbar-thumb {
-    background: var(--color-emerald-600);
+    background: var(--color-orange-600);
 }
 
 body.dark::-webkit-scrollbar-thumb {
-    background: var(--color-emerald-400);
+    background: var(--color-yellow-400);
 }
 
 body::-webkit-scrollbar-track {

@@ -91,17 +91,20 @@
 <template>
     <section
         id="contact"
-        class="relative w-full pt-10 lg:h-190"
+        class="relative w-full pt-10 h-370 md:h-330 lg:h-190"
         :style="{
             minHeight: errorNumber > 0 ? `${760 + errorNumber * 22}px` : '760px',
         }"
     >
         <div
             :class="[
-                'max-w-7xl w-full mx-auto p-6 sm:p-10 lg:p-14 xl:px-20 xl:py-20 lg:absolute lg:top-10 lg:left-1/2 lg:-translate-x-1/2 backdrop-blur-3xl personal-shadow rounded-3xl grid grid-cols-1 lg:grid-cols-2 gap-16 animate-fade-up border',
+                'max-w-7xl w-full mx-auto p-6 sm:p-10 lg:p-14 xl:px-20 xl:py-20 lg:absolute lg:top-10 lg:left-1/2 lg:-translate-x-1/2 backdrop-blur-3xl personal-shadow rounded-3xl grid grid-cols-1 lg:grid-cols-2 gap-16 animate-fade-up border z-20',
                 'bg-white/80 border-white',
                 'dark:bg-black/80 dark:border-zinc-700',
             ]"
+            v-animateonscroll="{
+                enterClass: 'animate-enter fade-in-10 slide-in-from-b-20 animate-duration-1000',
+            }"
         >
             <div class="space-y-10">
                 <div class="space-y-15">
@@ -238,7 +241,7 @@
                         >
                     </div>
 
-                    <div class="grid grid-cols-3 gap-x-4">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div class="w-full">
                             <label for="budget">{{ t('contact.form.budget') }}</label>
                             <InputNumber
@@ -258,7 +261,7 @@
                                 >{{ t(budget.error_message) }}</small
                             >
                         </div>
-                        <div class="w-full col-span-2">
+                        <div class="w-full col-span-1 md:col-span-2">
                             <label for="subject">{{ t('contact.form.subject') }}</label>
                             <InputText
                                 id="subject"

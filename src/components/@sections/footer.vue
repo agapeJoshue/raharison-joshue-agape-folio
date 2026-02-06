@@ -24,9 +24,15 @@
 </script>
 
 <template>
-    <section id="footer" class="w-full bg-gray-950 dark:bg-gray-900 text-gray-200">
+    <section
+        id="footer"
+        class="w-full bg-gray-950 dark:bg-gray-900 text-gray-200 z-10"
+        v-animateonscroll="{
+            enterClass: 'animate-enter fade-in-10 slide-in-from-b-20 animate-duration-1000',
+        }"
+    >
         <div
-            class="max-w-7xl mx-auto pt-12 lg:pt-20 xl:pt-33 pb-10 px-6 md:px-12 flex flex-col lg:flex-row justify-between items-center lg:items-start gap-10"
+            class="max-w-7xl mx-auto pt-25 md:pt-20 lg:pt-20 xl:pt-33 pb-10 px-6 md:px-12 flex flex-col lg:flex-row justify-between items-center lg:items-start gap-10"
         >
             <div class="flex flex-col items-center lg:items-start gap-4 lg:w-1/3">
                 <div
