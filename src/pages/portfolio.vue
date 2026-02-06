@@ -5,7 +5,10 @@
         name: 'IndexPage',
         setup() {
             const visible = ref(false);
-            const onChatBot = () => {
+            const onChatBot = (say: boolean) => {
+                if (say) {
+                } else {
+                }
                 visible.value = true;
             };
 
@@ -16,11 +19,11 @@
 
 <template>
     <HeaderSection />
-    <HeroSection @on-action="onChatBot" />
+    <HeroSection @on-action="() => onChatBot(false)" />
     <AboutSection />
     <ProjectSection />
     <ExperienceSection />
-    <ServiceSection />
+    <ServiceSection @on-action="() => onChatBot(true)" />
     <SkillSection />
     <ContactSection />
     <FooterSection />

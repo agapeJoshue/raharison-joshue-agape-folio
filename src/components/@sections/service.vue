@@ -5,10 +5,13 @@
 
     export default defineComponent({
         name: 'ServiceSection',
-        setup() {
+        emits: ['on-action'],
+        setup(_, { emit }) {
             const { t } = useI18n();
 
-            return { t, services };
+            const onAction = () => emit('on-action');
+
+            return { t, services, onAction };
         },
     });
 </script>
@@ -57,6 +60,7 @@
                     </div>
 
                     <Button
+                        @click="onAction"
                         :label="t('service.say_hello')"
                         :class="[
                             'w-fit mt-6 md:mt-10 font-semibold rounded-lg px-5 py-2.5 text-sm mx-auto md:mx-0 sm:text-base transition-colors duration-300',
