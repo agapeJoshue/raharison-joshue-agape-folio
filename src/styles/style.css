@@ -35,6 +35,10 @@ body::-webkit-scrollbar-track {
     background: transparent;
 }
 
+.custom-dialog *::-webkit-scrollbar {
+    width: 0;
+}
+
 .swiper-pagination-bullet {
     width: 10px;
     height: 10px;

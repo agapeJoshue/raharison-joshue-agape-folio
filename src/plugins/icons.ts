@@ -26,6 +26,11 @@ import {
     Github,
     Instagram,
     Euro,
+    Bot,
+    Sparkles,
+    UserRound,
+    Check,
+    CheckCheck,
 } from 'lucide-vue-next';
 
 export default {
@@ -35,6 +40,9 @@ export default {
         app.component('SunMoon', SunMoon);
         app.component('Gem', Gem);
         app.component('Menu', Menu);
+        app.component('Check', Check);
+        app.component('CheckCheck', CheckCheck);
+        app.component('UserRound', UserRound);
         app.component('CloseIcon', X);
         app.component('ChevronUp', ChevronUp);
         app.component('Download', Download);
@@ -55,6 +63,8 @@ export default {
         app.component('Gitlab', Gitlab);
         app.component('Github', Github);
         app.component('Instagram', Instagram);
+        app.component('Sparkles', Sparkles);
         app.component('Euro', Euro);
+        app.component('Bot', Bot);
     },
 };

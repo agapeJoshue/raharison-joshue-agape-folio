@@ -115,7 +115,7 @@
 
                         <p
                             :class="[
-                                'mt-3 text-sm leading-relaxed line-clamp-3',
+                                'mt-3 text-sm leading-relaxed line-clamp-2',
                                 'text-neutral-600',
                                 'dark:text-neutral-300',
                             ]"
@@ -123,7 +123,7 @@
                             {{ t(project.description) }}
                         </p>
 
-                        <div class="mt-8 flex items-center justify-between">
+                        <div class="mt-6 w-full flex items-center justify-between">
                             <router-link
                                 :to="project.links.demo || '#'"
                                 :class="[

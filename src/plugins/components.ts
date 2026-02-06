@@ -13,6 +13,9 @@ import ContactSection from '@/components/@sections/contact.vue';
 import FooterSection from '@/components/@sections/footer.vue';
 import ContactCard from '@/components/ContactCard.vue';
 import SocialIcon from '@/components/SocialIcon.vue';
+import ChatBot from '@/components/ChatBot.vue';
+import Chat from '@/components/Chat.vue';
+import ChatLoading from '@/components/ChatLoading.vue';
 
 export default {
     install(app: App) {
@@ -31,5 +34,8 @@ export default {
         app.component('ContactCard', ContactCard);
         app.component('FooterSection', FooterSection);
         app.component('SocialIcon', SocialIcon);
+        app.component('ChatBot', ChatBot);
+        app.component('Chat', Chat);
+        app.component('ChatLoading', ChatLoading);
     },
 };

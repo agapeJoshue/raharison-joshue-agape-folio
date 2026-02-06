@@ -4,7 +4,8 @@
 
     export default defineComponent({
         name: 'HeroSection',
-        setup() {
+        emits: ['on-action'],
+        setup(_, { emit }) {
             const { t } = useI18n();
             const isScrolled = ref(false);
             const isPad = ref(false);
@@ -36,11 +37,14 @@
                 window.removeEventListener('resize', handleResize);
             });
 
+            const onAction = () => emit('on-action');
+
             return {
                 t,
                 isScrolled,
                 isPad,
                 resumes,
+                onAction,
             };
         },
     });
@@ -139,13 +143,14 @@
                     </p>
 
                     <Button
+                        @click="onAction"
                         :class="[
                             'mt-6 px-5 py-2.5 text-sm font-semibold',
                             'bg-orange-500 border-orange-500 hover:bg-orange-500/90',
                             'dark:bg-yellow-500 dark:border-yellow-500 dark:hover:bg-yellow-500/90',
                         ]"
                     >
-                        <Gem :size="20" /> AI Assistance
+                        <Bot :size="20" /> Assistant IA
                     </Button>
 
                     <div :class="['md:hidden grid lg:grid grid-cols-3 gap-x-3 mt-20']">

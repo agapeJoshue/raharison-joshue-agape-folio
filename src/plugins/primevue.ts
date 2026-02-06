@@ -20,6 +20,7 @@ import InputMask from 'primevue/inputmask';
 import InputNumber from 'primevue/inputnumber';
 import IconField from 'primevue/iconfield';
 import InputIcon from 'primevue/inputicon';
+import Dialog from 'primevue/dialog';
 
 export default {
     install(app: App) {
@@ -44,5 +45,6 @@ export default {
         app.component('InputNumber', InputNumber);
         app.component('IconField', IconField);
         app.component('InputIcon', InputIcon);
+        app.component('Dialog', Dialog);
     },
 };

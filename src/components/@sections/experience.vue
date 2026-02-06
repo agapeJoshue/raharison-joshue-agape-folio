@@ -84,8 +84,7 @@
                             'dark:bg-zinc-900/70 dark:border-zinc-700 dark:hover:border-yellow-400',
                         ]"
                         v-animateonscroll="{
-                            enterClass:
-                                'animate-enter fade-in-10 zoom-in-50 slide-in-from-t-20 animate-duration-1000',
+                            enterClass: 'animate-enter fade-in-10 zoom-in-8 animate-duration-1000',
                         }"
                     >
                         <div class="overflow-hidden">
