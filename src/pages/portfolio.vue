@@ -26,7 +26,6 @@
     <ServiceSection @on-action="() => onChatBot(true)" />
     <SkillSection />
     <ContactSection />
-    <FooterSection />
 
     <ChatBot v-model:visible="visible" />
 </template>

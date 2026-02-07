@@ -14,21 +14,17 @@
         setup() {
             const { t } = useI18n();
             const { isDark } = useThemeStore();
-            const errorNumber = ref(0);
+            const isLoading = ref(false);
+            const currentYear = new Date().getFullYear();
 
             const username = ref<Field<string>>({ value: '', error: false, error_message: '' });
             const email = ref<Field<string>>({ value: '', error: false, error_message: '' });
             const location = ref<Field<string>>({ value: '', error: false, error_message: '' });
-            const budget = ref<Field<number>>({
-                value: 1,
-                error: false,
-                error_message: '',
-            });
+            const budget = ref<Field<number>>({ value: 1, error: false, error_message: '' });
             const subject = ref<Field<string>>({ value: '', error: false, error_message: '' });
             const message = ref<Field<string>>({ value: '', error: false, error_message: '' });
 
             const resetErrors = () => {
-                errorNumber.value = 0;
                 [username, email, location, budget, subject, message].forEach((field) => {
                     field.value.error = false;
                     field.value.error_message = '';
@@ -41,7 +37,6 @@
 
                 const check = (field: Field<any>, msg: string) => {
                     error = true;
-                    errorNumber.value++;
                     field.error = true;
                     field.error_message = msg;
                 };
@@ -60,22 +55,36 @@
             const onSubmit = () => {
                 if (hasError()) return;
 
+                isLoading.value = true;
                 const payload = {
-                    username: username.value.value,
+                    full_name: username.value.value,
                     email: email.value.value,
                     location: location.value.value,
                     budget: budget.value.value,
                     subject: subject.value.value,
-                    message: message.value.value,
+                    description: message.value.value,
                 };
 
                 console.log('Payload envoyé :', payload);
+                setTimeout(() => isLoading.value = false, 3000);
+            };
+
+
+            const scrollToSection = (id: string) => {
+                const element = document.getElementById(id);
+                if (!element) return;
+                const offset = element.getBoundingClientRect().top + window.scrollY - 80;
+                window.scrollTo({
+                    top: offset,
+                    behavior: 'smooth',
+                });
             };
 
             return {
                 t,
                 isDark,
-                errorNumber,
+                isLoading,
+                currentYear,
                 username,
                 email,
                 location,
@@ -83,22 +92,17 @@
                 subject,
                 message,
                 onSubmit,
+                scrollToSection,
             };
         },
     });
 </script>
 
 <template>
-    <section
-        id="contact"
-        class="relative w-full pt-10 h-370 md:h-330 lg:h-190"
-        :style="{
-            minHeight: errorNumber > 0 ? `${760 + errorNumber * 22}px` : '760px',
-        }"
-    >
+    <section id="contact" class="relative w-full pt-10">
         <div
             :class="[
-                'max-w-7xl w-full mx-auto p-6 sm:p-10 lg:p-14 xl:px-20 xl:py-20 lg:absolute lg:top-10 lg:left-1/2 lg:-translate-x-1/2 backdrop-blur-3xl personal-shadow rounded-3xl grid grid-cols-1 lg:grid-cols-2 gap-16 animate-fade-up border z-20',
+                'sticky max-w-7xl w-full mx-auto p-6 sm:p-10 lg:p-14 xl:p-20 backdrop-blur-3xl personal-shadow rounded-3xl grid grid-cols-1 lg:grid-cols-2 gap-16 animate-fade-up border z-2',
                 'bg-white/80 border-white',
                 'dark:bg-black/80 dark:border-zinc-700',
             ]"
@@ -313,14 +317,94 @@
 
                     <Button
                         @click="onSubmit"
+                        :loading="isLoading"
+                        :label="t('contact.form.submit')"
                         :class="[
-                            'text-base font-semibold px-6 py-3',
+                            'text-sm font-medium px-4 py-2.5',
                             'bg-orange-500 border-orange-500 hover:bg-orange-500/90 hover:border-orange-500/90',
                             'dark:bg-yellow-500 dark:border-yellow-500 dark:hover:bg-yellow-500/90 dark:hover:border-yellow-500/90',
                         ]"
+                    />
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="absolute top-full -translate-y-12 w-full bg-gray-950 dark:bg-gray-900 text-gray-200 z-1"
+            v-animateonscroll="{
+                enterClass: 'animate-enter fade-in-10 animate-duration-1000',
+            }"
+        >
+            <div
+                :class="[
+                    'max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center lg:items-start gap-10',
+                    'pb-10 pt-28 px-6',
+                    'md:pb-16 md:pt-25 md:px-12',
+                    'lg:pb-10 lg:pt-25',
+                    'xl:pb-12 xl:pt-28',
+                ]"
+            >
+                <div class="flex flex-col items-center lg:items-start gap-4 lg:w-1/3">
+                    <div
+                        class="flex items-center gap-3 transition-all duration-300 ease-out"
+                        @click="() => scrollToSection('hero')"
                     >
-                        {{ t('contact.form.submit') }} <SendHorizonal :size="18" />
-                    </Button>
+                        <Gem :size="28" :class="['text-orange-500', 'dark:text-yellow-400']" />
+
+                        <h5
+                            :class="[
+                                'text-[22px] font-bold tracking-tight select-none',
+                                'text-orange-500',
+                                'dark:text-yellow-400',
+                            ]"
+                        >
+                            Raharison<span :class="['text-orange-400', 'dark:text-yellow-300']"
+                                >.</span
+                            >
+                        </h5>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">{{ t('footer.message1') }}</p>
+                </div>
+
+                <div class="lg:w-1/3 text-center space-y-2.5">
+                    <p :class="['text-base text-gray-300']">
+                        © {{ currentYear }} - {{ t('footer.droit') }}
+                    </p>
+                    <p :class="['text-base text-gray-300']">{{ t('footer.message2') }}</p>
+                    <p :class="['text-base text-gray-400']">Vue 3 + TypeScript + Vite + PrimeVue</p>
+                </div>
+
+                <div class="lg:w-1/3 flex flex-col items-center lg:items-end gap-4">
+                    <h3 class="text-base font-bold text-neutral-400 mb-4">
+                        {{ t('footer.follow_me') }}
+                    </h3>
+                    <div class="flex gap-3">
+                        <SocialIcon tooltip="Facebook" link="#" class="group">
+                            <Facebook
+                                class="transition-transform transform hover:scale-125 hover:text-white"
+                            />
+                        </SocialIcon>
+                        <SocialIcon tooltip="Instagram" link="#" class="group">
+                            <Instagram
+                                class="transition-transform transform hover:scale-125 hover:text-white"
+                            />
+                        </SocialIcon>
+                        <SocialIcon tooltip="LinkedIn" link="#" class="group">
+                            <Linkedin
+                                class="transition-transform transform hover:scale-125 hover:text-white"
+                            />
+                        </SocialIcon>
+                        <SocialIcon tooltip="GitHub" link="#" class="group">
+                            <Github
+                                class="transition-transform transform hover:scale-125 hover:text-white"
+                            />
+                        </SocialIcon>
+                        <SocialIcon tooltip="GitLab" link="#" class="group">
+                            <Gitlab
+                                class="transition-transform transform hover:scale-125 hover:text-white"
+                            />
+                        </SocialIcon>
+                    </div>
                 </div>
             </div>
         </div>

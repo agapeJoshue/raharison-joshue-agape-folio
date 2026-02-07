@@ -14,8 +14,8 @@ export const projects: project[] = [
         description: 'project.auto_flow',
         rating: 4,
         images: {
-            light: '/imgs/auto_flow/login_page_light.png',
-            dark: '/imgs/auto_flow/login_page_dark.png',
+            light: '/imgs/projects/auto_flow/login_page_light.png',
+            dark: '/imgs/projects/auto_flow/login_page_dark.png',
         },
         links: { code: '', demo: '' },
     },
@@ -25,8 +25,8 @@ export const projects: project[] = [
         description: 'project.planning',
         rating: 5,
         images: {
-            light: '/imgs/planning/login_page_light.png',
-            dark: '/imgs/planning/login_page_dark.png',
+            light: '/imgs/projects/planning/login_page_light.png',
+            dark: '/imgs/projects/planning/login_page_dark.png',
         },
         links: { code: '', demo: '' },
     },
@@ -36,8 +36,8 @@ export const projects: project[] = [
         description: 'project.stock_flow',
         rating: 3,
         images: {
-            light: '/imgs/stock_flow/login_page_light.png',
-            dark: '/imgs/stock_flow/login_page_light.png',
+            light: '/imgs/projects/stock_flow/login_page_light.png',
+            dark: '/imgs/projects/stock_flow/login_page_light.png',
         },
         links: { code: '', demo: '' },
     },

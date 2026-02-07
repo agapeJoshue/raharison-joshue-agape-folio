@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { computed, defineComponent } from 'vue';
+    import { computed, defineComponent, ref } from 'vue';
 
     export default defineComponent({
         name: 'ChatBot',
@@ -12,7 +12,10 @@
                 get: () => props.visible,
                 set: (value: boolean) => emit('update:visible', value),
             });
-            return { visible };
+            
+            const scroll = ref('last-item');
+
+            return { visible, scroll };
         },
     });
 </script>
@@ -44,7 +47,7 @@
                             :class="[
                                 'text-xl font-bold',
                                 'text-orange-600',
-                                'dark:text-yellow-400',
+                                'dark:text-yellow-500',
                             ]"
                         >
                             Assistant IA
@@ -64,7 +67,7 @@
             />
         </template>
 
-        <div class="h-[calc(100vh-18rem)] flex flex-col justify-start py-1 gap-y-3">
+        <div class="h-[calc(100vh-18rem)] flex flex-col justify-start py-1 gap-y-5">
             <Chat
                 :isMe="false"
                 :messages="{
@@ -84,6 +87,8 @@
                 }"
             />
             <ChatLoading />
+
+            <span ref="last-item" />
         </div>
 
         <template #footer>
@@ -108,7 +113,7 @@
                     ]"
                     severity="info"
                 >
-                    <SendHorizonal :size="20" />
+                    <SendIcon :size="20" />
                 </Button>
             </div>
         </template>

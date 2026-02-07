@@ -127,7 +127,7 @@
                     :class="[
                         'hidden lg:flex items-center gap-8 text-[15px] font-semibold',
                         'text-neutral-600',
-                        'dark:text-neutral-400',
+                        'dark:text-neutral-300',
                     ]"
                 >
                     <li
@@ -138,7 +138,7 @@
                             'relative cursor-pointer py-1 transition-colors duration-200 ease-out',
                             item.id === itemActive
                                 ? ['text-orange-600', 'dark:text-yellow-400']
-                                : ['hover:text-neutral-900', 'dark:hover:text-zinc-100'],
+                                : ['hover:text-black', 'dark:hover:text-white'],
                         ]"
                     >
                         {{ t(item.label) }}
@@ -215,8 +215,7 @@
                         />
                     </li>
                 </ul>
-
-                <ToggleMode class="pb-6 sm:pb-0" />
+                <ToggleMode class="h-10 mb-5" />
             </div>
         </nav>
     </header>
@@ -225,11 +224,11 @@
         @click="() => scrollToSection('hero')"
         v-if="showBtnScrollTop"
         :class="[
-            'fixed bottom-10 right-10 w-16 h-16 hover:scale-[1.1] rounded-full flex items-center justify-center z-50 animate-bounce cursor-pointer transition-all',
+            'fixed bottom-22 right-10 w-13 h-13 md:w-16 md:h-16 hover:scale-[1.1] rounded-full flex items-center justify-center z-50 animate-bounce cursor-pointer transition-all',
             'bg-orange-500 hover:bg-orange-500/90 text-white',
             'dark:bg-yellow-500 dark:hover:bg-yellow-500/90',
         ]"
     >
-        <ChevronUp :size="40" />
+        <ChevronUp :size="40" class="w-9 md:w-15" />
     </button>
 </template>

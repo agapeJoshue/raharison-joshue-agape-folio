@@ -10,7 +10,6 @@ import ProjectSection from '@/components/@sections/project.vue';
 import ServiceSection from '@/components/@sections/service.vue';
 import SkillSection from '@/components/@sections/skill.vue';
 import ContactSection from '@/components/@sections/contact.vue';
-import FooterSection from '@/components/@sections/footer.vue';
 import ContactCard from '@/components/ContactCard.vue';
 import SocialIcon from '@/components/SocialIcon.vue';
 import ChatBot from '@/components/ChatBot.vue';
@@ -32,7 +31,6 @@ export default {
         app.component('SkillSection', SkillSection);
         app.component('ContactSection', ContactSection);
         app.component('ContactCard', ContactCard);
-        app.component('FooterSection', FooterSection);
         app.component('SocialIcon', SocialIcon);
         app.component('ChatBot', ChatBot);
         app.component('Chat', Chat);

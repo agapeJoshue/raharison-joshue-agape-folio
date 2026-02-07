@@ -30,7 +30,7 @@ import {
     Sparkles,
     UserRound,
     Check,
-    CheckCheck,
+    CheckCheck
 } from 'lucide-vue-next';
 
 export default {
@@ -57,7 +57,7 @@ export default {
         app.component('MapPin', MapPin);
         app.component('Mail', Mail);
         app.component('Phone', Phone);
-        app.component('SendHorizonal', SendHorizonal);
+        app.component('SendIcon', SendHorizonal);
         app.component('Facebook', Facebook);
         app.component('Linkedin', Linkedin);
         app.component('Gitlab', Gitlab);

@@ -73,7 +73,7 @@
         >
             <div
                 :class="[
-                    'rounded-4xl lg:rounded-[4rem] to-transparent bg-linear-to-b backdrop-blur-3xl personal-shadow px-6 pt-10 lg:p-16 2xl:p-25 space-y-16',
+                    'rounded-4xl lg:rounded-[4rem] to-transparent bg-linear-to-b backdrop-blur-3xl personal-shadow px-6 pt-10 lg:p-16 2xl:px-25 2xl:pt-16 2xl:pb-20 space-y-16',
                     'from-white/60',
                     'dark:from-black/60',
                 ]"
@@ -251,7 +251,7 @@
         <div class="max-w-400 mx-auto">
             <div
                 :class="[
-                    'bg-transparent rounded-4xl lg:rounded-[4rem] px-5 pt-10 pb-5 md:px-6 md:py-10 lg:py-12 xl:py-28 max-xxl:px-4 lg:p-16 2xl:px-25 space-y-16 grid xl:grid-cols-2 xl:items-center',
+                    'bg-transparent rounded-4xl lg:rounded-[4rem] px-2.5 pt-10 pb-5 md:px-6 md:py-10 lg:py-12 xl:py-28 max-xxl:px-4 lg:p-16 2xl:px-25 space-y-16 grid xl:grid-cols-2 xl:items-center',
                 ]"
             >
                 <div :class="['lg:pe-10 xl:pe-35.75 max-xs:mb-3 max-xl:mb-8']">

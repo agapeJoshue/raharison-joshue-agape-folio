@@ -21,6 +21,7 @@ import InputNumber from 'primevue/inputnumber';
 import IconField from 'primevue/iconfield';
 import InputIcon from 'primevue/inputicon';
 import Dialog from 'primevue/dialog';
+import { ProgressSpinner } from 'primevue';
 
 export default {
     install(app: App) {
@@ -46,5 +47,6 @@ export default {
         app.component('IconField', IconField);
         app.component('InputIcon', InputIcon);
         app.component('Dialog', Dialog);
+        app.component('ProgressSpinner', ProgressSpinner);
     },
 };
