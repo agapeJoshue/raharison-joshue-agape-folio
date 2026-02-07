@@ -10,6 +10,17 @@ type project = {
 export const projects: project[] = [
     {
         category: 'project.category.web_application',
+        name: 'Smart Shop - E-commerce',
+        description: 'project.stock_flow',
+        rating: 5,
+        images: {
+            light: '/imgs/projects/smart_shop/admin_dashboard_light.png',
+            dark: '/imgs/projects/smart_shop/admin_dashboard_dark.png',
+        },
+        links: { code: '', demo: '' },
+    },
+    {
+        category: 'project.category.web_application',
         name: 'AutoFlow with n8n',
         description: 'project.auto_flow',
         rating: 4,

@@ -30,7 +30,7 @@ import {
     Sparkles,
     UserRound,
     Check,
-    CheckCheck
+    CheckCheck,
 } from 'lucide-vue-next';
 
 export default {

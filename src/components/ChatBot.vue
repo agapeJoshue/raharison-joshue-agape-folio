@@ -12,7 +12,7 @@
                 get: () => props.visible,
                 set: (value: boolean) => emit('update:visible', value),
             });
-            
+
             const scroll = ref('last-item');
 
             return { visible, scroll };

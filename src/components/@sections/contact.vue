@@ -1,7 +1,10 @@
 <script lang="ts">
     import { defineComponent, ref } from 'vue';
+    import { useToast } from 'primevue/usetoast';
     import { useThemeStore } from '../../hooks/useThemeStore';
     import { useI18n } from 'vue-i18n';
+    import { useFetch } from '../../hooks/useApi';
+    import { contact } from '../../api/endpoints';
 
     interface Field<T> {
         value: T;
@@ -9,12 +12,21 @@
         error_message: string;
     }
 
+    interface ContactPayload {
+        full_name: string;
+        email: string;
+        location: string;
+        budget: string;
+        subject: string;
+        description: string;
+    }
+
     export default defineComponent({
         name: 'ContactSection',
         setup() {
             const { t } = useI18n();
+            const toast = useToast();
             const { isDark } = useThemeStore();
-            const isLoading = ref(false);
             const currentYear = new Date().getFullYear();
 
             const username = ref<Field<string>>({ value: '', error: false, error_message: '' });
@@ -29,6 +41,15 @@
                     field.value.error = false;
                     field.value.error_message = '';
                 });
+            };
+
+            const resetForm = () => {
+                username.value = { value: '', error: false, error_message: '' };
+                email.value = { value: '', error: false, error_message: '' };
+                location.value = { value: '', error: false, error_message: '' };
+                budget.value = { value: 1, error: false, error_message: '' };
+                subject.value = { value: '', error: false, error_message: '' };
+                message.value = { value: '', error: false, error_message: '' };
             };
 
             const hasError = (): boolean => {
@@ -52,23 +73,48 @@
                 return error;
             };
 
-            const onSubmit = () => {
+            const { loading, fetchData } = useFetch<ContactPayload>(contact, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+
+            const onSubmit = async () => {
                 if (hasError()) return;
 
-                isLoading.value = true;
-                const payload = {
+                const payload: ContactPayload = {
                     full_name: username.value.value,
                     email: email.value.value,
                     location: location.value.value,
-                    budget: budget.value.value,
+                    budget: String(budget.value.value),
                     subject: subject.value.value,
                     description: message.value.value,
                 };
 
-                console.log('Payload envoyé :', payload);
-                setTimeout(() => isLoading.value = false, 3000);
-            };
+                try {
+                    await fetchData({
+                        body: JSON.stringify(payload),
+                    });
 
+                    toast.add({
+                        severity: 'success',
+                        summary: 'Succès',
+                        detail: 'Votre message a été envoyé avec succès !',
+                        group: 'br',
+                        life: 3000,
+                    });
+                    resetForm();
+                } catch {
+                    toast.add({
+                        severity: 'error',
+                        summary: 'Erreur',
+                        detail: 'Impossible d’envoyer le message. Veuillez réessayer.',
+                        group: 'br',
+                        life: 3000,
+                    });
+                }
+            };
 
             const scrollToSection = (id: string) => {
                 const element = document.getElementById(id);
@@ -83,7 +129,7 @@
             return {
                 t,
                 isDark,
-                isLoading,
+                loading,
                 currentYear,
                 username,
                 email,
@@ -100,6 +146,7 @@
 
 <template>
     <section id="contact" class="relative w-full pt-10">
+        <Toast position="bottom-right" group="br" />
         <div
             :class="[
                 'sticky max-w-7xl w-full mx-auto p-6 sm:p-10 lg:p-14 xl:p-20 backdrop-blur-3xl personal-shadow rounded-3xl grid grid-cols-1 lg:grid-cols-2 gap-16 animate-fade-up border z-2',
@@ -317,7 +364,7 @@
 
                     <Button
                         @click="onSubmit"
-                        :loading="isLoading"
+                        :loading="loading"
                         :label="t('contact.form.submit')"
                         :class="[
                             'text-sm font-medium px-4 py-2.5',
