@@ -1,8 +1,11 @@
 <script lang="ts">
     import { defineComponent } from 'vue';
+    import { useToast } from 'primevue/usetoast';
     import { useI18n } from 'vue-i18n';
     import { scrollToSection } from '../../services/utilsService';
     import { CalendarRange, ChartSpline, CodeXml, Server, type LucideIcon } from 'lucide-vue-next';
+    import { BASE_API, download_file } from '../../api/endpoints';
+    import { ref } from 'vue';
 
     interface WorkStep {
         title: string;
@@ -15,6 +18,8 @@
 
         setup() {
             const { t } = useI18n();
+            const toast = useToast();
+            const isDownloading = ref(false);
 
             const formations = [
                 {
@@ -51,7 +56,50 @@
                 },
             ];
 
-            return { t, formations, scrollToSection, workStepData };
+            const onDownload = async () => {
+                const filename = 'my_cv_fullstacks_2025.pdf';
+                isDownloading.value = true;
+
+                try {
+                    const response = await fetch(`${BASE_API}${download_file(filename)}`);
+
+                    if (!response.ok) {
+                        throw new Error(`Erreur ${response.status} lors du téléchargement`);
+                    }
+
+                    const blob = await response.blob();
+
+                    const url = window.URL.createObjectURL(blob);
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+
+                    window.URL.revokeObjectURL(url);
+
+                    toast.add({
+                        severity: 'success',
+                        summary: 'Succès',
+                        detail: 'Votre CV a été téléchargé avec succès !',
+                        group: 'br',
+                        life: 3000,
+                    });
+                } catch (err) {
+                    toast.add({
+                        severity: 'error',
+                        summary: 'Erreur',
+                        detail: 'Impossible de télécharger le fichier. Veuillez réessayer.',
+                        group: 'br',
+                        life: 3000,
+                    });
+                } finally {
+                    isDownloading.value = false;
+                }
+            };
+
+            return { t, formations, scrollToSection, workStepData, onDownload, isDownloading };
         },
     });
 </script>
@@ -65,6 +113,7 @@
             'dark:from-zinc-900/60 dark:to-zinc-900/90',
         ]"
     >
+        <Toast position="bottom-right" group="br" />
         <div
             :class="['max-w-400 mx-auto pb-15 lg:pb-0']"
             v-animateonscroll="{
@@ -144,7 +193,9 @@
                             />
 
                             <Button
+                                @click="onDownload"
                                 :label="t('about.download_cv')"
+                                :loading="isDownloading"
                                 outlined
                                 :class="[
                                     'py-2.5 px-5 text-sm font-semibold bg-transparent',

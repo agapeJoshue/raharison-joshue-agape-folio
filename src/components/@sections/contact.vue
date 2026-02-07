@@ -426,27 +426,27 @@
                         {{ t('footer.follow_me') }}
                     </h3>
                     <div class="flex gap-3">
-                        <SocialIcon tooltip="Facebook" link="#" class="group">
+                        <SocialIcon tooltip="Facebook" link="https://www.facebook.com/agapejoshue" class="group">
                             <Facebook
                                 class="transition-transform transform hover:scale-125 hover:text-white"
                             />
                         </SocialIcon>
-                        <SocialIcon tooltip="Instagram" link="#" class="group">
+                        <SocialIcon tooltip="Instagram" link="https://www.instagram.com/agapejoshue?igsh=MXZtNGV1ZmRmcDVleA==" class="group">
                             <Instagram
                                 class="transition-transform transform hover:scale-125 hover:text-white"
                             />
                         </SocialIcon>
-                        <SocialIcon tooltip="LinkedIn" link="#" class="group">
+                        <SocialIcon tooltip="LinkedIn" link="https://www.linkedin.com/in/raharison-joshu%C3%A9-agap%C3%A9-14600129a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="group">
                             <Linkedin
                                 class="transition-transform transform hover:scale-125 hover:text-white"
                             />
                         </SocialIcon>
-                        <SocialIcon tooltip="GitHub" link="#" class="group">
+                        <SocialIcon tooltip="GitHub" link="https://github.com/agapeJoshue" class="group">
                             <Github
                                 class="transition-transform transform hover:scale-125 hover:text-white"
                             />
                         </SocialIcon>
-                        <SocialIcon tooltip="GitLab" link="#" class="group">
+                        <SocialIcon tooltip="GitLab" link="https://gitlab.com/agapedev.dark" class="group">
                             <Gitlab
                                 class="transition-transform transform hover:scale-125 hover:text-white"
                             />
