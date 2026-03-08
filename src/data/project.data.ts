@@ -10,6 +10,17 @@ type project = {
 export const projects: project[] = [
     {
         category: 'project.category.web_application',
+        name: 'MediBook',
+        description: 'project.stock_flow',
+        rating: 5,
+        images: {
+            light: '/imgs/projects/medibook/medibook_light.png',
+            dark: '/imgs/projects/medibook/medibook_dark.png',
+        },
+        links: { code: '', demo: '' },
+    },
+    {
+        category: 'project.category.web_application',
         name: 'Smart Shop - E-commerce',
         description: 'project.stock_flow',
         rating: 5,

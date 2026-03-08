@@ -224,13 +224,4 @@
             transform: translateY(-12px);
         }
     }
-
-    @keyframes borderGlow {
-        from {
-            transform: rotate(0deg);
-        }
-        to {
-            transform: rotate(360deg);
-        }
-    }
 </style>

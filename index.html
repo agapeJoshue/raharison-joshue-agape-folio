@@ -13,11 +13,21 @@
                 top: 0;
                 left: 0;
                 z-index: -1;
+                display: none;
+            }
+            .svg-bg.show {
+                display: block;
+                animation: show-svg 1s ease-in;
+            }
+
+            @keyframes show-svg {
+                from { opacity: 0; }
+                to { opacity: 1; }
             }
         </style>
     </head>
     <body class="bg-white dark:bg-black">
-        <svg class="svg-bg" preserveAspectRatio="xMidYMid slice" viewBox="10 10 80 80">
+        <svg id="backgroundSvg" class="svg-bg" preserveAspectRatio="xMidYMid slice" viewBox="10 10 80 80">
             <defs>
                 <style>
                     @keyframes rotate {

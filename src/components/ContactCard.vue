@@ -32,9 +32,9 @@
             >
                 {{ title }}
             </h6>
-            <p :class="['font-medium', 'text-black', 'dark:text-white']">
+            <div :class="['font-medium', 'text-black', 'dark:text-white']">
                 <slot />
-            </p>
+            </div>
         </div>
     </div>
 </template>

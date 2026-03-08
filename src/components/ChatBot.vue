@@ -1,21 +1,98 @@
 <script lang="ts">
-    import { computed, defineComponent, ref } from 'vue';
+    import { computed, defineComponent, ref, nextTick, watch, type PropType } from 'vue';
+
+    export type Message = {
+        id: number;
+        isMe: boolean;
+        message: string[];
+        createdAt: Date;
+        isRead: boolean;
+    };
 
     export default defineComponent({
         name: 'ChatBot',
         props: {
+            loading: { type: Boolean, required: true },
             visible: { type: Boolean, required: true },
+            discussions: { type: Array as PropType<Message[]>, required: true },
         },
-        emits: ['update:visible'],
+        emits: ['update:loading', 'update:visible', 'update:discussions'],
         setup(props, { emit }) {
+            const new_message = ref('');
+            const loading = computed({
+                get: () => props.loading,
+                set: (value: boolean) => emit('update:loading', value),
+            });
+
             const visible = computed({
                 get: () => props.visible,
                 set: (value: boolean) => emit('update:visible', value),
             });
 
-            const scroll = ref('last-item');
+            const discussions = computed({
+                get: () => props.discussions,
+                set: (value: Message[]) => emit('update:discussions', value),
+            });
 
-            return { visible, scroll };
+            const lastItem = ref<HTMLElement | null>(null);
+
+            const scrollToBottom = async () => {
+                await nextTick();
+                lastItem.value?.scrollIntoView({ behavior: 'smooth' });
+            };
+
+            watch(
+                () => discussions.value.length,
+                () => {
+                    scrollToBottom();
+                },
+            );
+
+            watch(
+                () => loading.value,
+                () => {
+                    scrollToBottom();
+                },
+            );
+
+            const onSendMessage = () => {
+                const lastMessage = discussions.value[discussions.value.length - 1];
+                if (lastMessage && lastMessage.isMe) {
+                    discussions.value[discussions.value.length - 1]?.message.push(
+                        new_message.value,
+                    );
+                } else {
+                    discussions.value.push({
+                        id: Date.now(),
+                        message: [new_message.value],
+                        createdAt: new Date(),
+                        isMe: true,
+                        isRead: true,
+                    });
+                }
+                new_message.value = '';
+                setTimeout(() => (loading.value = true), 500);
+                const message1 = `Merci pour votre message et pour l’intérêt que vous portez à mon créateur.
+
+                    Pour le moment, je ne suis malheureusement pas autorisée à répondre aux questions le concernant. Une petite maintenance technique est en cours et certaines fonctionnalités me sont temporairement restreintes.
+
+                    Mon créateur n’a donc pas encore activé les réponses à ce sujet. Je vous remercie pour votre compréhension et votre patience.
+
+                    Je serai ravie de pouvoir vous répondre dès que tout sera pleinement opérationnel. ✨`;
+
+                setTimeout(() => {
+                    discussions.value.push({
+                        id: Date.now(),
+                        message: [message1],
+                        createdAt: new Date(),
+                        isMe: false,
+                        isRead: true,
+                    });
+                    loading.value = false;
+                }, 2000);
+            };
+
+            return { loading, visible, discussions, new_message, onSendMessage, lastItem };
         },
     });
 </script>
@@ -25,7 +102,7 @@
         v-model:visible="visible"
         modal
         :class="[
-            'w-full max-w-180 backdrop-blur-3xl custom-dialog',
+            'w-full max-w-180 backdrop-blur-3xl rounded-[2.4rem] custom-dialog',
             'bg-white/80',
             'dark:bg-black/50',
         ]"
@@ -67,51 +144,56 @@
             />
         </template>
 
-        <div class="h-[calc(100vh-18rem)] flex flex-col justify-start py-1 gap-y-5">
+        <div
+            v-if="discussions.length > 0"
+            class="h-[calc(100vh-17rem)] flex flex-col justify-start py-1 gap-y-5 overflow-auto"
+        >
             <Chat
-                :isMe="false"
+                v-for="discussion in discussions"
+                :key="discussion.id"
+                :isMe="discussion.isMe"
                 :messages="{
-                    id: 1,
-                    message: `Bonjour ! Je suis l'assistant IA de Joshué Agapé. Comment puis-je vous aider ?`,
-                    createdAt: 'il y a 5 minutes',
-                    isRead: true,
+                    id: discussion.id,
+                    message: discussion.message,
+                    createdAt: discussion.createdAt,
+                    isRead: discussion.isRead,
                 }"
             />
-            <Chat
-                :isMe="true"
-                :messages="{
-                    id: 2,
-                    message: `Bonjour !`,
-                    createdAt: 'il y a 2 minutes',
-                    isRead: true,
-                }"
-            />
-            <ChatLoading />
 
-            <span ref="last-item" />
+            <ChatLoading v-if="loading" />
+
+            <span ref="lastItem" />
+        </div>
+
+        <div v-else class="h-[calc(100vh-18rem)] flex flex-col justify-start py-1 gap-y-5">
+            <ChatLoading v-if="loading" />
+            <span ref="lastItem" />
         </div>
 
         <template #footer>
             <div class="w-full flex items-end gap-x-3">
                 <Textarea
                     fluid
+                    v-model="new_message"
                     autoResize
                     rows="1"
                     :class="[
-                        'bg-transparent',
-                        'border-zinc-400 hover:border-orange-500 focus:border-orange-500',
-                        'border-zinc-600 dark:hover:border-yellow-500 dark:focus:border-yellow-500',
+                        'bg-transparent rounded-lg border-2',
+                        'border-orange-400 hover:border-orange-500 focus:border-orange-500',
+                        'border-yellow-600 dark:hover:border-yellow-500 dark:focus:border-yellow-500',
                     ]"
                     placeholder="Avez-vous des questions?"
                 />
                 <Button
                     rounded
+                    :disabled="!new_message"
                     :class="[
                         'w-11 h-10 p-1',
                         'bg-orange-500 border-orange-500',
                         'dark:bg-yellow-500 dark:border-yellow-500',
                     ]"
                     severity="info"
+                    @click="onSendMessage"
                 >
                     <SendIcon :size="20" />
                 </Button>

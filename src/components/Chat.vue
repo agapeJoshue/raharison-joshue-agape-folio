@@ -1,10 +1,11 @@
 <script lang="ts">
     import { computed, defineComponent, type PropType } from 'vue';
 
-    type Message = {
+    export type Message = {
         id: number;
-        message: string;
-        createdAt: string;
+        isMe: boolean;
+        message: string[];
+        createdAt: Date;
         isRead: boolean;
     };
 
@@ -17,7 +18,76 @@
         setup(props) {
             const isMe = computed(() => props.isMe);
             const data = computed(() => props);
-            return { isMe, data };
+
+            function timeAgo(dateInput: Date | string | number): string {
+                const date = new Date(dateInput);
+                const now = new Date();
+
+                const seconds = Math.floor((now.getTime() - date.getTime()) / 1000);
+
+                if (seconds < 10) {
+                    return "à l'instant";
+                }
+
+                if (seconds < 60) {
+                    return `il y a ${seconds} secondes`;
+                }
+
+                const minutes = Math.floor(seconds / 60);
+
+                if (minutes === 1) {
+                    return 'il y a 1 minute';
+                }
+
+                if (minutes < 60) {
+                    return `il y a ${minutes} minutes`;
+                }
+
+                const hours = Math.floor(minutes / 60);
+
+                if (hours === 1) {
+                    return 'il y a 1 heure';
+                }
+
+                if (hours < 24) {
+                    return `il y a ${hours} heures`;
+                }
+
+                const days = Math.floor(hours / 24);
+
+                if (days === 1) {
+                    return 'hier';
+                }
+
+                if (days < 7) {
+                    return `il y a ${days} jours`;
+                }
+
+                const weeks = Math.floor(days / 7);
+
+                if (weeks === 1) {
+                    return 'il y a 1 semaine';
+                }
+
+                if (weeks < 4) {
+                    return `il y a ${weeks} semaines`;
+                }
+
+                const months = Math.floor(days / 30);
+
+                if (months === 1) {
+                    return 'il y a 1 mois';
+                }
+
+                if (months < 12) {
+                    return `il y a ${months} mois`;
+                }
+
+                const years = Math.floor(days / 365);
+                return `il y a ${years} ans`;
+            }
+
+            return { isMe, data, timeAgo };
         },
     });
 </script>
@@ -62,14 +132,20 @@
                                 : ['-left-1.5', 'bg-orange-500', 'dark:bg-yellow-600'],
                         ]"
                     />
-                    <p class="text-base font-normal">{{ data.messages.message }}</p>
+                    <p
+                        v-for="(message, index) in data.messages.message"
+                        :key="index"
+                        class="text-base font-normal whitespace-pre-line"
+                    >
+                        {{ message }}
+                    </p>
                     <p
                         :class="[
                             'mt-1 text-end text-[13px] font-medium flex items-center gap-x-2.5 justify-end',
                             isMe ? 'text-white' : 'text-white',
                         ]"
                     >
-                        {{ data.messages.createdAt }}
+                        {{ timeAgo(data.messages.createdAt) }}
                         <Check
                             v-if="data.isMe && !data.messages.isRead"
                             :size="18"

@@ -201,9 +201,8 @@
                         <template #icon>
                             <Phone :size="22" />
                         </template>
-                        +261 34 24 393 87
-                        <span class="text-neutral-400 mx-1">ou</span>
-                        +261 33 68 473 73
+                        <div class="">+261 34 24 393 87</div>
+                        <div>+261 33 68 473 73</div>
                     </ContactCard>
                 </div>
             </div>
@@ -426,27 +425,47 @@
                         {{ t('footer.follow_me') }}
                     </h3>
                     <div class="flex gap-3">
-                        <SocialIcon tooltip="Facebook" link="https://www.facebook.com/agapejoshue" class="group">
+                        <SocialIcon
+                            tooltip="Facebook"
+                            link="https://www.facebook.com/agapejoshue"
+                            class="group"
+                        >
                             <Facebook
                                 class="transition-transform transform hover:scale-125 hover:text-white"
                             />
                         </SocialIcon>
-                        <SocialIcon tooltip="Instagram" link="https://www.instagram.com/agapejoshue?igsh=MXZtNGV1ZmRmcDVleA==" class="group">
+                        <SocialIcon
+                            tooltip="Instagram"
+                            link="https://www.instagram.com/agapejoshue?igsh=MXZtNGV1ZmRmcDVleA=="
+                            class="group"
+                        >
                             <Instagram
                                 class="transition-transform transform hover:scale-125 hover:text-white"
                             />
                         </SocialIcon>
-                        <SocialIcon tooltip="LinkedIn" link="https://www.linkedin.com/in/raharison-joshu%C3%A9-agap%C3%A9-14600129a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="group">
+                        <SocialIcon
+                            tooltip="LinkedIn"
+                            link="https://www.linkedin.com/in/raharison-joshu%C3%A9-agap%C3%A9-14600129a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                            class="group"
+                        >
                             <Linkedin
                                 class="transition-transform transform hover:scale-125 hover:text-white"
                             />
                         </SocialIcon>
-                        <SocialIcon tooltip="GitHub" link="https://github.com/agapeJoshue" class="group">
+                        <SocialIcon
+                            tooltip="GitHub"
+                            link="https://github.com/agapeJoshue"
+                            class="group"
+                        >
                             <Github
                                 class="transition-transform transform hover:scale-125 hover:text-white"
                             />
                         </SocialIcon>
-                        <SocialIcon tooltip="GitLab" link="https://gitlab.com/agapedev.dark" class="group">
+                        <SocialIcon
+                            tooltip="GitLab"
+                            link="https://gitlab.com/agapedev.dark"
+                            class="group"
+                        >
                             <Gitlab
                                 class="transition-transform transform hover:scale-125 hover:text-white"
                             />
