@@ -115,14 +115,14 @@
     >
         <Toast position="bottom-right" group="br" />
         <div
-            :class="['max-w-400 mx-auto pb-15 lg:pb-0']"
+            :class="['max-w-400 mx-auto']"
             v-animateonscroll="{
                 enterClass: 'animate-enter fade-in-10 slide-in-from-b-20 animate-duration-1000',
             }"
         >
             <div
                 :class="[
-                    'rounded-4xl lg:rounded-[4rem] to-transparent bg-linear-to-b backdrop-blur-3xl personal-shadow px-6 pt-10 lg:p-16 2xl:px-25 2xl:pt-16 2xl:pb-20 space-y-16',
+                    'rounded-4xl lg:rounded-[4rem] to-transparent bg-linear-to-b backdrop-blur-3xl personal-shadow px-6 py-10 lg:p-16 2xl:px-25 2xl:pt-16 2xl:pb-20 space-y-16',
                     'from-white/60',
                     'dark:from-black/60',
                 ]"
