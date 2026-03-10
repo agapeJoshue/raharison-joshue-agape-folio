@@ -3,7 +3,7 @@
     import { useThemeStore } from '../../hooks/useThemeStore';
     import { useI18n } from 'vue-i18n';
     import { scrollToSection } from '../../services/utilsService';
-    import { projects } from '../../data/project.data';
+    import { projectsData } from '../../data/projects.data';
 
     export default defineComponent({
         name: 'ProjectSection',
@@ -12,7 +12,7 @@
             const { t } = useI18n();
             const { isDark } = useThemeStore();
 
-            return { t, isDark, projects, scrollToSection };
+            return { t, isDark, projectsData, scrollToSection };
         },
     });
 </script>
@@ -20,7 +20,7 @@
 <template>
     <section
         id="project"
-        :class="['w-full backdrop-blur-3xl pt-15 lg:pt-20', 'bg-white/90', 'dark:bg-black/90']"
+        :class="['w-full backdrop-blur-3xl pt-15 lg:pt-20', 'bg-white/90', 'dark:bg-black/80']"
     >
         <div class="max-w-7xl mx-auto px-4 mb-20">
             <div class="text-center space-y-6 mb-14">
@@ -68,8 +68,8 @@
                 ]"
             >
                 <article
-                    v-for="project in projects"
-                    :key="project.name"
+                    v-for="project in projectsData"
+                    :key="project.project_name"
                     :class="[
                         'group relative rounded-2xl border aspect-auto shadow-sm hover:shadow-2xl transition-all duration-500 ease-out hover:-translate-y-1 overflow-hidden',
                         'bg-white border-white',
@@ -82,7 +82,7 @@
                     <div :class="['relative overflow-hidden']">
                         <img
                             :src="isDark ? project.images.dark : project.images.light"
-                            :alt="project.name"
+                            :alt="project.project_name"
                             :class="[
                                 'h-52 w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105',
                             ]"
@@ -104,13 +104,13 @@
                                 'dark:text-yellow-400',
                             ]"
                         >
-                            {{ t(project.category) }}
+                            {{ project.category }}
                         </p>
 
                         <h3
                             :class="['mt-1 text-lg font-semibold', 'text-black', 'dark:text-white']"
                         >
-                            {{ project.name }}
+                            {{ project.project_name }}
                         </h3>
 
                         <p
@@ -120,7 +120,7 @@
                                 'dark:text-neutral-300',
                             ]"
                         >
-                            {{ t(project.description) }}
+                            {{ project.project_description }}
                         </p>
 
                         <div class="mt-6 w-full flex items-center justify-between">

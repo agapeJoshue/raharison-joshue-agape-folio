@@ -31,6 +31,7 @@ import {
     UserRound,
     Check,
     CheckCheck,
+    ArrowLeft,
 } from 'lucide-vue-next';
 
 export default {
@@ -66,5 +67,7 @@ export default {
         app.component('Sparkles', Sparkles);
         app.component('Euro', Euro);
         app.component('Bot', Bot);
+        app.component('ArrowRight', ArrowRight);
+        app.component('ArrowLeft', ArrowLeft);
     },
 };

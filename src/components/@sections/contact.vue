@@ -201,8 +201,8 @@
                         <template #icon>
                             <Phone :size="22" />
                         </template>
-                        <div class="mt-2.5"> (Yas) +261 34 24 393 87</div>
-                        <div class="mt-2"> (Airtel) +261 33 68 473 73</div>
+                        <div class="mt-2.5">(Yas) +261 34 24 393 87</div>
+                        <div class="mt-2">(Airtel) +261 33 68 473 73</div>
                     </ContactCard>
                 </div>
             </div>

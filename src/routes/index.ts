@@ -7,6 +7,11 @@ const routes = [
         component: () => import('@/pages/portfolio.vue'),
     },
     {
+        path: '/project/:project_uuid',
+        name: 'portfolio_project',
+        component: () => import('@/pages/projectDemo.vue'),
+    },
+    {
         path: '/:pathMatch(.*)*',
         name: 'NotFound',
         component: () => import('@/pages/NotFound.vue'),

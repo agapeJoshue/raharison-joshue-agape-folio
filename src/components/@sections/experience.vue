@@ -27,7 +27,7 @@
 <template>
     <section
         id="experience"
-        :class="['w-full backdrop-blur-3xl', 'bg-white/80', 'dark:bg-black/80']"
+        :class="['w-full backdrop-blur-3xl', 'bg-white/90', 'dark:bg-black/80']"
     >
         <div class="mx-auto max-w-375 px-5 pt-20 pb-8">
             <div class="text-center space-y-4 mb-14">

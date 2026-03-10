@@ -15,6 +15,11 @@ import SocialIcon from '@/components/SocialIcon.vue';
 import ChatBot from '@/components/ChatBot.vue';
 import Chat from '@/components/Chat.vue';
 import ChatLoading from '@/components/ChatLoading.vue';
+import ProjectHero from '@/components/@projects/ProjectHero.vue';
+import Introduction from '@/components/@projects/introduction.vue';
+import Conception from '@/components/@projects/conception.vue';
+import Presentation from '@/components/@projects/presentation.vue';
+import Development from '@/components/@projects/development.vue';
 
 export default {
     install(app: App) {
@@ -35,5 +40,10 @@ export default {
         app.component('ChatBot', ChatBot);
         app.component('Chat', Chat);
         app.component('ChatLoading', ChatLoading);
+        app.component('ProjectHero', ProjectHero);
+        app.component('ProjectIntroduction', Introduction);
+        app.component('ProjectConception', Conception);
+        app.component('ProjectPresentation', Presentation);
+        app.component('ProjectDevelopment', Development);
     },
 };

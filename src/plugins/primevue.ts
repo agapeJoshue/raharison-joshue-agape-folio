@@ -23,6 +23,10 @@ import InputIcon from 'primevue/inputicon';
 import Dialog from 'primevue/dialog';
 import { ProgressSpinner } from 'primevue';
 import Toast from 'primevue/toast';
+import DataTable from 'primevue/datatable';
+import Column from 'primevue/column';
+import ColumnGroup from 'primevue/columngroup';
+import Row from 'primevue/row';
 
 export default {
     install(app: App) {
@@ -49,6 +53,10 @@ export default {
         app.component('InputIcon', InputIcon);
         app.component('Dialog', Dialog);
         app.component('Toast', Toast);
+        app.component('DataTable', DataTable);
+        app.component('Column', Column);
+        app.component('ColumnGroup', ColumnGroup);
+        app.component('Row', Row);
         app.component('ProgressSpinner', ProgressSpinner);
     },
 };
