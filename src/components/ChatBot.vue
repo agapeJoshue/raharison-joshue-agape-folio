@@ -87,15 +87,13 @@ import { useFetch } from '../hooks/useApi';
                     question: new_message.value
                 }
                 new_message.value = '';
-                
+
                 setTimeout(() => loading.value = true, 500);
 
                 try {
                     await fetchData({
                         body: JSON.stringify(payload),
                     });
-
-                    console.log(data.value);
 
                     if (data.value?.answer) {
                         discussions.value.push({
