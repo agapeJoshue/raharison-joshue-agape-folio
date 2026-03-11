@@ -63,7 +63,7 @@ import { useFetch } from '../hooks/useApi';
             );
 
             const onSendMessage = async () => {
-                const { loading, fetchData, data } = useFetch<AskResponse>(ask_ia, {
+                const { fetchData, data } = useFetch<AskResponse>(ask_ia, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
