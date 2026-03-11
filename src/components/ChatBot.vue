@@ -1,5 +1,7 @@
 <script lang="ts">
-    import { computed, defineComponent, ref, nextTick, watch, type PropType } from 'vue';
+import { computed, defineComponent, ref, nextTick, watch, type PropType } from 'vue';
+    import { ask_ia } from '../api/endpoints';
+import { useFetch } from '../hooks/useApi';
 
     export type Message = {
         id: number;
@@ -8,6 +10,11 @@
         createdAt: Date;
         isRead: boolean;
     };
+
+    interface AskResponse {
+        answer?: string;
+        detail?: string;
+    }
 
     export default defineComponent({
         name: 'ChatBot',
@@ -55,41 +62,69 @@
                 },
             );
 
-            const onSendMessage = () => {
-                const lastMessage = discussions.value[discussions.value.length - 1];
-                if (lastMessage && lastMessage.isMe) {
-                    discussions.value[discussions.value.length - 1]?.message.push(
-                        new_message.value,
-                    );
-                } else {
-                    discussions.value.push({
-                        id: Date.now(),
-                        message: [new_message.value],
-                        createdAt: new Date(),
-                        isMe: true,
-                        isRead: true,
+            const onSendMessage = async () => {
+                const { loading, fetchData, data } = useFetch<AskResponse>(ask_ia, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+                try {
+                    const lastMessage = discussions.value[discussions.value.length - 1];
+                    if (lastMessage && lastMessage.isMe) {
+                        discussions.value[discussions.value.length - 1]?.message.push(
+                            new_message.value,
+                        );
+                    } else {
+                        discussions.value.push({
+                            id: Date.now(),
+                            message: [new_message.value],
+                            createdAt: new Date(),
+                            isMe: true,
+                            isRead: true,
+                        });
+                    }
+                    const payload = {
+                        question: new_message.value
+                    }
+                    new_message.value = '';
+                    loading.value = true;
+                    
+                    await fetchData({
+                        body: JSON.stringify(payload),
                     });
+
+                    if (data.value?.answer) {
+                        discussions.value.push({
+                            id: Date.now(),
+                            message: [data.value.answer],
+                            createdAt: new Date(),
+                            isMe: false,
+                            isRead: true,
+                        });
+                        loading.value = false;
+                    }
+                } catch (err) {
+                    const message1 = `Merci pour votre message et pour l’intérêt que vous portez à mon créateur.
+
+                        Pour le moment, je ne suis malheureusement pas autorisée à répondre aux questions le concernant. Une petite maintenance technique est en cours et certaines fonctionnalités me sont temporairement restreintes.
+
+                        Mon créateur n’a donc pas encore activé les réponses à ce sujet. Je vous remercie pour votre compréhension et votre patience.
+
+                        Je serai ravie de pouvoir vous répondre dès que tout sera pleinement opérationnel. ✨`;
+
+                    setTimeout(() => {
+                        discussions.value.push({
+                            id: Date.now(),
+                            message: [message1],
+                            createdAt: new Date(),
+                            isMe: false,
+                            isRead: true,
+                        });
+                        loading.value = false;
+                    }, 2000);
                 }
-                new_message.value = '';
-                setTimeout(() => (loading.value = true), 500);
-                const message1 = `Merci pour votre message et pour l’intérêt que vous portez à mon créateur.
 
-                    Pour le moment, je ne suis malheureusement pas autorisée à répondre aux questions le concernant. Une petite maintenance technique est en cours et certaines fonctionnalités me sont temporairement restreintes.
-
-                    Mon créateur n’a donc pas encore activé les réponses à ce sujet. Je vous remercie pour votre compréhension et votre patience.
-
-                    Je serai ravie de pouvoir vous répondre dès que tout sera pleinement opérationnel. ✨`;
-
-                setTimeout(() => {
-                    discussions.value.push({
-                        id: Date.now(),
-                        message: [message1],
-                        createdAt: new Date(),
-                        isMe: false,
-                        isRead: true,
-                    });
-                    loading.value = false;
-                }, 2000);
             };
 
             return { loading, visible, discussions, new_message, onSendMessage, lastItem };
