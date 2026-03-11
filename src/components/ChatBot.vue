@@ -69,30 +69,34 @@ import { useFetch } from '../hooks/useApi';
                         'Content-Type': 'application/json',
                     },
                 });
+
+                if (!new_message.value.trim()) return;
+
+                const message = new_message.value;
+
                 const lastMessage = discussions.value[discussions.value.length - 1];
+
                 if (lastMessage && lastMessage.isMe) {
-                    discussions.value[discussions.value.length - 1]?.message.push(
-                        new_message.value,
-                    );
+                    lastMessage.message.push(message);
                 } else {
                     discussions.value.push({
                         id: Date.now(),
-                        message: [new_message.value],
+                        message: [message],
                         createdAt: new Date(),
                         isMe: true,
                         isRead: true,
                     });
                 }
-                const payload = {
-                    question: new_message.value
-                }
+
                 new_message.value = '';
 
-                setTimeout(() => loading.value = true, 500);
+                loading.value = true;
 
                 try {
                     await fetchData({
-                        body: JSON.stringify(payload),
+                        body: JSON.stringify({
+                            question: message
+                        }),
                     });
 
                     if (data.value?.answer) {
@@ -103,29 +107,24 @@ import { useFetch } from '../hooks/useApi';
                             isMe: false,
                             isRead: true,
                         });
-                        loading.value = false;
                     }
                 } catch (err) {
-                    const message1 = `Merci pour votre message et pour l’intérêt que vous portez à mon créateur.
+                    const errorMessage = `Merci pour votre message et pour l’intérêt que vous portez à mon créateur.
 
-                        Pour le moment, je ne suis malheureusement pas autorisée à répondre aux questions le concernant. Une petite maintenance technique est en cours et certaines fonctionnalités me sont temporairement restreintes.
+                    Pour le moment, je ne suis malheureusement pas autorisée à répondre aux questions le concernant. Une petite maintenance technique est en cours et certaines fonctionnalités me sont temporairement restreintes.
 
-                        Mon créateur n’a donc pas encore activé les réponses à ce sujet. Je vous remercie pour votre compréhension et votre patience.
+                    Je vous remercie pour votre compréhension et votre patience. ✨`;
 
-                        Je serai ravie de pouvoir vous répondre dès que tout sera pleinement opérationnel. ✨`;
-
-                    setTimeout(() => {
-                        discussions.value.push({
-                            id: Date.now(),
-                            message: [message1],
-                            createdAt: new Date(),
-                            isMe: false,
-                            isRead: true,
-                        });
-                        loading.value = false;
-                    }, 2000);
+                    discussions.value.push({
+                        id: Date.now(),
+                        message: [errorMessage],
+                        createdAt: new Date(),
+                        isMe: false,
+                        isRead: true,
+                    });
+                } finally {
+                    loading.value = false;
                 }
-
             };
 
             return { loading, visible, discussions, new_message, onSendMessage, lastItem };
