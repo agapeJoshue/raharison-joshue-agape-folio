@@ -174,7 +174,7 @@
             <div
                 class="mt-8 border border-zinc-300 dark:border-zinc-700 w-full rounded-xl overflow-hidden"
             >
-                <Image src="/bg.jpg" alt="Image" preview />
+                <Image src="/imgs/bg.jpg" alt="Image" preview />
             </div>
         </div>
 
@@ -195,7 +195,7 @@
             <div
                 class="mt-8 border border-zinc-300 dark:border-zinc-700 w-full rounded-xl overflow-hidden"
             >
-                <Image src="/bg.jpg" alt="Image" preview class="w-full h-full object-cover" />
+                <Image src="/imgs/bg.jpg" alt="Image" preview class="w-full h-full object-cover" />
             </div>
         </div>
 
@@ -215,7 +215,7 @@
             <div
                 class="mt-8 border border-zinc-300 dark:border-zinc-700 w-full rounded-xl overflow-hidden"
             >
-                <Image src="/bg.jpg" alt="Image" preview />
+                <Image src="/imgs/bg.jpg" alt="Image" preview />
             </div>
         </div>
 
@@ -235,7 +235,7 @@
             <div
                 class="mt-8 border border-zinc-300 dark:border-zinc-700 w-full rounded-xl overflow-hidden"
             >
-                <Image src="/bg.jpg" alt="Image" preview />
+                <Image src="/imgs/bg.jpg" alt="Image" preview />
             </div>
         </div>
 

@@ -12,7 +12,7 @@
 
 <template>
     <main class="min-h-screen w-full flex flex-col items-center gap-y-8 justify-center px-6">
-        <img src="/not-found.webp" alt="Page non trouvée" class="mx-auto max-w-100" />
+        <img src="/imgs/not-found.webp" alt="Page non trouvée" class="mx-auto max-w-100" />
         <h1 class="text-2xl font-semibold text-slate-900 dark:text-slate-100">Page introuvable</h1>
 
         <p class="text-lg text-slate-500 dark:text-slate-300 leading-relaxed max-w-150 text-center">
