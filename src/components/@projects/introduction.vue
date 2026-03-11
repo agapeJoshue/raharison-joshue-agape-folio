@@ -3,25 +3,23 @@
     import { computed, defineComponent, type PropType } from 'vue';
     import type { ProjectIntroductionDemo } from '../../data/projects.data';
     import { useThemeStore } from '../../hooks/useThemeStore';
-    import { useRouter } from 'vue-router';
 
     export default defineComponent({
         name: 'ProjectIntroduction',
         props: {
             introduction: { type: Object as PropType<ProjectIntroductionDemo>, required: true },
         },
-        emits: ['on-close'],
+        emits: ['on-close', 'on-next'],
         setup(props, { emit }) {
             const { t } = useI18n();
-            const router = useRouter();
             const { isDark } = useThemeStore();
 
             const projectIntro = computed(() => props.introduction);
 
             const onClose = () => emit('on-close');
-            const goBack = () => router.back();
+            const onAction = (type: 'back' | 'next') => emit('on-next', type);
 
-            return { t, isDark, projectIntro, onClose, goBack };
+            return { t, isDark, projectIntro, onClose, onAction };
         },
     });
 </script>
@@ -161,8 +159,8 @@
                 </span>
                 et le moyen
                 <span class="font-medium text-neutral-950 dark:text-neutral-50 underline">
-                    logiciel
-                </span>.
+                    logiciel </span
+                >.
             </p>
 
             <div v-if="projectIntro.means" class="ml-5 sm:ml-6 md:ml-7 lg:ml-8">
@@ -243,7 +241,7 @@
 
         <div class="flex items-center justify-between gap-5">
             <Button
-                @click="goBack"
+                @click="onAction('back')"
                 outlined
                 class="border-orange-500 dark:border-yellow-500 text-orange-500 dark:text-yellow-500"
             >
@@ -251,6 +249,7 @@
                 Revenir au precedent
             </Button>
             <Button
+                @click="onAction('next')"
                 outlined
                 class="border-orange-500 dark:border-yellow-500 text-orange-500 dark:text-yellow-500"
             >

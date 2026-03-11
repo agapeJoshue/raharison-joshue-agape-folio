@@ -3,10 +3,11 @@
 
     export default defineComponent({
         name: 'ProjectPresentation',
-        emits: ['on-close'],
+        emits: ['on-close', 'on-next'],
         setup(_, { emit }) {
             const onClose = () => emit('on-close');
-            return { onClose };
+            const onAction = (type: 'back' | 'next') => emit('on-next', type);
+            return { onClose, onAction };
         },
     });
 </script>
@@ -49,5 +50,24 @@
             et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus.
             Pellentesque aliquam maximus risus, vel sed vehicula.
         </p>
+
+        <div class="flex items-center justify-between gap-5">
+            <Button
+                @click="onAction('back')"
+                outlined
+                class="border-orange-500 dark:border-yellow-500 text-orange-500 dark:text-yellow-500"
+            >
+                <ArrowLeft :size="20" />
+                Revenir au precedent
+            </Button>
+            <Button
+                @click="onAction('next')"
+                outlined
+                class="border-orange-500 dark:border-yellow-500 text-orange-500 dark:text-yellow-500"
+            >
+                Voir le realisation
+                <ArrowRight :size="20" />
+            </Button>
+        </div>
     </section>
 </template>

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { defineComponent, onMounted, ref, watch } from 'vue';
+    import { defineComponent, onMounted, ref, nextTick, watch } from 'vue';
     import { useRoute, useRouter } from 'vue-router';
     import { projectsData, type Project } from '../data/projects.data';
 
@@ -10,6 +10,13 @@
         setup() {
             const route = useRoute();
             const router = useRouter();
+
+            const top = ref<HTMLElement | null>(null);
+
+            const scrollToTop = async () => {
+                await nextTick();
+                top.value?.scrollIntoView({ behavior: 'smooth' });
+            };
 
             const project = ref<Project | null>(null);
 
@@ -64,14 +71,50 @@
                     } else {
                         sectionShow.value = 'hero';
                     }
+                    scrollToTop();
                 },
             );
 
+            const onNext = (type: 'back' | 'next') => {
+                switch (sectionShow.value) {
+                    case 'introduction':
+                        router.push({
+                            path: route.path,
+                            query: { action: type === 'back' ? 'hero' : 'conception' },
+                        });
+                        sectionShow.value = type === 'back' ? 'hero' : 'conception';
+                        break;
+                    case 'conception':
+                        router.push({
+                            path: route.path,
+                            query: { action: type === 'back' ? 'introduction' : 'code' },
+                        });
+                        sectionShow.value = type === 'back' ? 'introduction' : 'code';
+                        break;
+                    case 'code':
+                        router.push({
+                            path: route.path,
+                            query: { action: type === 'back' ? 'conception' : 'demo' },
+                        });
+                        sectionShow.value = type === 'back' ? 'conception' : 'demo';
+                        break;
+                    case 'demo':
+                        router.push({
+                            path: route.path,
+                            query: { action: type === 'back' ? 'code' : 'hero' },
+                        });
+                        sectionShow.value = type === 'back' ? 'code' : 'hero';
+                        break;
+                }
+            };
+
             return {
+                top,
                 sectionShow,
                 project,
                 onAction,
                 onClose,
+                onNext,
             };
         },
     });
@@ -84,6 +127,7 @@
             sectionShow === 'hero' ? 'p-0' : 'lg:py-20',
         ]"
     >
+        <span ref="top" />
         <ProjectHero
             v-if="sectionShow === 'hero' && project"
             :project="project"
@@ -93,10 +137,15 @@
             v-if="sectionShow === 'introduction' && project"
             :introduction="project.introduction"
             @on-close="onClose"
+            @on-next="onNext"
         />
-        <ProjectConception v-if="sectionShow === 'conception'" @on-close="onClose" />
-        <ProjectPresentation v-if="sectionShow === 'demo'" @on-close="onClose" />
-        <ProjectDevelopment v-if="sectionShow === 'code'" @on-close="onClose" />
+        <ProjectConception
+            v-if="sectionShow === 'conception'"
+            @on-close="onClose"
+            @on-next="onNext"
+        />
+        <ProjectPresentation v-if="sectionShow === 'demo'" @on-close="onClose" @on-next="onNext" />
+        <ProjectDevelopment v-if="sectionShow === 'code'" @on-close="onClose" @on-next="onNext" />
     </main>
 </template>
 

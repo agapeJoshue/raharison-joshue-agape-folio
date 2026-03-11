@@ -21,6 +21,9 @@ import Conception from '@/components/@projects/conception.vue';
 import Presentation from '@/components/@projects/presentation.vue';
 import Development from '@/components/@projects/development.vue';
 
+import MediBookBack from '@/components/@code/medibook/backend.vue';
+import MediBookFront from '@/components/@code/medibook/frontend.vue';
+
 export default {
     install(app: App) {
         app.component('Swiper', Swiper);
@@ -45,5 +48,8 @@ export default {
         app.component('ProjectConception', Conception);
         app.component('ProjectPresentation', Presentation);
         app.component('ProjectDevelopment', Development);
+
+        app.component('MediBookBackend', MediBookBack);
+        app.component('MediBookFrontend', MediBookFront);
     },
 };
