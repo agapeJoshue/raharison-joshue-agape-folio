@@ -69,30 +69,33 @@ import { useFetch } from '../hooks/useApi';
                         'Content-Type': 'application/json',
                     },
                 });
+                const lastMessage = discussions.value[discussions.value.length - 1];
+                if (lastMessage && lastMessage.isMe) {
+                    discussions.value[discussions.value.length - 1]?.message.push(
+                        new_message.value,
+                    );
+                } else {
+                    discussions.value.push({
+                        id: Date.now(),
+                        message: [new_message.value],
+                        createdAt: new Date(),
+                        isMe: true,
+                        isRead: true,
+                    });
+                }
+                const payload = {
+                    question: new_message.value
+                }
+                new_message.value = '';
+                
+                setTimeout(() => loading.value = true, 500);
+
                 try {
-                    const lastMessage = discussions.value[discussions.value.length - 1];
-                    if (lastMessage && lastMessage.isMe) {
-                        discussions.value[discussions.value.length - 1]?.message.push(
-                            new_message.value,
-                        );
-                    } else {
-                        discussions.value.push({
-                            id: Date.now(),
-                            message: [new_message.value],
-                            createdAt: new Date(),
-                            isMe: true,
-                            isRead: true,
-                        });
-                    }
-                    const payload = {
-                        question: new_message.value
-                    }
-                    new_message.value = '';
-                    loading.value = true;
-                    
                     await fetchData({
                         body: JSON.stringify(payload),
                     });
+
+                    console.log(data.value);
 
                     if (data.value?.answer) {
                         discussions.value.push({
