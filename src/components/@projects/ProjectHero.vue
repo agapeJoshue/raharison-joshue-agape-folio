@@ -2,6 +2,7 @@
     import { useI18n } from 'vue-i18n';
     import { computed, defineComponent, onMounted, onUnmounted, ref, type PropType } from 'vue';
     import type { Project } from '../../data/projects.data';
+import { useRouter } from 'vue-router';
 
     export default defineComponent({
         name: 'ProjectMenu',
@@ -11,6 +12,7 @@
         emits: ['on-action'],
         setup(props, { emit }) {
             const { t } = useI18n();
+            const router = useRouter();
             const currentYear = new Date().getFullYear();
             const width = ref<number>(window.innerWidth);
 
@@ -32,7 +34,9 @@
                 emit('on-action', type);
             };
 
-            return { t, width, currentYear, project, onAction };
+            const goBack = () => router.back();
+
+            return { t, width, currentYear, project, onAction, goBack };
         },
     });
 </script>
@@ -100,13 +104,12 @@
             </div>
         </div>
 
-        <router-link to="/" class="absolute bottom-20">
-            <Button
-                class="font-medium px-5 py-2.5 text-sm bg-orange-500 hover:bg-orange-400 dark:bg-yellow-500 dark:hover:bg-yellow-400 border-none"
-            >
-                portfolio
-            </Button>
-        </router-link>
+        <Button
+            @click="goBack"
+            class="absolute bottom-20 font-medium px-5 py-2.5 text-sm bg-orange-500 hover:bg-orange-400 dark:bg-yellow-500 dark:hover:bg-yellow-400 border-none"
+        >
+            portfolio
+        </Button>
 
         <p class="absolute bottom-8 text-base text-gray-700 dark:text-gray-300">
             © {{ currentYear }} - {{ t('footer.droit') }}
