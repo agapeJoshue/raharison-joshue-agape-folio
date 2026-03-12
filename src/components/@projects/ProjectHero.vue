@@ -73,26 +73,26 @@
                 <span
                     class="border h-18.75 border-orange-600 dark:border-yellow-400 absolute left-[49.9%] -translate-x-1/2 bottom-full"
                 />
+                <!-- @click="onAction('introduction')" -->
                 <button
-                    @click="onAction('introduction')"
                     class="px-5 py-4 text-sm uppercase text-center border-r-2 border-b-2 [@media(width>=50rem)]:border-b-0 border-orange-600 dark:border-yellow-400 hover:bg-orange-50 dark:hover:bg-yellow-500/15 transition-colors cursor-pointer over"
                 >
                     introduction
                 </button>
+                <!-- @click="onAction('conception')" -->
                 <button
-                    @click="onAction('conception')"
                     class="px-5 py-4 text-sm uppercase text-center border-b-2 [@media(width>=50rem)]:border-b-0 [@media(width>=50rem)]:border-r-2 border-orange-600 dark:border-yellow-400 last:border-none hover:bg-orange-50 dark:hover:bg-yellow-500/15 transition-colors cursor-pointer"
                 >
                     conception
                 </button>
+                <!-- @click="onAction('code')" -->
                 <button
-                    @click="onAction('code')"
                     class="px-5 py-4 text-sm uppercase text-center border-r-2 border-orange-600 dark:border-yellow-400 last:border-none hover:bg-orange-50 dark:hover:bg-yellow-500/15 transition-colors cursor-pointer"
                 >
                     Developpement
                 </button>
+                <!-- @click="onAction('demo')" -->
                 <button
-                    @click="onAction('demo')"
                     class="px-5 py-4 text-sm uppercase text-center border-r-2 border-orange-600 dark:border-yellow-400 last:border-none hover:bg-orange-50 dark:hover:bg-yellow-500/15 transition-colors cursor-pointer"
                 >
                     presentation
